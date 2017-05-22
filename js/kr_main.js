@@ -30,11 +30,12 @@ function init(){
 
   // put a camera in the scene
   camera	= new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 10000 );
-  camera.position.set(0, 0, 5);
+  camera.position.set(0, 0, 500);
   scene.add(camera);
 
   // create a camera contol
-  cameraControls	= new THREE.TrackballControls( camera )
+  cameraControls	= new THREE.TrackballControls( camera , renderer.domElement);
+
 
   // transparently support window resize
   THREEx.WindowResize.bind(renderer, camera);
@@ -67,6 +68,7 @@ function init(){
 }
 
 relic = new Relic.RelicScene(Relic.config_carbon);
+setupGUI();
 
 // animation loop
 function animate() {
@@ -84,11 +86,11 @@ if(relic && relic.ready){
   render();
   stats.update();
 }
-
+var PIseconds;
 // render the scene
 function render() {
   // variable which is increase by Math.PI every seconds - usefull for animation
-  var PIseconds	= Date.now() * Math.PI;
+  PIseconds	= Date.now() * Math.PI;
   // update camera controls
   cameraControls.update();
   // actually render the scene
