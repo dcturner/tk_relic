@@ -36,12 +36,11 @@ function init() {
   scene = new THREE.Scene();
 
   // put a camera in the scene
-  // camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
-  //   1, 10000);
-  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
-    100, 2000000);
+  camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
+    1, 10000);
 
-  camera.position.set(0, 0, 500);
+
+  camera.position.set(0, 0, 5);
   scene.add(camera);
 
   // create a camera contol
@@ -87,7 +86,7 @@ function init() {
   scene.add(light);
 }
 
-relic = new Relic.RelicScene(Relic.config_carbon);
+relic = new Relic.RelicScene("carbon");
 setupGUI();
 
 // animation loop
