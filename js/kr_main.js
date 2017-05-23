@@ -8,7 +8,6 @@ var stats,
   tunnel,
   sky;
 
-if (!init()) animate();
 
 // init the scene
 function init() {
@@ -58,7 +57,7 @@ function init() {
       "- <i>f</i> for fullscreen";
   }
 
-//  - - - - - - - - - - - -SKY
+  //  - - - - - - - - - - - -SKY
   sky = new THREE.Sky();
   scene.add(sky.mesh);
 
@@ -113,8 +112,10 @@ function render() {
   // update camera controls
   cameraControls.update();
 
-updateRelic();
+  updateRelic();
 
   // actually render the scene
   renderer.render(scene, camera);
 }
+
+if (!init()) animate();
