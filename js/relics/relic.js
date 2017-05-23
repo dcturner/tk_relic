@@ -49,21 +49,6 @@ this.ready = false;
           }
 
           this.update = function(){
-            var time = Date.now();
-            var seed_osc_y = time/this.osc_y;
-relicMesh.children[0].position.set(0,10+Math.cos(seed_osc_y)*10,0);
-var seed_scaleX = time/this.scaleX_osc_rate;
-var seed_scaleY = time/this.scaleY_osc_rate;
-var seed_scaleZ = time/this.scaleZ_osc_rate;
-
-var halfX = (this.scaleX_osc_max - this.scaleX_osc_min)*0.5;
-var halfY = (this.scaleY_osc_max - this.scaleY_osc_min)*0.5;
-var halfZ = (this.scaleZ_osc_max - this.scaleZ_osc_min)*0.5;
-var sclX = (this.scaleX_osc_min + halfX) + (Math.cos(seed_scaleX)*halfX);
-var sclY = (this.scaleY_osc_min + halfY) + (Math.cos(seed_scaleY)*halfY);
-var sclZ = (this.scaleZ_osc_min + halfZ) + (Math.cos(seed_scaleZ)*halfZ);
-
-relicMesh.children[0].scale.set(sclX,sclY,sclZ);
 
           }
         };

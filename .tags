@@ -5,10 +5,15 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Config	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^Relic.Config = function(name){$/;"	function
+GuiParams	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/gui.js	/^var GuiParams = function(){$/;"	class
+GuiParams	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/gui.js	/^var GuiParams = function(){$/;"	function
 Relic.Config	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^Relic = {};$/;"	class
 Relic.RelicScene	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^Relic.config_chaos = new Relic.Config("chaos");$/;"	class
 Relic.RelicScene.relicLoader	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^  				this.relicLoader.load( this.meshURL, function ( collada ) {$/;"	method
 Relic.RelicScene.update	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^          this.update = function(){$/;"	method
 RelicScene	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^Relic.RelicScene = function(config){$/;"	function
+gui	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/gui.js	/^var gui, gp;$/;"	variable
+guiChanged	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/gui.js	/^function guiChanged(){$/;"	function
 setup	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^          this.setup = function(){$/;"	function
+setupGUI	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/gui.js	/^function setupGUI(){$/;"	function
 update	/Users/dt/Documents/Clients/Territory/Kaboo_Relics/Draft2/js/relics/relic.js	/^          this.update = function(){$/;"	function
