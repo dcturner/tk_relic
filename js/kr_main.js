@@ -87,7 +87,7 @@ function init() {
 }
 
 relic = new Relic.RelicScene("carbon");
-setupGUI();
+
 
 // animation loop
 function animate() {
@@ -112,6 +112,9 @@ function render() {
   PIseconds = Date.now() * Math.PI;
   // update camera controls
   cameraControls.update();
+
+updateRelic();
+
   // actually render the scene
   renderer.render(scene, camera);
 }

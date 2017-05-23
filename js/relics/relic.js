@@ -1,5 +1,7 @@
 Relic = {};
 
+updateRelic = function(){};
+
 Relic.RelicScene = function(name){
   // collada
   _this = this;
