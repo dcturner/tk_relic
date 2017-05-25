@@ -1,4 +1,5 @@
 Relic = {};
+Relic['shaders'] = [];
 
 updateRelic = function() {};
 
@@ -15,5 +16,5 @@ Relic.RelicScene = function(name) {
 		_this.ready = true;
 	});
 
-    this.update = function(){}
+	this.update = function() {}
 }

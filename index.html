@@ -12,16 +12,27 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi-filters/1.0.6/filters.min.js"></script>
 
 		<script src="js/three//three.js"></script>
+		<!-- POSTPROCESSING -->
+		<script src="js/postprocessing/EffectComposer.js"></script>
+		<script src="js/postprocessing/ShaderPass.js"></script>
+		<script src="js/postprocessing/RenderPass.js"></script>
+		<script src="js/postprocessing/BokehPass.js"></script>
+
+		<!-- SHADERS -->
+		<script src="js/shaders/CopyShader.js"></script>
+		<script src="js/shaders/SkyShader.js"></script>
+		<script src="js/shaders/SSAOShader.js"></script>
+		<script src="js/shaders/BokehShader.js"></script>
+
 		<script src="js/loaders/ColladaLoader.js"></script>
 		<script src="vendor/three.js/Detector.js"></script>
 		<script src="vendor/three.js/Stats.js"></script>
 		<script src="vendor/threex/THREEx.screenshot.js"></script>
 		<script src="vendor/threex/THREEx.FullScreen.js"></script>
 		<script src="vendor/threex/THREEx.WindowResize.js"></script>
-		<script src="vendor/three.js/TrackballControls.js"></script>
+		<script src="vendor/three.js/TrackBallControls.js"></script>
 
-		<!-- SHADERS -->
-		<script src="js/shaders/SkyShader.js"></script>
+
 
 		<link  href="css/main.css" rel="stylesheet"/>
 	</head>
@@ -38,6 +49,7 @@
 	<script src="js/gui.js"></script>
 	<script src="js/relics/relic.js"></script>
 	<script src="js/audio/AudioBoss.js"></script>
+	<script src="js/postFX.js"></script>
 	<script src="relicAssets/carbon/config.js"></script>
 	<script src="js/kr_main.js"></script>
 </body>
