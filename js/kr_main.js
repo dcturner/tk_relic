@@ -14,6 +14,9 @@ var composer,
   pass_tilt,
   pass_bokeh;
 
+var global_time_seed = 0,
+  global_time_rate = 0.01;
+
 
 // init the scene
 function init() {
@@ -43,11 +46,12 @@ function init() {
   scene = new THREE.Scene();
   scene.fog = new THREE.Fog(
     new THREE.Color(0, 0, 0),
-    3.7, 6.3);
+    0, 100);
+    // 3.7, 6.3);
 
   // put a camera in the scene
   camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
-    1, 10);
+    1, 100);
 
 
   camera.position.set(0, 0, 5);
@@ -119,7 +123,7 @@ function animate() {
   // do the render
   render();
 
-
+  global_time_seed += global_time_rate;
   stats.update();
 }
 
@@ -130,7 +134,7 @@ function render() {
   // update camera controls
   cameraControls.update();
 
-  updateRelic();
+  relic_update();
 
   // actually render the scene
   //renderer.render(scene, camera);

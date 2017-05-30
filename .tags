@@ -813,7 +813,7 @@ RectAreaLightHelper.constructor	js/three/helpers/RectAreaLightHelper.js	/^RectAr
 RectAreaLightHelper.dispose	js/three/helpers/RectAreaLightHelper.js	/^RectAreaLightHelper.prototype.dispose = function () {$/;"	m
 RectAreaLightHelper.update	js/three/helpers/RectAreaLightHelper.js	/^RectAreaLightHelper.prototype.update = function () {$/;"	m
 Relic.RelicConfig	relicAssets/carbon/config.js	/^var orbitLine_master, triangleGrid, core;$/;"	f
-Relic.RelicScene	js/relics/relic.js	/^updateRelic = function() {};$/;"	c
+Relic.RelicScene	js/relics/relic.js	/^relic_update = function() {};$/;"	c
 Relic.RelicScene.update	js/relics/relic.js	/^    this.update = function(){}$/;"	m
 Relic.relicParams.COUNT	relicAssets/carbon/config.js	/^Relic.relicParams['orbitLines'] = {$/;"	p
 Relic.relicParams.SCALE_MIN	relicAssets/carbon/config.js	/^    COUNT: 4,$/;"	p
@@ -3007,8 +3007,8 @@ unrollLoops.replace	js/three/renderers/webgl/WebGLProgram.js	/^	function replace
 update	js/three/renderers/webgl/WebGLAttributes.js	/^	function update( attribute, bufferType ) {$/;"	f
 updateBuffer	js/three/renderers/webgl/WebGLAttributes.js	/^	function updateBuffer( buffer, attribute, bufferType ) {$/;"	f
 updateObject	vendor/three.js/Three.js	/^	function updateObject( object ) {$/;"	f
-updateRelic	js/relics/relic.js	/^Relic = {};$/;"	f
-updateRelic	relicAssets/carbon/config.js	/^function updateRelic() {}$/;"	f
+relic_update	js/relics/relic.js	/^Relic = {};$/;"	f
+relic_update	relicAssets/carbon/config.js	/^function relic_update() {}$/;"	f
 updateRenderTargetMipmap	vendor/three.js/Three.js	/^	function updateRenderTargetMipmap ( renderTarget ) {$/;"	f
 updateShadowCamera	vendor/three.js/Three.js	/^	function updateShadowCamera( camera, light ) {$/;"	f
 updateShadowMap	vendor/three.js/Three.js	/^	this.updateShadowMap = function ( scene, camera ) {$/;"	c

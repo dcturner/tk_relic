@@ -1,7 +1,7 @@
 Relic = {};
 Relic['shaders'] = [];
 
-updateRelic = function() {};
+relic_update = function() {};
 
 Relic.RelicScene = function(name) {
 	// collada
