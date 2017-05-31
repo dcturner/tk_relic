@@ -138,6 +138,7 @@ function render() {
 
   // actually render the scene
   //renderer.render(scene, camera);
+  testShaderLoop();
   composer.render();
 }
 
@@ -185,9 +186,9 @@ function initPostprocessing() {
 
   composer.addPass(pass_render);
   composer.addPass(pass_ssao);
-  composer.addPass(pass_bokeh);
+  //composer.addPass(pass_bokeh);
 
-  gui_setup_postFX_Controls();
+//gui_setup_postFX_Controls();
 }
 
 if (!init()) animate();

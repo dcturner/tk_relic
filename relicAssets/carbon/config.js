@@ -16,7 +16,8 @@ Relic.relicParams['hexagons'] = {
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - GENERAL MATERIALS
-var mat_fresnel;
+var mat_fresnel,
+  mat_colouredNormals;
 
 var colladaScene;
 
@@ -196,8 +197,6 @@ function relicSetup_shadersAndMaterials() {
   mat_hexagons.color = new THREE.Color(0x000000);
   mat_hexagons.emissive = new THREE.Color(6, 10, 13);
   mat_hexagons.emissiveIntensity = 0.0073;
-
-
 }
 
 
@@ -214,21 +213,35 @@ function relic_setupEnvironment() {
   textureCube.mapping = THREE.CubeRefractionMapping;
   scene.background = textureCube;
   //
-  var geometry = new THREE.SphereGeometry(2, 20, 20);
+  var geometry = new THREE.SphereGeometry(2, 40, 40);
   var shader = THREE.FresnelShader;
   var uniforms = THREE.UniformsUtils.clone(shader.uniforms);
   uniforms["tCube"].value = textureCube;
-  mat_fresnel = new THREE.ShaderMaterial(THREE.FresnelShader);
+  mat_fresnel = new THREE.ShaderMaterial(Shader_ColouredNormals);
 
-
-  var shell = new THREE.Mesh(geometry, mat_fresnel);
+  mat_colouredNormals = getMaterial_colouredNormals();
+  var shell = new THREE.Mesh(geometry, mat_colouredNormals);
 
   //scene.add(shell);
-  console.log(mat_fresnel);
-  gui_relic.add(mat_fresnel.uniforms.mFresnelBias, "value", 0, 1);
-  gui_relic.add(mat_fresnel.uniforms.mFresnelPower, "value", -1, 4);
-  gui_relic.add(mat_fresnel.uniforms.mFresnelScale, "value", 0, 1);
-  gui_relic.add(mat_fresnel.uniforms.mRefractionRatio, "value", -1, 3);
-  gui_relic.add(mat_fresnel, "wireframe");
-  gui_relic.add(mat_fresnel, "wireframeLinewidth", 0, 100);
+
+  gui_relic.addThreeUniformColor(mat_colouredNormals, 'col1', 'colour1');
+  gui_relic.addThreeUniformColor(mat_colouredNormals, 'col2', 'colour2');
+  gui_relic.addThreeUniformColor(mat_colouredNormals, 'col3', 'colour3');
+
+// gui_relic.add(mat_fresnel.uniforms.mFresnelBias, "value", 0, 1);
+// gui_relic.add(mat_fresnel.uniforms.mFresnelPower, "value", -1, 4);
+// gui_relic.add(mat_fresnel.uniforms.mFresnelScale, "value", 0, 1);
+// gui_relic.add(mat_fresnel.uniforms.mRefractionRatio, "value", -1, 3);
+// gui_relic.add(mat_fresnel, "wireframe");
+// gui_relic.add(mat_fresnel, "wireframeLinewidth", 0, 100);
+}
+
+function handler_shaderChange() {
+  mat_colouredNormals.uniforms.col1.value = Shader_ColouredNormals_params.col1;
+  mat_colouredNormals.uniforms.col2.value = Shader_ColouredNormals_params.col2;
+  mat_colouredNormals.uniforms.col3.value = Shader_ColouredNormals_params.col3;
+  console.log(mat_colouredNormals.uniforms);
+}
+
+function testShaderLoop() {
 }

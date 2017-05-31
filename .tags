@@ -707,6 +707,7 @@ OctahedronGeometry.constructor	js/three/geometries/OctahedronGeometry.js	/^Octah
 OctahedronGeometry.parameters.detail	js/three/geometries/OctahedronGeometry.js	/^		radius: radius,$/;"	p
 OctahedronGeometry.parameters.radius	js/three/geometries/OctahedronGeometry.js	/^	this.parameters = {$/;"	p
 OrthographicCamera	js/three/cameras/OrthographicCamera.js	/^function OrthographicCamera( left, right, top, bottom, near, far ) {$/;"	c
+PIseconds	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var PIseconds;$/;"	variable
 PIseconds	js/kr_main.js	/^var PIseconds;$/;"	v
 ParametricBufferGeometry	js/three/geometries/ParametricGeometry.js	/^function ParametricBufferGeometry( func, slices, stacks ) {$/;"	c
 ParametricBufferGeometry.constructor	js/three/geometries/ParametricGeometry.js	/^ParametricBufferGeometry.prototype.constructor = ParametricBufferGeometry;$/;"	m
@@ -2140,6 +2141,7 @@ allocateBones	vendor/three.js/Three.js	/^	function allocateBones ( object ) {$/;
 allocateLights	vendor/three.js/Three.js	/^	function allocateLights( lights ) {$/;"	f
 allocateShadows	vendor/three.js/Three.js	/^	function allocateShadows( lights ) {$/;"	f
 allpoints	js/three/extras/ShapeUtils.js	/^		var allpoints = contour.concat();$/;"	v
+animate	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function animate() {$/;"	function
 animate	js/kr_main.js	/^function animate() {$/;"	f
 applySkin	js/loaders/ColladaLoader.js	/^	function applySkin ( geometry, instanceCtrl, frame ) {$/;"	f
 applySkin.animationdata.name	js/loaders/ColladaLoader.js	/^		var animationdata = { "name":animationBounds.ID,"fps":30,"length":animationBounds.frames \/ 30,"hierarchy":[] };$/;"	p
@@ -2230,6 +2232,7 @@ clipLine	vendor/three.js/Three.js	/^	function clipLine( s1, s2 ) {$/;"	f
 colladaScene	relicAssets/carbon/config.js	/^var colladaScene;$/;"	v
 compile	js/three/renderers/WebGLRenderer.js	/^	this.compile = function ( scene, camera ) {$/;"	f
 components	js/three/math/Color.js	/^			var components = m[ 2 ];$/;"	v
+composer	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var composer,$/;"	variable
 compressedTexImage2D	js/three/renderers/webgl/WebGLState.js	/^	function compressedTexImage2D() {$/;"	f
 compressedTextureFormats	js/three/renderers/webgl/WebGLState.js	/^	var compressedTextureFormats = null;$/;"	v
 construct	js/three/Three.Legacy.js	/^	console.log( 'THREE.Curve.create() has been deprecated' );$/;"	c
@@ -2287,6 +2290,7 @@ deallocateRenderTarget	vendor/three.js/Three.js	/^	var deallocateRenderTarget = 
 deallocateTexture	vendor/three.js/Three.js	/^	var deallocateTexture = function ( texture ) {$/;"	f
 deleteBuffers	vendor/three.js/Three.js	/^	var deleteBuffers = function ( geometry ) {$/;"	f
 denominator	vendor/three.js/Three.js	/^		var denominator = plane.normal.dot( this.direction );$/;"	v
+depthMaterial	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var depthMaterial,$/;"	variable
 descSort	vendor/three.js/Three.js	/^	var descSort = function ( a, b ) {$/;"	f
 destroy	js/three/renderers/webgl/WebGLProgram.js	/^	this.destroy = function() {$/;"	c
 det	vendor/three.js/Three.js	/^		var det = Math.abs( 1 - a01 * a01 );$/;"	v
@@ -2539,6 +2543,7 @@ getTextureUnit	vendor/three.js/Three.js	/^	function getTextureUnit() {$/;"	f
 getToneMappingFunction	js/three/renderers/webgl/WebGLProgram.js	/^function getToneMappingFunction( functionName, toneMapping ) {$/;"	f
 getUniforms	js/three/renderers/webgl/WebGLProgram.js	/^	this.getUniforms = function() {$/;"	f
 get_url	vendor/three.js/Three.js	/^		function get_url( source_url, url_type ) {$/;"	f
+global_time_seed	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var global_time_seed = 0,$/;"	variable
 gui_core	relicAssets/carbon/config.js	/^var gui_core = gui.addFolder("core");$/;"	v
 gui_hexagons	relicAssets/carbon/config.js	/^var gui_hexagons = gui.addFolder("hexagons");$/;"	v
 gui_orbitLines	relicAssets/carbon/config.js	/^var gui_orbitLines = gui.addFolder("orbitLines");$/;"	v
@@ -2573,6 +2578,7 @@ images.mipmaps	vendor/three.js/Three.js	/^						images[ f ] = { mipmaps : [] };$
 index	js/loaders/ColladaLoader.js	/^		var index = 0;$/;"	v
 indexPtr	vendor/three.js/Three.js	/^		var indexPtr = 0;$/;"	v
 indices	vendor/three.js/Three.js	/^		var indices, k, j, jl, u;$/;"	v
+init	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function init() {$/;"	function
 init	js/kr_main.js	/^function init() {$/;"	f
 init	js/three/renderers/webgl/WebGLState.js	/^	function init() {$/;"	f
 initAttributes	js/three/renderers/webgl/WebGLState.js	/^	function initAttributes() {$/;"	f
@@ -2585,6 +2591,8 @@ initMaterial	js/three/renderers/WebGLRenderer.js	/^	function initMaterial( mater
 initMaterial	vendor/three.js/Three.js	/^	this.initMaterial = function ( material, lights, fog, object ) {$/;"	f
 initMeshBuffers	vendor/three.js/Three.js	/^	function initMeshBuffers ( geometryGroup, object ) {$/;"	f
 initParticleBuffers	vendor/three.js/Three.js	/^	function initParticleBuffers ( geometry, object ) {$/;"	f
+initPostprocessing	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function initPostprocessing() {$/;"	function
+initPostprocessing.pars.minFilter	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^  var pars = {$/;"	property
 initWebGLObjects	vendor/three.js/Three.js	/^	this.initWebGLObjects = function ( scene ) {$/;"	f
 int32ToFourCC	vendor/three.js/Three.js	/^		function int32ToFourCC( value ) {$/;"	f
 interpolate	vendor/three.js/Three.js	/^	function interpolate( p0, p1, p2, p3, t, t2, t3 ) {$/;"	f
@@ -2777,6 +2785,8 @@ refreshUniformsShadow	vendor/three.js/Three.js	/^	function refreshUniformsShadow
 refreshUniformsStandard	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsStandard( uniforms, material ) {$/;"	f
 refreshUniformsToon	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsToon( uniforms, material ) {$/;"	f
 releaseMaterialProgramReference	js/three/renderers/WebGLRenderer.js	/^	function releaseMaterialProgramReference( material ) {$/;"	f
+relic_update	js/relics/relic.js	/^Relic = {};$/;"	f
+relic_update	relicAssets/carbon/config.js	/^function relic_update() {}$/;"	f
 remove	js/three/renderers/webgl/WebGLAttributes.js	/^	function remove( attribute ) {$/;"	f
 removeHoles	js/three/extras/ShapeUtils.js	/^		function removeHoles( contour, holes ) {$/;"	f
 removeHoles.intersectsHoleEdge	js/three/extras/ShapeUtils.js	/^			function intersectsHoleEdge( inShapePt, inHolePt ) {$/;"	f
@@ -2785,6 +2795,7 @@ removeHoles.isCutLineInsideAngles	js/three/extras/ShapeUtils.js	/^			function is
 removeInstances	vendor/three.js/Three.js	/^	function removeInstances( objlist, object ) {$/;"	f
 removeInstancesDirect	vendor/three.js/Three.js	/^	function removeInstancesDirect( objlist, object ) {$/;"	f
 removeObject	vendor/three.js/Three.js	/^	function removeObject( object, scene ) {$/;"	f
+render	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function render() {$/;"	function
 render	js/kr_main.js	/^function render() {$/;"	f
 render	js/three/Three.Legacy.js	/^	this.render = function () {};$/;"	f
 render	js/three/renderers/WebGLRenderer.js	/^	this.render = function ( scene, camera, renderTarget, forceClear ) {$/;"	c
@@ -2945,6 +2956,7 @@ sqy	vendor/three.js/Three.js	/^		var sqy = q.y * q.y;$/;"	v
 sqz	vendor/three.js/Three.js	/^		var sqz = q.z * q.z;$/;"	v
 startEnd2	vendor/three.js/Three.js	/^			var startEnd2 = startEnd.dot( startEnd );$/;"	v
 startEnd_startP	vendor/three.js/Three.js	/^			var startEnd_startP = startEnd.dot( startP );$/;"	v
+stats	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var stats,$/;"	variable
 stats	js/kr_main.js	/^var stats,$/;"	v
 strokePath	vendor/three.js/Three.js	/^	function strokePath( color, linewidth, linecap, linejoin ) {$/;"	f
 subtract	vendor/three.js/Three.js	/^		var subtract = function ( a, b ) {$/;"	f
@@ -3007,8 +3019,6 @@ unrollLoops.replace	js/three/renderers/webgl/WebGLProgram.js	/^	function replace
 update	js/three/renderers/webgl/WebGLAttributes.js	/^	function update( attribute, bufferType ) {$/;"	f
 updateBuffer	js/three/renderers/webgl/WebGLAttributes.js	/^	function updateBuffer( buffer, attribute, bufferType ) {$/;"	f
 updateObject	vendor/three.js/Three.js	/^	function updateObject( object ) {$/;"	f
-relic_update	js/relics/relic.js	/^Relic = {};$/;"	f
-relic_update	relicAssets/carbon/config.js	/^function relic_update() {}$/;"	f
 updateRenderTargetMipmap	vendor/three.js/Three.js	/^	function updateRenderTargetMipmap ( renderTarget ) {$/;"	f
 updateShadowCamera	vendor/three.js/Three.js	/^	function updateShadowCamera( camera, light ) {$/;"	f
 updateShadowMap	vendor/three.js/Three.js	/^	this.updateShadowMap = function ( scene, camera ) {$/;"	c
