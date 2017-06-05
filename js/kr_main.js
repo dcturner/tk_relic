@@ -30,10 +30,16 @@ function init() {
     Detector.addGetWebGLMessage();
     return true;
   }
+  renderer = new THREE.WebGLRenderer();
+  renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.autoClear = false;
-  renderer.toneMapping = THREE.ReinhardToneMapping;
-  renderer.toneMappingExposure = 3;
+
+  window.addEventListener('resize', onWindowResize, false);
+
+  // renderer.setSize(window.innerWidth, window.innerHeight);
+  // renderer.autoClear = false;
+  // renderer.toneMapping = THREE.ReinhardToneMapping;
+  // renderer.toneMappingExposure = 3;
   document.getElementById('container').appendChild(renderer.domElement);
 
   // add Stats.js - https://github.com/mrdoob/stats.js
@@ -44,85 +50,68 @@ function init() {
 
   // create a scene
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(
-    new THREE.Color(0, 0, 0),
-    0, 100);
-    // 3.7, 6.3);
+  // scene.fog = new THREE.Fog(
+  //   new THREE.Color(0, 0, 0),
+  //   0, 100);
+  // 3.7, 6.3);
 
   // put a camera in the scene
-  camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
-    1, 100);
+  // camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
+  // 1, 100);
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,
+    100, 2000000);
+  camera.position.set(0, 100, 2000);
 
-
-  camera.position.set(0, 0, 5);
+  // camera.position.set(0, 0, 5);
   scene.add(camera);
 
   // create a camera contol
   cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
 
-
   // - - - - - - - - - - - - - - - - - - - - - - POST FX COMPOSER
   composer = new THREE.EffectComposer(renderer);
   initPostprocessing();
 
-  // transparently support window resize
-  THREEx.WindowResize.bind(renderer, camera);
-  // allow 'p' to make screenshot
-  THREEx.Screenshot.bindKey(renderer);
-  // allow 'f' to go fullscreen where this feature is supported
-  if (THREEx.FullScreen.available()) {
-    THREEx.FullScreen.bindKey();
-    document.getElementById('inlineDoc').innerHTML += "- <i>f</i> for fullscreen";
-  }
+  var helper = new THREE.GridHelper(10000, 2, 0xffffff, 0xffffff);
+  scene.add(helper);
 
-  //  - - - - - - - - - - - -SKY
-  sky = new THREE.Sky();
-  scene.add(sky.mesh);
+  //relic = new Relic.RelicScene("carbon");
+  //gui_setupSceneControls();
 
-
-  // here you add your objects
-  // // - you will most likely replace this part by your own
-  var light = new THREE.AmbientLight(0x111111);
-  scene.add(light);
-  var light = new THREE.DirectionalLight(0xffffff);
-  light.position.set(Math.random(), Math.random(), Math.random()).normalize();
-  scene.add(light);
-  var light = new THREE.DirectionalLight(0xffffff);
-  light.position.set(Math.random(), Math.random(), Math.random()).normalize();
-  scene.add(light);
-  // var light = new THREE.PointLight(Math.random() * 0xffffff);
-  // light.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() -
-  //   0.5)
-  //   .normalize().multiplyScalar(1.2);
-  // scene.add(light);
-  // var light = new THREE.PointLight(Math.random() * 0xffffff);
-  // light.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() -
-  //   0.5)
-  //   .normalize().multiplyScalar(1.2);
-  // scene.add(light);
-
-  relic = new Relic.RelicScene("carbon");
-  gui_setupSceneControls();
+  initSky();
 //audioBoss.loop("relicAssets/carbon/audio/test1.wav");
 }
 
+function initSky() {
 
+  // Add Sky Mesh
+  sky = new THREE.Sky();
+  scene.add(sky.mesh);
+
+  sunSphere = new THREE.Mesh(
+    new THREE.SphereBufferGeometry(20000, 16, 8),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff
+    })
+  );
+  sunSphere.position.y = -70000;
+  sunSphere.visible = false;
+  scene.add(sunSphere);
+  console.log(sky);
+  gui_initSky();
+}
+;
 
 // animation loop
 function animate() {
 
-  // loop on request animation loop
-  // - it has to be at the begining of the function
-  // - see details at http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
   requestAnimationFrame(animate);
 
-  if (relic && relic.ready) {
-    relic.update();
-  }
+  // if (relic && relic.ready) {
+  //   relic.update();
+  // }
 
-  // do the render
   render();
-
   global_time_seed += global_time_rate;
   stats.update();
 }
@@ -134,12 +123,13 @@ function render() {
   // update camera controls
   cameraControls.update();
 
-  relic_update();
+  // relic_update();
 
   // actually render the scene
-  //renderer.render(scene, camera);
-  testShaderLoop();
-  composer.render();
+  renderer.render(scene, camera);
+
+// testShaderLoop();
+// composer.render();
 }
 
 var depthMaterial,
@@ -186,9 +176,20 @@ function initPostprocessing() {
 
   composer.addPass(pass_render);
   composer.addPass(pass_ssao);
-  //composer.addPass(pass_bokeh);
-
+  composer.autoClear = false;
+//composer.addPass(pass_bokeh);
 //gui_setup_postFX_Controls();
 }
 
 if (!init()) animate();
+
+function onWindowResize() {
+
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  render();
+
+}
