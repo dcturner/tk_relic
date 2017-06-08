@@ -4,9 +4,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-AUDIO_BOSS	js/audio/AudioBoss.js	/^var AUDIO_BOSS = function(){$/;"	f
-AUDIO_BOSS	js/audio/AudioBoss.js	/^}$/;"	c
-AUDIO_BOSS.loop	js/audio/AudioBoss.js	/^AUDIO_BOSS.prototype.loop = function (url) {$/;"	m
+AUDIO_BOSS	js/audio/AudioBoss.js	/^var AUDIO_BOSS = function() {$/;"	c
+AUDIO_BOSS.getHowl	js/audio/AudioBoss.js	/^    function getHowl(urls){$/;"	f
+AUDIO_BOSS.loop	js/audio/AudioBoss.js	/^AUDIO_BOSS.prototype.loop = function(url) {$/;"	m
 Accessor	js/loaders/ColladaLoader.js	/^	function Accessor() {$/;"	c
 Accessor.parse	js/loaders/ColladaLoader.js	/^	Accessor.prototype.parse = function ( element ) {$/;"	m
 AmbientLight	js/three/lights/AmbientLight.js	/^function AmbientLight( color, intensity ) {$/;"	c
@@ -393,6 +393,7 @@ DodecahedronGeometry	js/three/geometries/DodecahedronGeometry.js	/^function Dode
 DodecahedronGeometry.constructor	js/three/geometries/DodecahedronGeometry.js	/^DodecahedronGeometry.prototype.constructor = DodecahedronGeometry;$/;"	m
 DodecahedronGeometry.parameters.detail	js/three/geometries/DodecahedronGeometry.js	/^		radius: radius,$/;"	p
 DodecahedronGeometry.parameters.radius	js/three/geometries/DodecahedronGeometry.js	/^	this.parameters = {$/;"	p
+EPS	vendor/three.js/OrbitControls.js	/^	var EPS = 0.000001;$/;"	v
 EPS	vendor/three.js/Three.js	/^		var EPS = 0.000001;$/;"	v
 EdgesGeometry	js/three/geometries/EdgesGeometry.js	/^function EdgesGeometry( geometry, thresholdAngle ) {$/;"	c
 EdgesGeometry.constructor	js/three/geometries/EdgesGeometry.js	/^EdgesGeometry.prototype.constructor = EdgesGeometry;$/;"	m
@@ -707,8 +708,6 @@ OctahedronGeometry.constructor	js/three/geometries/OctahedronGeometry.js	/^Octah
 OctahedronGeometry.parameters.detail	js/three/geometries/OctahedronGeometry.js	/^		radius: radius,$/;"	p
 OctahedronGeometry.parameters.radius	js/three/geometries/OctahedronGeometry.js	/^	this.parameters = {$/;"	p
 OrthographicCamera	js/three/cameras/OrthographicCamera.js	/^function OrthographicCamera( left, right, top, bottom, near, far ) {$/;"	c
-PIseconds	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var PIseconds;$/;"	variable
-PIseconds	js/kr_main.js	/^var PIseconds;$/;"	v
 ParametricBufferGeometry	js/three/geometries/ParametricGeometry.js	/^function ParametricBufferGeometry( func, slices, stacks ) {$/;"	c
 ParametricBufferGeometry.constructor	js/three/geometries/ParametricGeometry.js	/^ParametricBufferGeometry.prototype.constructor = ParametricBufferGeometry;$/;"	m
 ParametricBufferGeometry.parameters.func	js/three/geometries/ParametricGeometry.js	/^	this.parameters = {$/;"	p
@@ -813,11 +812,10 @@ RectAreaLightHelper	js/three/helpers/RectAreaLightHelper.js	/^function RectAreaL
 RectAreaLightHelper.constructor	js/three/helpers/RectAreaLightHelper.js	/^RectAreaLightHelper.prototype.constructor = RectAreaLightHelper;$/;"	m
 RectAreaLightHelper.dispose	js/three/helpers/RectAreaLightHelper.js	/^RectAreaLightHelper.prototype.dispose = function () {$/;"	m
 RectAreaLightHelper.update	js/three/helpers/RectAreaLightHelper.js	/^RectAreaLightHelper.prototype.update = function () {$/;"	m
-Relic.RelicConfig	relicAssets/carbon/config.js	/^var orbitLine_master, triangleGrid, core;$/;"	f
+Relic.RelicConfig	relicAssets/carbon/config.js	/^var obj_triangleGrid,mat_triangleGrid;$/;"	f
 Relic.RelicScene	js/relics/relic.js	/^relic_update = function() {};$/;"	c
-Relic.RelicScene.update	js/relics/relic.js	/^    this.update = function(){}$/;"	m
-Relic.relicParams.COUNT	relicAssets/carbon/config.js	/^Relic.relicParams['orbitLines'] = {$/;"	p
-Relic.relicParams.SCALE_MIN	relicAssets/carbon/config.js	/^    COUNT: 4,$/;"	p
+Relic.RelicScene.update	js/relics/relic.js	/^	this.update = function() {}$/;"	m
+Relic.relicParams.U_EMISSION_COLOUR	relicAssets/carbon/config.js	/^Relic.relicParams['hexagons'] = {$/;"	p
 RenderList	vendor/three.js/Three.js	/^	var RenderList = function () {$/;"	f
 RenderList.checkBackfaceCulling	vendor/three.js/Three.js	/^		var checkBackfaceCulling = function ( v1, v2, v3 ) {$/;"	f
 RenderList.checkTriangleVisibility	vendor/three.js/Three.js	/^		var checkTriangleVisibility = function ( v1, v2, v3 ) {$/;"	f
@@ -844,6 +842,8 @@ RingGeometry.parameters.phiSegments	js/three/geometries/RingGeometry.js	/^		thet
 RingGeometry.parameters.thetaLength	js/three/geometries/RingGeometry.js	/^		thetaStart: thetaStart,$/;"	p
 RingGeometry.parameters.thetaSegments	js/three/geometries/RingGeometry.js	/^		outerRadius: outerRadius,$/;"	p
 RingGeometry.parameters.thetaStart	js/three/geometries/RingGeometry.js	/^		phiSegments: phiSegments,$/;"	p
+SFRT	js/shaders/shaderfrog/shaderFrog_library.js	/^var SFRT;$/;"	v
+STATE.NONE	vendor/three.js/OrbitControls.js	/^	var STATE = { NONE: - 1, ROTATE: 0, DOLLY: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_DOLLY: 4, TOUCH_PAN: 5 };$/;"	p
 Sampler	js/loaders/ColladaLoader.js	/^	function Sampler ( animation ) {$/;"	c
 Sampler.create	js/loaders/ColladaLoader.js	/^	Sampler.prototype.create = function () {$/;"	m
 Sampler.getData	js/loaders/ColladaLoader.js	/^	Sampler.prototype.getData = function ( type, ndx, member ) {$/;"	m
@@ -857,8 +857,10 @@ SceneUtils.detach	js/three/extras/SceneUtils.js	/^	},$/;"	m
 Shader	js/loaders/ColladaLoader.js	/^	function Shader ( type, effect ) {$/;"	c
 Shader.create	js/loaders/ColladaLoader.js	/^	Shader.prototype.create = function() {$/;"	m
 Shader.parse	js/loaders/ColladaLoader.js	/^	Shader.prototype.parse = function ( element ) {$/;"	m
+ShaderFrogRuntime.r	js/shaderfrog-runtime.min.js	/^var ShaderFrogRuntime=function(e){function r(t){if(a[t])return a[t].exports;var n=a[t]={exports:{},id:t,loaded:!1};return e[t].call(n.exports,n,n.exports,r),n.loaded=!0,n.exports}var a={};return r.m=e,r.c=a,r.p="",r(0)}([function(e,r,a){"use strict";function t(e){return e&&e.__esModule?e:{"default":e}}function n(){}function i(){var e=arguments.length,r=arguments[0];if(2>e)return r;for(var a=1;e>a;a++)for(var t=arguments[a],n=Object.keys(t||{}),i=n.length,s=0;i>s;s++){var o=n[s];r[o]=t[o]}return r}function s(e){return i({},e)}function o(e){var r=s(e),a=void 0,t=void 0;for(a=0;t=arguments[a++ +1];)delete r[t];return r}Object.defineProperty(r,"__esModule",{value:!0});var u=a(1),d=t(u);n.prototype={mainCamera:null,cubeCameras:{},reserved:{time:null,cameraPosition:null},umap:{"float":{type:"f",value:0},"int":{type:"i",value:0},vec2:{type:"v2",value:function(){return new d["default"].Vector2}},vec3:{type:"v3",value:function(){return new d["default"].Vector3}},vec4:{type:"v4",value:function(){return new d["default"].Vector4}},samplerCube:{type:"t"},sampler2D:{type:"t"}},getUmap:function(e){var r=this.umap[e].value;return"function"==typeof r?r():r},load:function(e,r){var a=this,t=e,n="string"==typeof e;n&&(t=[e]);for(var i=new Array(t.length),s=0,o=function(e,o){var u=new d["default"].XHRLoader;u.load(o,function(u){var d=void 0;try{d=JSON.parse(u),delete d.id}catch(m){throw new Error("Could not parse shader"+o+"! Please verify the URL is correct.")}a.add(d.name,d),i[e]=d,++s===t.length&&r(n?i[0]:i)})},u=0;u<t.length;u++)o(u,t[u])},registerCamera:function(e){if(!(e instanceof d["default"].Camera))throw new Error("Cannot register a non-camera as a camera!");this.mainCamera=e},registerCubeCamera:function(e,r){if(!r.renderTarget)throw new Error("Cannot register a non-camera as a camera!");this.cubeCameras[e]=r},unregisterCamera:function(e){if(e in this.cubeCameras)delete this.cubeCameras[e];else{if(e!==this.mainCamera)throw new Error("You never registered camera "+e);delete this.mainCamera}},updateSource:function(e,r,a){if(a=a||"name",!this.shaderTypes[e])throw new Error("Runtime Error: Cannot update shader "+e+" because it has not been added.");var t=this.add(e,r),n=void 0,s=void 0;for(s=0;n=this.runningShaders[s++];)n[a]===e&&(i(n.material,o(t,"id")),n.material.needsUpdate=!0)},renameShader:function(e,r){var a=void 0,t=void 0;if(!(e in this.shaderTypes))throw new Error("Could not rename shader "+e+" to "+r+". It does not exist.");for(this.shaderTypes[r]=this.shaderTypes[e],delete this.shaderTypes[e],a=0;t=this.runningShaders[a++];)t.name===e&&(t.name=r)},get:function(e){var r=this.shaderTypes[e];return r.initted||this.create(e),r.material},add:function(e,r){var a=s(r),t=void 0;a.fragmentShader=r.fragment,a.vertexShader=r.vertex,delete a.fragment,delete a.vertex;for(var n in a.uniforms)t=a.uniforms[n],null===t.value&&(a.uniforms[n].value=this.getUmap(t.glslType));return e in this.shaderTypes?i(this.shaderTypes[e],a):this.shaderTypes[e]=a,a},create:function(e){var r=this.shaderTypes[e];return r.material=new d["default"].RawShaderMaterial(r),this.runningShaders.push(r),r.init&&r.init(r.material),r.material.needsUpdate=!0,r.initted=!0,r.material},updateRuntime:function(e,r,a){a=a||"name";var t=void 0,n=void 0,i=void 0,s=void 0;for(n=0;t=this.runningShaders[n++];)if(t[a]===e)for(i in r.uniforms)i in this.reserved||i in t.material.uniforms&&(s=r.uniforms[i],"t"===s.type&&"string"==typeof s.value&&(s.value=this.cubeCameras[s.value].renderTarget),t.material.uniforms[i].value=r.uniforms[i].value)},updateShaders:function(e,r){var a=void 0,t=void 0;for(r=r||{},t=0;a=this.runningShaders[t++];){for(var n in r.uniforms)n in a.material.uniforms&&(a.material.uniforms[n].value=r.uniforms[n]);"cameraPosition"in a.material.uniforms&&this.mainCamera&&(a.material.uniforms.cameraPosition.value=this.mainCamera.position.clone()),"viewMatrix"in a.material.uniforms&&this.mainCamera&&(a.material.uniforms.viewMatrix.value=this.mainCamera.matrixWorldInverse),"time"in a.material.uniforms&&(a.material.uniforms.time.value=e)}},shaderTypes:{},runningShaders:[]},r["default"]=n,e.exports=r["default"]},function(e,r){e.exports=THREE}]);/;"	f
 ShaderLib.basic	js/three/renderers/shaders/ShaderLib.js	/^var ShaderLib = {$/;"	p
 ShaderLib.physical.uniforms	js/three/renderers/shaders/ShaderLib.js	/^ShaderLib.physical = {$/;"	p
+ShaderLib.vertexShader	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_sim_vertex' ] = {$/;"	p
 ShaderMaterial	js/three/materials/ShaderMaterial.js	/^function ShaderMaterial( parameters ) {$/;"	c
 ShaderMaterial.Material	js/three/materials/ShaderMaterial.js	/^ShaderMaterial.prototype.copy = function ( source ) {$/;"	c
 ShaderMaterial.constructor	js/three/materials/ShaderMaterial.js	/^ShaderMaterial.prototype.constructor = ShaderMaterial;$/;"	m
@@ -870,6 +872,10 @@ ShaderMaterial.extensions.fragDepth	js/three/materials/ShaderMaterial.js	/^		der
 ShaderMaterial.extensions.shaderTextureLOD	js/three/materials/ShaderMaterial.js	/^		drawBuffers: false, \/\/ set to use draw buffers$/;"	p
 ShaderMaterial.isShaderMaterial	js/three/materials/ShaderMaterial.js	/^ShaderMaterial.prototype.isShaderMaterial = true;$/;"	m
 ShaderMaterial.toJSON	js/three/materials/ShaderMaterial.js	/^ShaderMaterial.prototype.toJSON = function ( meta ) {$/;"	m
+ShaderRuntime	js/ShaderRuntime.js	/^function ShaderRuntime() {}$/;"	c
+ShaderRuntime	js/ShaderRuntime.js	/^function ShaderRuntime() {}$/;"	f
+ShaderRuntime.cubeCameras	js/ShaderRuntime.js	/^    mainCamera: null,$/;"	p
+ShaderRuntime.mainCamera	js/ShaderRuntime.js	/^ShaderRuntime.prototype = {$/;"	p
 ShadowMaterial	js/three/materials/ShadowMaterial.js	/^function ShadowMaterial( parameters ) {$/;"	c
 ShadowMaterial.constructor	js/three/materials/ShadowMaterial.js	/^ShadowMaterial.prototype.constructor = ShadowMaterial;$/;"	m
 ShadowMaterial.isShadowMaterial	js/three/materials/ShadowMaterial.js	/^ShadowMaterial.prototype.isShadowMaterial = true;$/;"	m
@@ -971,6 +977,8 @@ TEXTURE_MAPPING.UVMapping	js/three/loaders/ObjectLoader.js	/^var TEXTURE_MAPPING
 TEXTURE_WRAPPING.ClampToEdgeWrapping	js/three/loaders/ObjectLoader.js	/^	RepeatWrapping: RepeatWrapping,$/;"	p
 TEXTURE_WRAPPING.MirroredRepeatWrapping	js/three/loaders/ObjectLoader.js	/^	ClampToEdgeWrapping: ClampToEdgeWrapping,$/;"	p
 TEXTURE_WRAPPING.RepeatWrapping	js/three/loaders/ObjectLoader.js	/^var TEXTURE_WRAPPING = {$/;"	p
+THREE.AdaptiveToneMappingPass	js/postprocessing/AdaptiveToneMappingPass.js	/^\/**$/;"	c
+THREE.AdaptiveToneMappingPass.adaptLuminanceShader.defines	js/postprocessing/AdaptiveToneMappingPass.js	/^	this.adaptLuminanceShader = {$/;"	p
 THREE.AmbientLight	vendor/three.js/Three.js	/^};$/;"	c
 THREE.AmbientLight	vendor/three.js/Three.js	/^};$/;"	f
 THREE.AmbientLight.THREE.Light	vendor/three.js/Three.js	/^	var light = new THREE.AmbientLight();$/;"	c
@@ -993,6 +1001,14 @@ THREE.ArrowHelper.setDirection	vendor/three.js/Three.js	/^THREE.ArrowHelper.prot
 THREE.ArrowHelper.setLength	vendor/three.js/Three.js	/^THREE.ArrowHelper.prototype.setLength = function ( length, headLength, headWidth ) {$/;"	m
 THREE.AxisHelper	vendor/three.js/Three.js	/^THREE.ParametricGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	f
 THREE.AxisHelper	vendor/three.js/Three.js	/^};$/;"	c
+THREE.BasicShader.uniforms	js/shaders/BasicShader.js	/^THREE.BasicShader = {$/;"	p
+THREE.BleachBypassShader.uniforms	js/shaders/BleachBypassShader.js	/^THREE.BleachBypassShader = {$/;"	p
+THREE.BlendShader.uniforms	js/shaders/BlendShader.js	/^THREE.BlendShader = {$/;"	p
+THREE.BloomPass	js/postprocessing/BloomPass.js	/^\/**$/;"	c
+THREE.BloomPass.pars.minFilter	js/postprocessing/BloomPass.js	/^	var pars = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat };$/;"	p
+THREE.BokehPass	js/postprocessing/BokehPass.js	/^\/**$/;"	c
+THREE.BokehShader.uniforms	js/shaders/BokehShader.js	/^THREE.BokehShader = {$/;"	p
+THREE.BokehShader.uniforms	js/shaders/BokehShader2.js	/^THREE.BokehShader = {$/;"	p
 THREE.Bone	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Bone.update	vendor/three.js/Three.js	/^THREE.Bone.prototype.update = function ( parentSkinMatrix, forceUpdate ) {$/;"	m
 THREE.BoundingBoxHelper	vendor/three.js/Three.js	/^};$/;"	c
@@ -1011,6 +1027,7 @@ THREE.BoxGeometry.parameters.width	vendor/three.js/Three.js	/^	this.parameters =
 THREE.BoxGeometry.parameters.widthSegments	vendor/three.js/Three.js	/^		depth: depth,$/;"	p
 THREE.BoxHelper	vendor/three.js/Three.js	/^};$/;"	c
 THREE.BoxHelper.update	vendor/three.js/Three.js	/^THREE.BoxHelper.prototype.update = function ( object ) {$/;"	m
+THREE.BrightnessContrastShader.uniforms	js/shaders/BrightnessContrastShader.js	/^THREE.BrightnessContrastShader = {$/;"	p
 THREE.BufferAttribute	vendor/three.js/Three.js	/^THREE.BufferAttribute = function () {};$/;"	c
 THREE.BufferAttribute	vendor/three.js/Three.js	/^};$/;"	f
 THREE.BufferAttribute.constructor	vendor/three.js/Three.js	/^THREE.BufferAttribute.prototype = {$/;"	p
@@ -1035,6 +1052,8 @@ THREE.CircleGeometry.parameters.radius	vendor/three.js/Three.js	/^	this.paramete
 THREE.CircleGeometry.parameters.segments	vendor/three.js/Three.js	/^		radius: radius,$/;"	p
 THREE.CircleGeometry.parameters.thetaLength	vendor/three.js/Three.js	/^		thetaStart: thetaStart,$/;"	p
 THREE.CircleGeometry.parameters.thetaStart	vendor/three.js/Three.js	/^		segments: segments,$/;"	p
+THREE.ClearMaskPass	js/postprocessing/MaskPass.js	/^} );$/;"	c
+THREE.ClearPass	js/postprocessing/ClearPass.js	/^\/**$/;"	c
 THREE.Clock	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Clock.constructor	vendor/three.js/Three.js	/^THREE.Clock.prototype = {$/;"	p
 THREE.ColladaLoader	js/loaders/ColladaLoader.js	/^\/**$/;"	f
@@ -1049,6 +1068,7 @@ THREE.ColladaLoader.request.onreadystatechange	js/loaders/ColladaLoader.js	/^			
 THREE.Color	vendor/three.js/Three.js	/^THREE.RGBA_S3TC_DXT5_Format = 2004;$/;"	f
 THREE.Color	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Color.constructor	vendor/three.js/Three.js	/^THREE.Color.prototype = {$/;"	p
+THREE.ColorCorrectionShader.uniforms	js/shaders/ColorCorrectionShader.js	/^THREE.ColorCorrectionShader = {$/;"	p
 THREE.ColorKeywords.aliceblue	vendor/three.js/Three.js	/^THREE.ColorKeywords = { "aliceblue": 0xF0F8FF, "antiquewhite": 0xFAEBD7, "aqua": 0x00FFFF, "aquamarine": 0x7FFFD4, "azure": 0xF0FFFF,$/;"	p
 THREE.ColorKeywords.antiquewhite	vendor/three.js/Three.js	/^THREE.ColorKeywords = { "aliceblue": 0xF0F8FF, "antiquewhite": 0xFAEBD7, "aqua": 0x00FFFF, "aquamarine": 0x7FFFD4, "azure": 0xF0FFFF,$/;"	p
 THREE.ColorKeywords.aqua	vendor/three.js/Three.js	/^THREE.ColorKeywords = { "aliceblue": 0xF0F8FF, "antiquewhite": 0xFAEBD7, "aqua": 0x00FFFF, "aquamarine": 0x7FFFD4, "azure": 0xF0FFFF,$/;"	p
@@ -1196,6 +1216,7 @@ THREE.ColorKeywords.white	vendor/three.js/Three.js	/^"violet": 0xEE82EE, "wheat"
 THREE.ColorKeywords.whitesmoke	vendor/three.js/Three.js	/^"violet": 0xEE82EE, "wheat": 0xF5DEB3, "white": 0xFFFFFF, "whitesmoke": 0xF5F5F5, "yellow": 0xFFFF00, "yellowgreen": 0x9ACD32 };$/;"	p
 THREE.ColorKeywords.yellow	vendor/three.js/Three.js	/^"violet": 0xEE82EE, "wheat": 0xF5DEB3, "white": 0xFFFFFF, "whitesmoke": 0xF5F5F5, "yellow": 0xFFFF00, "yellowgreen": 0x9ACD32 };$/;"	p
 THREE.ColorKeywords.yellowgreen	vendor/three.js/Three.js	/^"violet": 0xEE82EE, "wheat": 0xF5DEB3, "white": 0xFFFFFF, "whitesmoke": 0xF5F5F5, "yellow": 0xFFFF00, "yellowgreen": 0x9ACD32 };$/;"	p
+THREE.ColorifyShader.uniforms	js/shaders/ColorifyShader.js	/^THREE.ColorifyShader = {$/;"	p
 THREE.CombinedCamera	vendor/three.js/Three.js	/^THREE.CubeCamera.prototype = Object.create( THREE.Object3D.prototype );$/;"	c
 THREE.CombinedCamera.setFov	vendor/three.js/Three.js	/^THREE.CombinedCamera.prototype.setFov = function( fov ) {$/;"	m
 THREE.CombinedCamera.setLens	vendor/three.js/Three.js	/^THREE.CombinedCamera.prototype.setLens = function ( focalLength, frameHeight ) {$/;"	m
@@ -1215,10 +1236,13 @@ THREE.CompressedTexture.THREE.Texture	vendor/three.js/Three.js	/^	var texture = 
 THREE.CompressedTexture.clone	vendor/three.js/Three.js	/^THREE.CompressedTexture.prototype.clone = function () {$/;"	m
 THREE.CompressedTexture.image.height	vendor/three.js/Three.js	/^	this.image = { width: width, height: height };$/;"	p
 THREE.CompressedTexture.image.width	vendor/three.js/Three.js	/^	this.image = { width: width, height: height };$/;"	p
+THREE.ConvolutionShader.defines	js/shaders/ConvolutionShader.js	/^THREE.ConvolutionShader = {$/;"	p
+THREE.CopyShader.uniforms	js/shaders/CopyShader.js	/^THREE.CopyShader = {$/;"	p
 THREE.CubeCamera	vendor/three.js/Three.js	/^};$/;"	c
 THREE.CubeGeometry	vendor/three.js/Three.js	/^THREE.CircleGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	f
 THREE.CubeReflectionMapping	vendor/three.js/Three.js	/^THREE.UVMapping = function () {};$/;"	f
 THREE.CubeRefractionMapping	vendor/three.js/Three.js	/^THREE.CubeReflectionMapping = function () {};$/;"	f
+THREE.CubeTexturePass	js/postprocessing/CubeTexturePass.js	/^\/**$/;"	c
 THREE.CubicBezierCurve	vendor/three.js/Three.js	/^};$/;"	c
 THREE.CubicBezierCurve.getPoint	vendor/three.js/Three.js	/^THREE.CubicBezierCurve.prototype.getPoint = function ( t ) {$/;"	m
 THREE.CubicBezierCurve.getTangent	vendor/three.js/Three.js	/^THREE.CubicBezierCurve.prototype.getTangent = function( t ) {$/;"	m
@@ -1261,6 +1285,7 @@ THREE.CylinderGeometry.parameters.openEnded	vendor/three.js/Three.js	/^		heightS
 THREE.CylinderGeometry.parameters.radialSegments	vendor/three.js/Three.js	/^		height: height,$/;"	p
 THREE.CylinderGeometry.parameters.radiusBottom	vendor/three.js/Three.js	/^		radiusTop: radiusTop,$/;"	p
 THREE.CylinderGeometry.parameters.radiusTop	vendor/three.js/Three.js	/^	this.parameters = {$/;"	p
+THREE.DOFMipMapShader.uniforms	js/shaders/DOFMipMapShader.js	/^THREE.DOFMipMapShader = {$/;"	p
 THREE.DataTexture	vendor/three.js/Three.js	/^};$/;"	c
 THREE.DataTexture.THREE.Texture	vendor/three.js/Three.js	/^	var texture = new THREE.DataTexture();$/;"	c
 THREE.DataTexture.clone	vendor/three.js/Three.js	/^THREE.DataTexture.prototype.clone = function () {$/;"	m
@@ -1272,14 +1297,20 @@ THREE.DepthPassPlugin.getObjectMaterial	vendor/three.js/Three.js	/^	function get
 THREE.DepthPassPlugin.init	vendor/three.js/Three.js	/^	this.init = function ( renderer ) {$/;"	m
 THREE.DepthPassPlugin.render	vendor/three.js/Three.js	/^	this.render = function ( scene, camera ) {$/;"	m
 THREE.DepthPassPlugin.update	vendor/three.js/Three.js	/^	this.update = function ( scene, camera ) {$/;"	m
+THREE.DigitalGlitch.uniforms	js/shaders/DigitalGlitch.js	/^THREE.DigitalGlitch = {$/;"	p
 THREE.DirectionalLight	vendor/three.js/Three.js	/^THREE.AreaLight.prototype = Object.create( THREE.Light.prototype );$/;"	c
 THREE.DirectionalLight.THREE.Light	vendor/three.js/Three.js	/^	var light = new THREE.DirectionalLight();$/;"	c
 THREE.DirectionalLight.clone	vendor/three.js/Three.js	/^THREE.DirectionalLight.prototype.clone = function () {$/;"	m
 THREE.DirectionalLightHelper	vendor/three.js/Three.js	/^}();$/;"	c
 THREE.DirectionalLightHelper.dispose	vendor/three.js/Three.js	/^THREE.DirectionalLightHelper.prototype.dispose = function () {$/;"	m
 THREE.DirectionalLightHelper.update	vendor/three.js/Three.js	/^THREE.DirectionalLightHelper.prototype.update = function () {$/;"	m
+THREE.DotScreenPass	js/postprocessing/DotScreenPass.js	/^\/**$/;"	c
+THREE.DotScreenShader.uniforms	js/shaders/DotScreenShader.js	/^THREE.DotScreenShader = {$/;"	p
+THREE.EdgeShader.uniforms	js/shaders/EdgeShader.js	/^THREE.EdgeShader = {$/;"	p
+THREE.EdgeShader2.uniforms	js/shaders/EdgeShader2.js	/^THREE.EdgeShader2 = {$/;"	p
 THREE.EdgesHelper	vendor/three.js/Three.js	/^}();$/;"	c
 THREE.EdgesHelper.sortFunction	vendor/three.js/Three.js	/^	var sortFunction = function ( a, b ) { return a - b };$/;"	f
+THREE.EffectComposer	js/postprocessing/EffectComposer.js	/^\/**$/;"	c
 THREE.EllipseCurve	vendor/three.js/Three.js	/^};$/;"	c
 THREE.EllipseCurve.getPoint	vendor/three.js/Three.js	/^THREE.EllipseCurve.prototype.getPoint = function ( t ) {$/;"	m
 THREE.Euler	vendor/three.js/Three.js	/^};$/;"	c
@@ -1299,25 +1330,32 @@ THREE.ExtrudeGeometry.WorldUVGenerator.generateSideWallUV	vendor/three.js/Three.
 THREE.ExtrudeGeometry.WorldUVGenerator.generateTopUV	vendor/three.js/Three.js	/^THREE.ExtrudeGeometry.WorldUVGenerator = {$/;"	m
 THREE.ExtrudeGeometry.addShape	vendor/three.js/Three.js	/^THREE.ExtrudeGeometry.prototype.addShape = function ( shape, options ) {$/;"	m
 THREE.ExtrudeGeometry.addShapeList	vendor/three.js/Three.js	/^THREE.ExtrudeGeometry.prototype.addShapeList = function ( shapes, options ) {$/;"	m
+THREE.FXAAShader.uniforms	js/shaders/FXAAShader.js	/^THREE.FXAAShader = {$/;"	p
 THREE.Face3	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Face3.constructor	vendor/three.js/Three.js	/^THREE.Face3.prototype = {$/;"	p
 THREE.Face4	vendor/three.js/Three.js	/^};$/;"	f
 THREE.FaceNormalsHelper	vendor/three.js/Three.js	/^THREE.EdgesHelper.prototype = Object.create( THREE.Line.prototype );$/;"	c
 THREE.FaceNormalsHelper.update	vendor/three.js/Three.js	/^THREE.FaceNormalsHelper.prototype.update = function () {$/;"	m
+THREE.FilmPass	js/postprocessing/FilmPass.js	/^\/**$/;"	c
+THREE.FilmShader.uniforms	js/shaders/FilmShader.js	/^THREE.FilmShader = {$/;"	p
 THREE.Float32Attribute	vendor/three.js/Three.js	/^THREE.Uint32Attribute.prototype = Object.create( THREE.BufferAttribute.prototype );$/;"	c
 THREE.Float64Attribute	vendor/three.js/Three.js	/^THREE.Float32Attribute.prototype = Object.create( THREE.BufferAttribute.prototype );$/;"	c
+THREE.FocusShader.uniforms	js/shaders/FocusShader.js	/^THREE.FocusShader = {$/;"	p
 THREE.Fog	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Fog.clone	vendor/three.js/Three.js	/^THREE.Fog.prototype.clone = function () {$/;"	m
 THREE.FogExp2	vendor/three.js/Three.js	/^};$/;"	c
 THREE.FogExp2.clone	vendor/three.js/Three.js	/^THREE.FogExp2.prototype.clone = function () {$/;"	m
 THREE.FontUtils.faces	vendor/three.js/Three.js	/^THREE.FontUtils = {$/;"	p
 THREE.FontUtils.generateShapes	vendor/three.js/Three.js	/^};$/;"	f
+THREE.FresnelShader.uniforms	js/shaders/FresnelShader.js	/^THREE.FresnelShader = {$/;"	p
 THREE.Frustum	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Frustum.constructor	vendor/three.js/Three.js	/^THREE.Frustum.prototype = {$/;"	p
+THREE.GammaCorrectionShader.uniforms	js/shaders/GammaCorrectionShader.js	/^THREE.GammaCorrectionShader = {$/;"	p
 THREE.Geometry	vendor/three.js/Three.js	/^THREE.EventDispatcher.prototype.apply( THREE.BufferGeometry.prototype );$/;"	c
 THREE.Geometry.constructor	vendor/three.js/Three.js	/^THREE.Geometry.prototype = {$/;"	p
 THREE.GeometryUtils.merge	vendor/three.js/Three.js	/^THREE.GeometryUtils = {$/;"	m
 THREE.GeometryUtils.randomPointInTriangle	vendor/three.js/Three.js	/^	},$/;"	m
+THREE.GlitchPass	js/postprocessing/GlitchPass.js	/^\/**$/;"	c
 THREE.GridHelper	vendor/three.js/Three.js	/^};$/;"	c
 THREE.GridHelper.setColors	vendor/three.js/Three.js	/^THREE.GridHelper.prototype.setColors = function( colorCenterLine, colorGrid ) {$/;"	m
 THREE.Gyroscope	vendor/three.js/Three.js	/^};$/;"	c
@@ -1335,6 +1373,9 @@ THREE.HemisphereLight.clone	vendor/three.js/Three.js	/^THREE.HemisphereLight.pro
 THREE.HemisphereLightHelper	vendor/three.js/Three.js	/^}$/;"	c
 THREE.HemisphereLightHelper.dispose	vendor/three.js/Three.js	/^THREE.HemisphereLightHelper.prototype.dispose = function () {$/;"	m
 THREE.HemisphereLightHelper.update	vendor/three.js/Three.js	/^THREE.HemisphereLightHelper.prototype.update = function () {$/;"	m
+THREE.HorizontalBlurShader.uniforms	js/shaders/HorizontalBlurShader.js	/^THREE.HorizontalBlurShader = {$/;"	p
+THREE.HorizontalTiltShiftShader.uniforms	js/shaders/HorizontalTiltShiftShader.js	/^THREE.HorizontalTiltShiftShader = {$/;"	p
+THREE.HueSaturationShader.uniforms	js/shaders/HueSaturationShader.js	/^THREE.HueSaturationShader = {$/;"	p
 THREE.IcosahedronGeometry	vendor/three.js/Three.js	/^THREE.PolyhedronGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
 THREE.IcosahedronGeometry.parameters.detail	vendor/three.js/Three.js	/^		radius: radius,$/;"	p
 THREE.IcosahedronGeometry.parameters.radius	vendor/three.js/Three.js	/^	this.parameters = {$/;"	p
@@ -1356,6 +1397,7 @@ THREE.JSONLoader.load	vendor/three.js/Three.js	/^THREE.JSONLoader.prototype.load
 THREE.JSONLoader.loadAjaxJSON	vendor/three.js/Three.js	/^THREE.JSONLoader.prototype.loadAjaxJSON = function ( context, url, callback, texturePath, callbackProgress ) {$/;"	m
 THREE.JSONLoader.parse	vendor/three.js/Three.js	/^THREE.JSONLoader.prototype.parse = function ( json, texturePath ) {$/;"	m
 THREE.JSONLoader.xhr.onreadystatechange	vendor/three.js/Three.js	/^	var length = 0;$/;"	f
+THREE.KaleidoShader.uniforms	js/shaders/KaleidoShader.js	/^THREE.KaleidoShader = {$/;"	p
 THREE.KeyFrameAnimation	vendor/three.js/Three.js	/^};$/;"	c
 THREE.KeyFrameAnimation.getNextKeyWith	vendor/three.js/Three.js	/^THREE.KeyFrameAnimation.prototype.getNextKeyWith = function( sid, h, key ) {$/;"	m
 THREE.KeyFrameAnimation.getPrevKeyWith	vendor/three.js/Three.js	/^THREE.KeyFrameAnimation.prototype.getPrevKeyWith = function( sid, h, key ) {$/;"	m
@@ -1402,6 +1444,10 @@ THREE.Loader.onLoadStart	vendor/three.js/Three.js	/^	this.onLoadStart = function
 THREE.LoadingManager	vendor/three.js/Three.js	/^};$/;"	c
 THREE.LoadingManager.itemEnd	vendor/three.js/Three.js	/^	this.itemEnd = function ( url ) {$/;"	m
 THREE.LoadingManager.itemStart	vendor/three.js/Three.js	/^	this.itemStart = function ( url ) {$/;"	m
+THREE.LuminosityHighPassShader.shaderID	js/shaders/LuminosityHighPassShader.js	/^THREE.LuminosityHighPassShader = {$/;"	p
+THREE.LuminosityHighPassShader.uniforms	js/shaders/LuminosityHighPassShader.js	/^  shaderID: "luminosityHighPass",$/;"	p
+THREE.LuminosityShader.uniforms	js/shaders/LuminosityShader.js	/^THREE.LuminosityShader = {$/;"	p
+THREE.MaskPass	js/postprocessing/MaskPass.js	/^\/**$/;"	c
 THREE.Material	vendor/three.js/Three.js	/^};$/;"	c
 THREE.Material.constructor	vendor/three.js/Three.js	/^THREE.Material.prototype = {$/;"	p
 THREE.MaterialLoader	vendor/three.js/Three.js	/^};$/;"	c
@@ -1433,6 +1479,7 @@ THREE.MeshNormalMaterial.clone	vendor/three.js/Three.js	/^THREE.MeshNormalMateri
 THREE.MeshPhongMaterial	vendor/three.js/Three.js	/^};$/;"	c
 THREE.MeshPhongMaterial.THREE.Material	vendor/three.js/Three.js	/^	var material = new THREE.MeshPhongMaterial();$/;"	c
 THREE.MeshPhongMaterial.clone	vendor/three.js/Three.js	/^THREE.MeshPhongMaterial.prototype.clone = function () {$/;"	m
+THREE.MirrorShader.uniforms	js/shaders/MirrorShader.js	/^THREE.MirrorShader = {$/;"	p
 THREE.MorphAnimMesh	vendor/three.js/Three.js	/^};$/;"	c
 THREE.MorphAnimMesh.clone	vendor/three.js/Three.js	/^THREE.MorphAnimMesh.prototype.clone = function ( object ) {$/;"	m
 THREE.MorphAnimMesh.parseAnimations	vendor/three.js/Three.js	/^THREE.MorphAnimMesh.prototype.parseAnimations = function () {$/;"	m
@@ -1463,6 +1510,10 @@ THREE.MorphBlendMesh.update	vendor/three.js/Three.js	/^THREE.MorphBlendMesh.prot
 THREE.MorphBlendMesh.var.animation.endFrame	vendor/three.js/Three.js	/^		startFrame: start,$/;"	p
 THREE.MorphBlendMesh.var.animation.length	vendor/three.js/Three.js	/^		endFrame: end,$/;"	p
 THREE.MorphBlendMesh.var.animation.startFrame	vendor/three.js/Three.js	/^	var animation = {$/;"	p
+THREE.NormalMapShader.uniforms	js/shaders/NormalMapShader.js	/^THREE.NormalMapShader = {$/;"	p
+THREE.OBJLoader	js/three/loaders/OBJLoader.js	/^\/**$/;"	c
+THREE.OBJLoader.constructor	js/three/loaders/OBJLoader.js	/^THREE.OBJLoader.prototype = {$/;"	p
+THREE.OBJLoader.regexp.vertex_pattern	js/three/loaders/OBJLoader.js	/^	this.regexp = {$/;"	p
 THREE.Object3D	vendor/three.js/Three.js	/^}( THREE ) );$/;"	c
 THREE.Object3D.constructor	vendor/three.js/Three.js	/^THREE.Object3D.prototype = {$/;"	p
 THREE.ObjectLoader	vendor/three.js/Three.js	/^};$/;"	c
@@ -1470,16 +1521,31 @@ THREE.ObjectLoader.constructor	vendor/three.js/Three.js	/^THREE.ObjectLoader.pro
 THREE.OctahedronGeometry	vendor/three.js/Three.js	/^THREE.IcosahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
 THREE.OctahedronGeometry.parameters.detail	vendor/three.js/Three.js	/^		radius: radius,$/;"	p
 THREE.OctahedronGeometry.parameters.radius	vendor/three.js/Three.js	/^	this.parameters = {$/;"	p
+THREE.OrbitControls	vendor/three.js/OrbitControls.js	/^\/**$/;"	c
+THREE.OrbitControls.constructor	vendor/three.js/OrbitControls.js	/^THREE.OrbitControls.prototype.constructor = THREE.OrbitControls;$/;"	m
+THREE.OrbitControls.getAzimuthalAngle	vendor/three.js/OrbitControls.js	/^	this.getAzimuthalAngle = function () {$/;"	m
+THREE.OrbitControls.getPolarAngle	vendor/three.js/OrbitControls.js	/^	this.getPolarAngle = function () {$/;"	m
+THREE.OrbitControls.keys.BOTTOM	vendor/three.js/OrbitControls.js	/^	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };$/;"	p
+THREE.OrbitControls.keys.LEFT	vendor/three.js/OrbitControls.js	/^	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };$/;"	p
+THREE.OrbitControls.keys.RIGHT	vendor/three.js/OrbitControls.js	/^	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };$/;"	p
+THREE.OrbitControls.keys.UP	vendor/three.js/OrbitControls.js	/^	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };$/;"	p
+THREE.OrbitControls.mouseButtons.ORBIT	vendor/three.js/OrbitControls.js	/^	this.mouseButtons = { ORBIT: THREE.MOUSE.LEFT, ZOOM: THREE.MOUSE.MIDDLE, PAN: THREE.MOUSE.RIGHT };$/;"	p
+THREE.OrbitControls.reset	vendor/three.js/OrbitControls.js	/^	this.reset = function () {$/;"	m
+THREE.OrbitControls.saveState	vendor/three.js/OrbitControls.js	/^	this.saveState = function () {$/;"	m
+THREE.OrbitControls.update	vendor/three.js/OrbitControls.js	/^	this.update = function () {$/;"	m
 THREE.OrthographicCamera	vendor/three.js/Three.js	/^};$/;"	c
 THREE.OrthographicCamera.THREE.Camera	vendor/three.js/Three.js	/^	var camera = new THREE.OrthographicCamera();$/;"	c
 THREE.OrthographicCamera.clone	vendor/three.js/Three.js	/^THREE.OrthographicCamera.prototype.clone = function () {$/;"	m
 THREE.OrthographicCamera.updateProjectionMatrix	vendor/three.js/Three.js	/^THREE.OrthographicCamera.prototype.updateProjectionMatrix = function () {$/;"	m
+THREE.OutlinePass	js/postprocessing/OutlinePass.js	/^\/**$/;"	c
+THREE.ParallaxShader.modes	js/shaders/ParallaxShader.js	/^THREE.ParallaxShader = {$/;"	p
 THREE.ParametricGeometry	vendor/three.js/Three.js	/^THREE.TetrahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
 THREE.ParticleSystem	vendor/three.js/Three.js	/^};$/;"	c
 THREE.ParticleSystem.clone	vendor/three.js/Three.js	/^THREE.ParticleSystem.prototype.clone = function ( object ) {$/;"	m
 THREE.ParticleSystemMaterial	vendor/three.js/Three.js	/^};$/;"	c
 THREE.ParticleSystemMaterial.THREE.Material	vendor/three.js/Three.js	/^	var material = new THREE.ParticleSystemMaterial();$/;"	c
 THREE.ParticleSystemMaterial.clone	vendor/three.js/Three.js	/^THREE.ParticleSystemMaterial.prototype.clone = function () {$/;"	m
+THREE.Pass	js/postprocessing/EffectComposer.js	/^} );$/;"	c
 THREE.Path	vendor/three.js/Three.js	/^THREE.Gyroscope.prototype.scaleObject = new THREE.Vector3();$/;"	c
 THREE.Path.Array	vendor/three.js/Three.js	/^	var npts = [ new THREE.Vector2( x0, y0 ) ];$/;"	c
 THREE.Path.absarc	vendor/three.js/Three.js	/^ THREE.Path.prototype.absarc = function ( aX, aY, aRadius,$/;"	m
@@ -1540,6 +1606,7 @@ THREE.Quaternion	vendor/three.js/Three.js	/^"violet": 0xEE82EE, "wheat": 0xF5DEB
 THREE.Quaternion.constructor	vendor/three.js/Three.js	/^THREE.Quaternion.prototype = {$/;"	p
 THREE.Quaternion.slerp	vendor/three.js/Three.js	/^};$/;"	f
 THREE.REVISION	vendor/three.js/Three.js	/^var THREE = { REVISION: '67' };$/;"	p
+THREE.RGBShiftShader.uniforms	js/shaders/RGBShiftShader.js	/^THREE.RGBShiftShader = {$/;"	p
 THREE.RawShaderMaterial	vendor/three.js/Three.js	/^};$/;"	c
 THREE.RawShaderMaterial	vendor/three.js/Three.js	/^};$/;"	f
 THREE.RawShaderMaterial.THREE.ShaderMaterial	vendor/three.js/Three.js	/^	var material = new THREE.RawShaderMaterial();$/;"	c
@@ -1552,6 +1619,7 @@ THREE.Raycaster.intersectObjects	vendor/three.js/Three.js	/^	THREE.Raycaster.pro
 THREE.Raycaster.linePrecision	vendor/three.js/Three.js	/^	THREE.Raycaster.prototype.linePrecision = 1;$/;"	m
 THREE.Raycaster.precision	vendor/three.js/Three.js	/^	THREE.Raycaster.prototype.precision = 0.0001;$/;"	m
 THREE.Raycaster.set	vendor/three.js/Three.js	/^	THREE.Raycaster.prototype.set = function ( origin, direction ) {$/;"	m
+THREE.RenderPass	js/postprocessing/RenderPass.js	/^\/**$/;"	c
 THREE.RenderableFace	vendor/three.js/Three.js	/^};$/;"	c
 THREE.RenderableLine	vendor/three.js/Three.js	/^};$/;"	c
 THREE.RenderableObject	vendor/three.js/Three.js	/^};$/;"	c
@@ -1559,6 +1627,10 @@ THREE.RenderableSprite	vendor/three.js/Three.js	/^};$/;"	c
 THREE.RenderableVertex	vendor/three.js/Three.js	/^} )();$/;"	c
 THREE.RenderableVertex.copy	vendor/three.js/Three.js	/^THREE.RenderableVertex.prototype.copy = function ( vertex ) {$/;"	m
 THREE.RingGeometry	vendor/three.js/Three.js	/^THREE.PlaneGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
+THREE.SMAAPass	js/postprocessing/SMAAPass.js	/^\/**$/;"	c
+THREE.SSAARenderPass	js/postprocessing/SSAARenderPass.js	/^\/**$/;"	c
+THREE.SSAOShader.uniforms	js/shaders/SSAOShader.js	/^THREE.SSAOShader = {$/;"	p
+THREE.SavePass	js/postprocessing/SavePass.js	/^\/**$/;"	c
 THREE.Scene	vendor/three.js/Three.js	/^THREE.Particle = THREE.Sprite;$/;"	c
 THREE.Scene.	vendor/three.js/Three.js	/^	THREE.Object3D.prototype.clone.call(this, object);$/;"	c
 THREE.Scene.__addObject	vendor/three.js/Three.js	/^THREE.Scene.prototype.__addObject = function ( object ) {$/;"	m
@@ -1574,13 +1646,21 @@ THREE.SceneLoader.onLoadStart	vendor/three.js/Three.js	/^	this.onLoadStart = fun
 THREE.SceneUtils.attach	vendor/three.js/Three.js	/^	},$/;"	m
 THREE.SceneUtils.createMultiMaterialObject	vendor/three.js/Three.js	/^THREE.SceneUtils = {$/;"	m
 THREE.SceneUtils.detach	vendor/three.js/Three.js	/^	},$/;"	m
+THREE.SepiaShader.uniforms	js/shaders/SepiaShader.js	/^THREE.SepiaShader = {$/;"	p
 THREE.ShaderChunk.fog_pars_fragment	vendor/three.js/Three.js	/^THREE.ShaderChunk = {$/;"	p
 THREE.ShaderFlares.lensFlareVertexTexture	vendor/three.js/Three.js	/^THREE.ShaderFlares = {$/;"	p
 THREE.ShaderLib.basic	vendor/three.js/Three.js	/^THREE.ShaderLib = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_initial_spectrum' ] = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_main' ] = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_normals' ] = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_phase' ] = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_spectrum' ] = {$/;"	p
+THREE.ShaderLib.uniforms	js/shaders/OceanShaders.js	/^THREE.ShaderLib[ 'ocean_subtransform' ] = {$/;"	p
 THREE.ShaderMaterial	vendor/three.js/Three.js	/^THREE.ParticleBasicMaterial = THREE.ParticleSystemMaterial;$/;"	c
 THREE.ShaderMaterial.THREE.Material	vendor/three.js/Three.js	/^	var material = new THREE.ShaderMaterial();$/;"	c
 THREE.ShaderMaterial.clone	vendor/three.js/Three.js	/^THREE.ShaderMaterial.prototype.clone = function () {$/;"	m
 THREE.ShaderMaterial.defaultAttributeValues.color	vendor/three.js/Three.js	/^	this.defaultAttributeValues = {$/;"	p
+THREE.ShaderPass	js/postprocessing/ShaderPass.js	/^\/**$/;"	c
 THREE.ShadowMapPlugin	vendor/three.js/Three.js	/^};$/;"	c
 THREE.ShadowMapPlugin.init	vendor/three.js/Three.js	/^	this.init = function ( renderer ) {$/;"	m
 THREE.ShadowMapPlugin.render	vendor/three.js/Three.js	/^	this.render = function ( scene, camera ) {$/;"	m
@@ -1668,6 +1748,9 @@ THREE.SpritePlugin.createProgram	vendor/three.js/Three.js	/^	function createProg
 THREE.SpritePlugin.init	vendor/three.js/Three.js	/^	this.init = function ( renderer ) {$/;"	m
 THREE.SpritePlugin.painterSortStable	vendor/three.js/Three.js	/^	function painterSortStable ( a, b ) {$/;"	f
 THREE.SpritePlugin.render	vendor/three.js/Three.js	/^	this.render = function ( scene, camera, viewportWidth, viewportHeight ) {$/;"	m
+THREE.TAARenderPass	js/postprocessing/TAARenderPass.js	/^\/**$/;"	c
+THREE.THREE.OutlinePass.pars.minFilter	js/postprocessing/OutlinePass.js	/^	var pars = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat };$/;"	p
+THREE.TechnicolorShader.uniforms	js/shaders/TechnicolorShader.js	/^THREE.TechnicolorShader = {$/;"	p
 THREE.TetrahedronGeometry	vendor/three.js/Three.js	/^THREE.OctahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	f
 THREE.TetrahedronGeometry	vendor/three.js/Three.js	/^};$/;"	c
 THREE.TextGeometry	vendor/three.js/Three.js	/^THREE.SphereGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	f
@@ -1676,6 +1759,8 @@ THREE.Texture	vendor/three.js/Three.js	/^THREE.ParticleCanvasMaterial = THREE.Sp
 THREE.Texture.constructor	vendor/three.js/Three.js	/^THREE.Texture.prototype = {$/;"	p
 THREE.TextureLoader	vendor/three.js/Three.js	/^}$/;"	c
 THREE.TextureLoader.constructor	vendor/three.js/Three.js	/^THREE.TextureLoader.prototype = {$/;"	p
+THREE.TexturePass	js/postprocessing/TexturePass.js	/^\/**$/;"	c
+THREE.ToneMapShader.uniforms	js/shaders/ToneMapShader.js	/^THREE.ToneMapShader = {$/;"	p
 THREE.TorusGeometry	vendor/three.js/Three.js	/^THREE.TextGeometry.prototype = Object.create( THREE.ExtrudeGeometry.prototype );$/;"	c
 THREE.TorusGeometry.parameters.arc	vendor/three.js/Three.js	/^		tubularSegments: tubularSegments,$/;"	p
 THREE.TorusGeometry.parameters.radialSegments	vendor/three.js/Three.js	/^		tube: tube,$/;"	p
@@ -1719,6 +1804,7 @@ THREE.Triangle.barycoordFromPoint	vendor/three.js/Three.js	/^}();$/;"	f
 THREE.Triangle.constructor	vendor/three.js/Three.js	/^THREE.Triangle.prototype = {$/;"	p
 THREE.Triangle.containsPoint	vendor/three.js/Three.js	/^}();$/;"	f
 THREE.Triangle.normal	vendor/three.js/Three.js	/^};$/;"	f
+THREE.TriangleBlurShader.uniforms	js/shaders/TriangleBlurShader.js	/^THREE.TriangleBlurShader = {$/;"	p
 THREE.TubeGeometry	vendor/three.js/Three.js	/^THREE.TorusKnotGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
 THREE.TubeGeometry.FrenetFrames	vendor/three.js/Three.js	/^THREE.TubeGeometry.prototype = Object.create( THREE.Geometry.prototype );$/;"	c
 THREE.TubeGeometry.FrenetFrames.initialNormal1	vendor/three.js/Three.js	/^	function initialNormal1(lastBinormal) {$/;"	f
@@ -1738,6 +1824,9 @@ THREE.Uint8ClampedAttribute	vendor/three.js/Three.js	/^THREE.Uint8Attribute.prot
 THREE.UniformsLib.common	vendor/three.js/Three.js	/^THREE.UniformsLib = {$/;"	p
 THREE.UniformsUtils.clone	vendor/three.js/Three.js	/^	},$/;"	m
 THREE.UniformsUtils.merge	vendor/three.js/Three.js	/^THREE.UniformsUtils = {$/;"	m
+THREE.UnpackDepthRGBAShader.uniforms	js/shaders/UnpackDepthRGBAShader.js	/^THREE.UnpackDepthRGBAShader = {$/;"	p
+THREE.UnrealBloomPass	js/postprocessing/UnrealBloomPass.js	/^\/**$/;"	c
+THREE.UnrealBloomPass.pars.minFilter	js/postprocessing/UnrealBloomPass.js	/^	var pars = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat };$/;"	p
 THREE.Vector2	vendor/three.js/Three.js	/^}$/;"	c
 THREE.Vector2.constructor	vendor/three.js/Three.js	/^THREE.Vector2.prototype = {$/;"	p
 THREE.Vector3	vendor/three.js/Three.js	/^};$/;"	c
@@ -1749,6 +1838,9 @@ THREE.VertexNormalsHelper	vendor/three.js/Three.js	/^}();$/;"	c
 THREE.VertexNormalsHelper.update	vendor/three.js/Three.js	/^THREE.VertexNormalsHelper.prototype.update = ( function ( object ) {$/;"	m
 THREE.VertexTangentsHelper	vendor/three.js/Three.js	/^}());$/;"	c
 THREE.VertexTangentsHelper.update	vendor/three.js/Three.js	/^THREE.VertexTangentsHelper.prototype.update = ( function ( object ) {$/;"	m
+THREE.VerticalBlurShader.uniforms	js/shaders/VerticalBlurShader.js	/^THREE.VerticalBlurShader = {$/;"	p
+THREE.VerticalTiltShiftShader.uniforms	js/shaders/VerticalTiltShiftShader.js	/^THREE.VerticalTiltShiftShader = {$/;"	p
+THREE.VignetteShader.uniforms	js/shaders/VignetteShader.js	/^THREE.VignetteShader = {$/;"	p
 THREE.WebGLRenderTarget	vendor/three.js/Three.js	/^};$/;"	c
 THREE.WebGLRenderTarget.constructor	vendor/three.js/Three.js	/^THREE.WebGLRenderTarget.prototype = {$/;"	p
 THREE.WebGLRenderTargetCube	vendor/three.js/Three.js	/^THREE.EventDispatcher.prototype.apply( THREE.WebGLRenderTarget.prototype );$/;"	c
@@ -2141,12 +2233,16 @@ allocateBones	vendor/three.js/Three.js	/^	function allocateBones ( object ) {$/;
 allocateLights	vendor/three.js/Three.js	/^	function allocateLights( lights ) {$/;"	f
 allocateShadows	vendor/three.js/Three.js	/^	function allocateShadows( lights ) {$/;"	f
 allpoints	js/three/extras/ShapeUtils.js	/^		var allpoints = contour.concat();$/;"	v
-animate	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function animate() {$/;"	function
-animate	js/kr_main.js	/^function animate() {$/;"	f
+animate	js/main.js	/^function animate() {$/;"	f
 applySkin	js/loaders/ColladaLoader.js	/^	function applySkin ( geometry, instanceCtrl, frame ) {$/;"	f
 applySkin.animationdata.name	js/loaders/ColladaLoader.js	/^		var animationdata = { "name":animationBounds.ID,"fps":30,"length":animationBounds.frames \/ 30,"hierarchy":[] };$/;"	p
 areCustomAttributesDirty	vendor/three.js/Three.js	/^	function areCustomAttributesDirty( material ) {$/;"	f
 area	vendor/three.js/Three.js	/^	var area = function ( contour ) {$/;"	f
+array	relicAssets/carbon/geo/blendProper.json	/^                "array":[-0.00424099,-0.204396,0.977812,-0.331446,-0.381483,0.880462,-0.322235,-0.400927,0.856349,-0.339929,-0.381483,0.877222,-0.648713,-0.204396,0.731646,-0.330719,-0.400927,0.853109,-0.648713,0.204396,0.731646,-0.339929,0.381483,0.877222,-0.330719,0.400927,0.853109,-0.331446,0.381483,0.880462,-0.00424099,0.204396,0.977812,-0.322235,0.400927,0.856349,-0.646434,-0.186809,0.760148,-0.652954,0.196531,0.730026,-0.652954,-0.196531,0.730026,-0.024941,0.186809,0.997537,2.98023e-08,-0.196531,0.979432,2.98023e-08,0.196531,0.979432,-0.339929,0.381483,0.877222,-0.640705,0.187588,0.766818,-0.337182,0.375176,0.882754,-0.033658,0.187588,0.99869,-0.331446,0.381483,0.880462,-0.646434,0.186809,0.760148,-0.640705,-0.187588,0.766818,-0.024941,-0.186809,0.997537,-0.024941,0.186809,0.997537,-0.331446,-0.381483,0.880462,-0.033658,-0.187588,0.99869,-0.337182,-0.375176,0.882754,-0.339929,-0.381483,0.877222,-0.322235,-0.400927,0.856349,-0.029182,-0.194673,0.995917,2.98023e-08,-0.196531,0.979432,-0.642193,-0.194673,0.761768,-0.652954,-0.196531,0.730026,-0.648713,-0.204396,0.731646,-0.322235,0.400927,0.856349,-0.330719,0.400927,0.853109,-0.642193,0.194673,0.761768,-0.652954,0.196531,0.730026,-0.029182,0.194673,0.995917,2.98023e-08,0.196531,0.979432,-0.00424099,0.204396,0.977812,-0.646434,-0.186809,0.760148,-0.640705,0.187588,0.766818,-0.640705,-0.187588,0.766818,-0.033658,-0.187588,0.99869,-0.00424099,-0.204396,0.977812,-0.029182,-0.194673,0.995917,-0.331446,-0.381483,0.880462,-0.339929,-0.381483,0.877222,-0.642193,-0.194673,0.761768,-0.648713,-0.204396,0.731646,-0.648713,0.204396,0.731646,-0.642193,0.194673,0.761768,-0.339929,0.381483,0.877222,-0.331446,0.381483,0.880462,-0.029182,0.194673,0.995917,-0.00424099,0.204396,0.977812,-0.646434,-0.186809,0.760148,-0.646434,0.186809,0.760148,-0.652954,0.196531,0.730026,-0.024941,0.186809,0.997537,-0.024941,-0.186809,0.997537,2.98023e-08,-0.196531,0.979432,-0.330719,-0.400927,0.853109,-0.00424099,-0.204396,0.977812,-0.648713,0.204396,0.731646,-0.033658,-0.187588,0.99869,-0.033658,0.187588,0.99869,-0.640705,0.187588,0.766818,-0.337182,0.375176,0.882754,-0.640705,0.187588,0.766818,-0.033658,0.187588,0.99869,-0.640705,-0.187588,0.766818,-0.337182,-0.375176,0.882754,-0.033658,-0.187588,0.99869],$/;"	f
+array	relicAssets/carbon/geo/blendProper.json	/^                "array":[0.196242,-0.725329,0.659839,0.196242,-0.725329,0.659839,0.196242,-0.725329,0.659839,-0.586162,-0.725329,0.360987,-0.586162,-0.725329,0.360987,-0.586162,-0.725329,0.360987,-0.586162,0.72533,0.360987,-0.586162,0.72533,0.360987,-0.586162,0.72533,0.360987,0.196242,0.72533,0.659838,0.196242,0.72533,0.659838,0.196242,0.72533,0.659838,-0.977365,3.20811e-08,0.211558,-0.977365,3.20811e-08,0.211558,-0.977365,3.20811e-08,0.211558,0.587451,1.22718e-07,0.80926,0.587451,1.22718e-07,0.80926,0.587451,1.22718e-07,0.80926,-0.446608,0.656423,0.607929,-0.589373,0.154515,0.792901,-0.339335,0.309061,0.888424,-0.0892972,0.154515,0.983917,-0.0723899,0.656423,0.750877,-0.884121,0.154729,0.44084,-0.589373,-0.154515,0.792901,0.365093,-0.154729,0.917997,0.365093,0.154729,0.917997,-0.0723899,-0.656423,0.750877,-0.0892666,-0.154546,0.983917,-0.339335,-0.309061,0.888424,-0.446608,-0.656423,0.607929,-0.032075,-0.78399,0.619922,0.177984,-0.501663,0.846522,0.512864,-0.226356,0.828059,-0.697043,-0.501633,0.512314,-0.934324,-0.226356,0.275307,-0.755699,-0.557543,0.343547,-0.032075,0.78399,0.619922,-0.389355,0.78399,0.483444,-0.697012,0.501633,0.512314,-0.934324,0.226356,0.275307,0.177984,0.501663,0.846522,0.512864,0.226356,0.828059,0.334208,0.557543,0.75985,-0.884121,-0.154729,0.44084,-0.356822,1.48413e-07,0.934172,-0.356822,1.48413e-07,0.934172,-0.356822,1.48413e-07,0.934172,0.196234,-0.725321,0.65985,0.196234,-0.725321,0.65985,0.196234,-0.725321,0.65985,-0.586164,-0.725318,0.361006,-0.586164,-0.725318,0.361006,-0.586164,-0.725318,0.361006,-0.586164,0.725318,0.361005,-0.586164,0.725318,0.361005,-0.586164,0.725318,0.361005,0.196234,0.725321,0.65985,0.196234,0.725321,0.65985,0.196234,0.725321,0.65985,-0.977365,3.37507e-08,0.211558,-0.977365,3.37507e-08,0.211558,-0.977365,3.37507e-08,0.211558,0.587453,2.58208e-07,0.809259,0.587453,2.58208e-07,0.809259,0.587453,2.58208e-07,0.809259,-0.389355,-0.78399,0.483444,0.334208,-0.557543,0.75985,-0.755699,0.557543,0.343547,-0.356822,2.96826e-07,0.934172,-0.356822,2.96826e-07,0.934172,-0.356822,2.96826e-07,0.934172,-0.356822,-3.66725e-07,0.934172,-0.356822,-3.66725e-07,0.934172,-0.356822,-3.66725e-07,0.934172,-0.356822,5.50088e-07,0.934172,-0.356822,5.50088e-07,0.934172,-0.356822,5.50088e-07,0.934172],$/;"	f
+array	relicAssets/carbon/geo/blendProper.json	/^                "array":[0.457714,0.493042,0.381875,0.454224,0.382071,0.44937,0.38025,0.454224,0.304411,0.493042,0.380053,0.44937,0.304411,0.583881,0.38025,0.622699,0.380053,0.627553,0.381875,0.622699,0.457714,0.583881,0.382071,0.627553,0.307704,0.497046,0.303402,0.582134,0.303402,0.494789,0.45442,0.579877,0.458722,0.494789,0.458722,0.582134,0.38025,0.622699,0.308862,0.580146,0.381062,0.621831,0.453262,0.580146,0.381875,0.622699,0.307704,0.579877,0.308862,0.496777,0.45442,0.497046,0.45442,0.579877,0.381875,0.454224,0.453262,0.496777,0.381062,0.455092,0.38025,0.454224,0.382071,0.44937,0.453608,0.495639,0.458722,0.494789,0.308516,0.495639,0.303402,0.494789,0.304411,0.493042,0.382071,0.627553,0.380053,0.627553,0.308516,0.581284,0.303402,0.582134,0.453608,0.581284,0.458722,0.582134,0.457714,0.583881,0.307704,0.497046,0.308862,0.580146,0.308862,0.496777,0.453262,0.496777,0.457714,0.493042,0.453608,0.495639,0.381875,0.454224,0.38025,0.454224,0.308516,0.495639,0.304411,0.493042,0.304411,0.583881,0.308516,0.581284,0.38025,0.622699,0.381875,0.622699,0.453608,0.581284,0.457714,0.583881,0.307704,0.497046,0.307704,0.579877,0.303402,0.582134,0.45442,0.579877,0.45442,0.497046,0.458722,0.494789,0.380053,0.44937,0.457714,0.493042,0.304411,0.583881,0.453262,0.496777,0.453262,0.580146,0.308862,0.580146,0.381062,0.621831,0.308862,0.580146,0.453262,0.580146,0.308862,0.496777,0.381062,0.455092,0.453262,0.496777],$/;"	f
+array	relicAssets/carbon/geo/blendProper.json	/^                "array":[0.802413,0.689244,0.841044,0.613771,0.845875,0.613966,0.841044,0.612153,0.802413,0.53668,0.845875,0.611957,0.712012,0.53668,0.673381,0.612153,0.66855,0.611957,0.673381,0.613771,0.712012,0.689244,0.66855,0.613966,0.798428,0.539957,0.71375,0.535676,0.800674,0.535676,0.715996,0.685966,0.800674,0.690247,0.71375,0.690247,0.673381,0.612153,0.715729,0.541109,0.674245,0.612962,0.715729,0.684814,0.673381,0.613771,0.715996,0.539957,0.798696,0.541109,0.798428,0.685966,0.715996,0.685966,0.841044,0.613771,0.798696,0.684814,0.84018,0.612962,0.841044,0.612153,0.845875,0.613966,0.799829,0.685158,0.800674,0.690247,0.799829,0.540765,0.800674,0.535676,0.802413,0.53668,0.66855,0.613966,0.66855,0.611957,0.714596,0.540765,0.71375,0.535676,0.714596,0.685158,0.71375,0.690247,0.712012,0.689244,0.798428,0.539957,0.715729,0.541109,0.798696,0.541109,0.798696,0.684814,0.802413,0.689244,0.799829,0.685158,0.841044,0.613771,0.841044,0.612153,0.799829,0.540765,0.802413,0.53668,0.712012,0.53668,0.714596,0.540765,0.673381,0.612153,0.673381,0.613771,0.714596,0.685158,0.712012,0.689244,0.798428,0.539957,0.715996,0.539957,0.71375,0.535676,0.715996,0.685966,0.798428,0.685966,0.800674,0.690247,0.845875,0.611957,0.802413,0.689244,0.712012,0.53668,0.798696,0.684814,0.715729,0.684814,0.715729,0.541109,0.674245,0.612962,0.715729,0.541109,0.715729,0.684814,0.798696,0.541109,0.84018,0.612962,0.798696,0.684814],$/;"	f
+array	relicAssets/carbon/geo/blendProper.json	/^            "array":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,20,23,24,19,21,25,26,27,28,29,24,30,29,30,31,27,32,33,25,34,35,36,18,37,38,39,40,23,41,42,43,28,32,25,41,21,26,18,20,22,29,30,27,19,39,23,34,24,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,18,39,19,21,41,22,23,44,24,21,28,25,27,32,28,24,34,30,30,66,31,32,67,33,34,44,35,18,22,37,39,68,40,41,26,42,69,70,71,72,73,74,75,76,77],$/;"	f
 arrayCacheF32	js/three/renderers/webgl/WebGLUniforms.js	/^var arrayCacheF32 = [];$/;"	v
 arrayCacheI32	js/three/renderers/webgl/WebGLUniforms.js	/^var arrayCacheI32 = [];$/;"	v
 arrayMax	js/three/utils.js	/^function arrayMax( array ) {$/;"	f
@@ -2156,10 +2252,13 @@ async_callback_gate	vendor/three.js/Three.js	/^		function async_callback_gate() 
 async_callback_gate.progress.loadedModels	vendor/three.js/Three.js	/^				totalTextures : total_textures,$/;"	p
 async_callback_gate.progress.totalModels	vendor/three.js/Three.js	/^			var progress = {$/;"	p
 async_callback_gate.progress.totalTextures	vendor/three.js/Three.js	/^				totalModels : total_models,$/;"	p
+attributes	relicAssets/carbon/geo/blendProper.json	/^        "attributes":{$/;"	f
 attributes	vendor/three.js/Three.js	/^		var attributes = json.attributes;$/;"	v
 attributes.position	js/three/renderers/webgl/plugins/SpritePlugin.js	/^		attributes = {$/;"	p
 attributes.position	vendor/three.js/Three.js	/^		attributes = {$/;"	p
 attributes.vertex	js/three/renderers/webgl/plugins/LensFlarePlugin.js	/^		attributes = {$/;"	p
+b	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "b": 1.0$/;"	f
+b	js/shaders/shaderfrog/Vignette.json	/^        "b": 0.0$/;"	f
 b	vendor/three.js/Three.js	/^		var b = Math.floor( color.b * 255 );$/;"	v
 b0	vendor/three.js/Three.js	/^		var b0 = diff.dot( this.direction );$/;"	v
 b1	vendor/three.js/Three.js	/^		var b1 = - diff.dot( segDir );$/;"	v
@@ -2204,11 +2303,16 @@ cameraNX.cameraPY.cameraNY.cameraPZ.cameraNZ.THREE.CubeCamera.updateCubeMap	vend
 cameraPX.cameraNX.cameraPY.cameraNY.cameraPZ.cameraNZ.CubeCamera.options.format	js/three/cameras/CubeCamera.js	/^	var options = { format: RGBFormat, magFilter: LinearFilter, minFilter: LinearFilter };$/;"	p
 cameraPX.cameraNX.cameraPY.cameraNY.cameraPZ.cameraNZ.CubeCamera.options.magFilter	js/three/cameras/CubeCamera.js	/^	var options = { format: RGBFormat, magFilter: LinearFilter, minFilter: LinearFilter };$/;"	p
 cameraPX.cameraNX.cameraPY.cameraNY.cameraPZ.cameraNZ.CubeCamera.options.minFilter	js/three/cameras/CubeCamera.js	/^	var options = { format: RGBFormat, magFilter: LinearFilter, minFilter: LinearFilter };$/;"	p
+cameraPosition	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "cameraPosition": {$/;"	f
+cameraPosition	js/shaders/shaderfrog/Vignette.json	/^    "cameraPosition": {$/;"	f
+cameraPosition	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "cameraPosition": {$/;"	f
+cameraPosition	relicAssets/carbon/shaders/Vignette.json	/^    "cameraPosition": {$/;"	f
 canvas	vendor/three.js/Three.js	/^		var canvas = document.createElement( 'canvas' );$/;"	v
 case.color	js/three/renderers/webgl/WebGLLights.js	/^					uniforms = {$/;"	p
 case.direction	js/three/renderers/webgl/WebGLLights.js	/^					uniforms = {$/;"	p
 case.position	js/three/renderers/webgl/WebGLLights.js	/^					uniforms = {$/;"	p
 center	vendor/three.js/Three.js	/^		var center = sphere.center;$/;"	v
+changeEvent.type	vendor/three.js/OrbitControls.js	/^	var changeEvent = { type: 'change' };$/;"	p
 channel.info.arrIndices	js/loaders/ColladaLoader.js	/^				channel.info = { sid: sid, dotSyntax: dotSyntax, arrSyntax: arrSyntax, arrIndices: arrIndices };$/;"	p
 channel.info.arrSyntax	js/loaders/ColladaLoader.js	/^				channel.info = { sid: sid, dotSyntax: dotSyntax, arrSyntax: arrSyntax, arrIndices: arrIndices };$/;"	p
 channel.info.dotSyntax	js/loaders/ColladaLoader.js	/^				channel.info = { sid: sid, dotSyntax: dotSyntax, arrSyntax: arrSyntax, arrIndices: arrIndices };$/;"	p
@@ -2229,10 +2333,10 @@ clearTarget	js/three/renderers/WebGLRenderer.js	/^	this.clearTarget = function (
 clearTarget	vendor/three.js/Three.js	/^	this.clearTarget = function ( renderTarget, color, depth, stencil ) {$/;"	c
 clipImage	vendor/three.js/Three.js	/^	function clipImage( x0, y0, x1, y1, x2, y2, u0, v0, u1, v1, u2, v2, image ) {$/;"	f
 clipLine	vendor/three.js/Three.js	/^	function clipLine( s1, s2 ) {$/;"	f
-colladaScene	relicAssets/carbon/config.js	/^var colladaScene;$/;"	v
+clock	js/shaders/shaderfrog/shaderFrog_library.js	/^var clock;$/;"	v
+clone	js/ShaderRuntime.js	/^function clone( obj ) {$/;"	f
 compile	js/three/renderers/WebGLRenderer.js	/^	this.compile = function ( scene, camera ) {$/;"	f
 components	js/three/math/Color.js	/^			var components = m[ 2 ];$/;"	v
-composer	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var composer,$/;"	variable
 compressedTexImage2D	js/three/renderers/webgl/WebGLState.js	/^	function compressedTexImage2D() {$/;"	f
 compressedTextureFormats	js/three/renderers/webgl/WebGLState.js	/^	var compressedTextureFormats = null;$/;"	v
 construct	js/three/Three.Legacy.js	/^	console.log( 'THREE.Curve.create() has been deprecated' );$/;"	c
@@ -2280,6 +2384,10 @@ currentTextureSlot	js/three/renderers/webgl/WebGLState.js	/^	var currentTextureS
 curveSegments	vendor/three.js/Three.js	/^	var curveSegments = options.curveSegments !== undefined ? options.curveSegments : 12;$/;"	v
 d	vendor/three.js/Three.js	/^		var d = - 2 * far * near \/ ( far - near );$/;"	v
 d	vendor/three.js/Three.js	/^		var d = 1 \/ ( e[3] * x + e[7] * y + e[11] * z + e[15] ); \/\/ perspective divide$/;"	v
+dat.GUI	js/gui.js	/^\/\/ THREE EXTENSION$/;"	c
+dat.GUI.addThreeColor	js/gui.js	/^dat.GUI.prototype.addThreeColor = function(obj, varName) {$/;"	m
+dat.GUI.addThreeUniformColor	js/gui.js	/^dat.GUI.prototype.addThreeUniformColor = function(material, uniformName, label) {$/;"	m
+data	relicAssets/carbon/geo/blendProper.json	/^    "data":{$/;"	f
 data	vendor/three.js/Three.js	/^		var data = context.getImageData( 0, 0, width, height ).data;$/;"	v
 data	vendor/three.js/Three.js	/^		var data = json;$/;"	v
 dataOffset	vendor/three.js/Three.js	/^		var dataOffset = header[ off_size ] + 4;$/;"	v
@@ -2290,8 +2398,11 @@ deallocateRenderTarget	vendor/three.js/Three.js	/^	var deallocateRenderTarget = 
 deallocateTexture	vendor/three.js/Three.js	/^	var deallocateTexture = function ( texture ) {$/;"	f
 deleteBuffers	vendor/three.js/Three.js	/^	var deleteBuffers = function ( geometry ) {$/;"	f
 denominator	vendor/three.js/Three.js	/^		var denominator = plane.normal.dot( this.direction );$/;"	v
-depthMaterial	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var depthMaterial,$/;"	variable
 descSort	vendor/three.js/Three.js	/^	var descSort = function ( a, b ) {$/;"	f
+description	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "description": ""$/;"	f
+description	js/shaders/shaderfrog/Vignette.json	/^      "description": ""$/;"	f
+description	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "description": ""$/;"	f
+description	relicAssets/carbon/shaders/Vignette.json	/^      "description": ""$/;"	f
 destroy	js/three/renderers/webgl/WebGLProgram.js	/^	this.destroy = function() {$/;"	c
 det	vendor/three.js/Three.js	/^		var det = Math.abs( 1 - a01 * a01 );$/;"	v
 det	vendor/three.js/Three.js	/^		var det = me[ 0 ] * te[ 0 ] + me[ 1 ] * te[ 3 ] + me[ 2 ] * te[ 6 ];$/;"	v
@@ -2301,7 +2412,14 @@ directionDistance	vendor/three.js/Three.js	/^		var directionDistance = result.do
 disable	js/three/renderers/webgl/WebGLState.js	/^	function disable( id ) {$/;"	f
 disableUnusedAttributes	js/three/renderers/webgl/WebGLState.js	/^	function disableUnusedAttributes() {$/;"	f
 disableUnusedAttributes	vendor/three.js/Three.js	/^	function disableUnusedAttributes() {$/;"	f
+displayName	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "displayName": null,$/;"	f
+displayName	js/shaders/shaderfrog/Vignette.json	/^      "displayName": null,$/;"	f
+displayName	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "displayName": null,$/;"	f
+displayName	relicAssets/carbon/shaders/Vignette.json	/^      "displayName": null,$/;"	f
 dispose	js/three/renderers/WebGLRenderer.js	/^	this.dispose = function () {$/;"	f
+dispose	vendor/three.js/OrbitControls.js	/^	this.dispose = function () {$/;"	f
+dollyIn	vendor/three.js/OrbitControls.js	/^	function dollyIn( dollyScale ) {$/;"	f
+dollyOut	vendor/three.js/OrbitControls.js	/^	function dollyOut( dollyScale ) {$/;"	f
 drawTriangle	vendor/three.js/Three.js	/^	function drawTriangle( x0, y0, x1, y1, x2, y2 ) {$/;"	f
 duplicatedVertices	vendor/three.js/Three.js	/^		var duplicatedVertices = 0;$/;"	v
 e	vendor/three.js/Three.js	/^		var e = Math.cos( z ), f = Math.sin( z );$/;"	v
@@ -2315,6 +2433,7 @@ enableAttribute	js/three/renderers/webgl/WebGLState.js	/^	function enableAttribu
 enableAttribute	vendor/three.js/Three.js	/^	function enableAttribute( attribute ) {$/;"	f
 enableAttributeAndDivisor	js/three/renderers/webgl/WebGLState.js	/^	function enableAttributeAndDivisor( attribute, meshPerAttribute ) {$/;"	f
 enableScissorTest	vendor/three.js/Three.js	/^	this.enableScissorTest = function () {};$/;"	f
+endEvent.type	vendor/three.js/OrbitControls.js	/^	var endEvent = { type: 'end' };$/;"	p
 expand	vendor/three.js/Three.js	/^	function expand( v1, v2, pixels ) {$/;"	f
 export.LEFT	js/three/constants.js	/^export var MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2 };$/;"	p
 export.MIDDLE	js/three/constants.js	/^export var MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2 };$/;"	p
@@ -2436,6 +2555,7 @@ export.uv_pars_fragment	js/three/renderers/shaders/ShaderChunk.js	/^	tonemapping
 export.uv_pars_vertex	js/three/renderers/shaders/ShaderChunk.js	/^	uv_pars_fragment: uv_pars_fragment,$/;"	p
 export.uv_vertex	js/three/renderers/shaders/ShaderChunk.js	/^	uv_pars_vertex: uv_pars_vertex,$/;"	p
 export.worldpos_vertex	js/three/renderers/shaders/ShaderChunk.js	/^	uv2_vertex: uv2_vertex,$/;"	p
+extend	js/ShaderRuntime.js	/^function extend() {$/;"	f
 extension	js/three/renderers/webgl/WebGLExtensions.js	/^			var extension;$/;"	v
 extractDoubleSided	js/loaders/ColladaLoader.js	/^	function extractDoubleSided( obj, element ) {$/;"	f
 face	vendor/three.js/Three.js	/^		var face = ThreeFont.faces[ family ][ data.cssFontWeight ][ data.cssFontStyle ] = data;$/;"	v
@@ -2461,6 +2581,10 @@ fogID	vendor/three.js/Three.js	/^		var fogID, fogJSON;$/;"	v
 forceContextLoss	js/three/renderers/WebGLRenderer.js	/^	this.forceContextLoss = function () {$/;"	f
 fourCC	vendor/three.js/Three.js	/^		var fourCC = header[ off_pfFourCC ];$/;"	v
 fourCCToInt32	vendor/three.js/Three.js	/^		function fourCCToInt32( value ) {$/;"	f
+fragment	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "fragment": "\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\\n\/\/ SHADERFROG UNIFORMS\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\nuniform sampler2D u_emissionTexture;\\nuniform sampler2D u_matteTexture;\\nuniform sampler2D u_reflectionTexture;\\n\\nuniform float u_reflectionStrength;\\nuniform float u_matteStrength;\\n\\nuniform vec3 u_lightPosition;\\nuniform vec3 u_lightColor;\\nuniform vec3 u_diffuseColour;\\nuniform vec3 u_emissionColour;\\n\\nuniform float u_emissionStrength;\\nuniform float u_emissionPulseStrength;\\nuniform float u_emissionPulseRate;\\n\\nuniform float u_specularPower;\\nuniform float u_specularFalloff;\\n\\nuniform vec3 u_ambientColor;\\nuniform float u_ambientFalloff;\\nuniform float u_ambientStrength;\\nuniform float u_ambientAffectedBySpec;\\n\\n\\nfloat vEmissionOverallStrength;\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat get_emissionStrength(){\\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\\n    return str;\\n}\\nfloat get_matteStrength(){\\n    return texture2D(u_matteTexture, vUv).r;\\n}\\n\\nvec3 get_reflectionColour(){\\n    mat4 mm = modelViewMatrix;\\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\\n    vec3 r = reflect(e,n);\\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\\n    vec2 vN = r.xy \/ m +0.5;\\n    return texture2D(u_reflectionTexture, vN).rgb;\\n}\\n\\n\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\\n    vec3 LightX = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\\n    \\n    \\n    \\n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, viewDirectionW ) ),u_specularFalloff)*u_specularPower);\\n    \\n    \/\/ Diffuse\\n    vec3 c = vec3(u_diffuseColour);\\n    \\n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\\n    \\n    \/\/ Reflection\\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\\n    c += (refColour*(1.0 - (matteValue*2.0)));\\n    \\n    \/\/ Emission\\n    float emissionStrength = get_emissionStrength();\\n    vec3 emissionDifference = vec3(u_emissionColour.x - c.x, u_emissionColour.y - c.y, u_emissionColour.z - c.z) * (1.0 - emissionStrength);\\n\\n    \/\/ Ambient\\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\\n    vec3 ambCol = u_ambientColor * ambStrength;\\n\\n    \\n\\n    \/\/ Base colour\\n    c += ((specComp*matteValue) + ambCol + emissionDifference);\\n    c = clamp(c,.0,1.);\\n    \\n\\n    gl_FragColor = vec4( c , 1.0 );\\n\\n}",$/;"	f
+fragment	js/shaders/shaderfrog/Vignette.json	/^  "fragment": "\/**\\n* Example Fragment Shader\\n* Sets the color and alpha of the pixel by setting gl_FragColor\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ A uniform unique to this shader. You can modify it to the using the form\\n\/\/ below the shader preview. Any uniform you add is automatically given a form\\nuniform vec3 u_vignetteColour;\\nuniform vec2 u_vignetteSpread;\\nuniform vec2 u_vignetteBias;\\n\\n\/\/ Example varyings passed from the vertex shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat getVignette(){\\n    float d = smoothstep(u_vignetteSpread.x,u_vignetteSpread.y, distance(vUv, u_vignetteBias));\\n    return d;\\n}\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n\\n    gl_FragColor = vec4( u_vignetteColour, getVignette());\\n\\n}",$/;"	f
+fragment	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "fragment": "\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\\n\/\/ SHADERFROG UNIFORMS\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\nuniform sampler2D u_emissionTexture;\\nuniform sampler2D u_matteTexture;\\nuniform sampler2D u_reflectionTexture;\\n\\nuniform float u_reflectionStrength;\\nuniform float u_matteStrength;\\n\\nuniform vec3 u_lightPosition;\\nuniform vec3 u_lightColor;\\nuniform vec3 u_diffuseColour;\\nuniform vec3 u_emissionColour;\\n\\nuniform float u_emissionStrength;\\nuniform float u_emissionPulseStrength;\\nuniform float u_emissionPulseRate;\\n\\nuniform float u_specularPower;\\nuniform float u_specularFalloff;\\n\\nuniform vec3 u_ambientColor;\\nuniform float u_ambientFalloff;\\nuniform float u_ambientStrength;\\nuniform float u_ambientAffectedBySpec;\\n\\n\\nfloat vEmissionOverallStrength;\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat get_emissionStrength(){\\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\\n    return str;\\n}\\nfloat get_matteStrength(){\\n    return texture2D(u_matteTexture, vUv).r;\\n}\\n\\nvec3 get_reflectionColour(){\\n    mat4 mm = modelViewMatrix;\\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\\n    vec3 r = reflect(e,n);\\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\\n    vec2 vN = r.xy \/ m +0.5;\\n    return texture2D(u_reflectionTexture, vN).rgb;\\n}\\n\\n\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\\n    vec3 LightX = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\\n    \\n    \\n    \\n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, viewDirectionW ) ),u_specularFalloff)*u_specularPower);\\n    \\n    \/\/ Diffuse\\n    vec3 c = vec3(u_diffuseColour);\\n    \\n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\\n    \\n    \/\/ Reflection\\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\\n    c += (refColour*(1.0 - (matteValue*2.0)));\\n    \\n    \/\/ Emission\\n    float emissionStrength = get_emissionStrength();\\n    vec3 emissionDifference = vec3(u_emissionColour.x - c.x, u_emissionColour.y - c.y, u_emissionColour.z - c.z) * (1.0 - emissionStrength);\\n\\n    \/\/ Ambient\\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\\n    vec3 ambCol = u_ambientColor * ambStrength;\\n\\n    \\n\\n    \/\/ Base colour\\n    c += ((specComp*matteValue) + ambCol + emissionDifference);\\n    c = clamp(c,.0,1.);\\n    \\n\\n    gl_FragColor = vec4( c , 1.0 );\\n\\n}",$/;"	f
+fragment	relicAssets/carbon/shaders/Vignette.json	/^  "fragment": "\/**\\n* Example Fragment Shader\\n* Sets the color and alpha of the pixel by setting gl_FragColor\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ A uniform unique to this shader. You can modify it to the using the form\\n\/\/ below the shader preview. Any uniform you add is automatically given a form\\nuniform vec3 u_vignetteColour;\\nuniform vec2 u_vignetteSpread;\\nuniform vec2 u_vignetteBias;\\n\\n\/\/ Example varyings passed from the vertex shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\nvarying vec2 vUv2;\\n\\nfloat getVignette(){\\n    float d = smoothstep(u_vignetteSpread.x,u_vignetteSpread.y, distance(vUv, u_vignetteBias));\\n    return d;\\n}\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n\\n    gl_FragColor = vec4( u_vignetteColour, getVignette());\\n\\n}",$/;"	f
 frame	js/three/renderers/WebGLRenderer.js	/^		_infoRender = {$/;"	p
 function.addUV	js/three/geometries/ExtrudeGeometry.js	/^	function addUV( vector2 ) {$/;"	f
 function.addVertex	js/three/geometries/ExtrudeGeometry.js	/^	function addVertex( index ) {$/;"	f
@@ -2487,10 +2611,13 @@ function.sidewalls	vendor/three.js/Three.js	/^	function sidewalls( contour, laye
 function.snip	js/three/extras/ShapeUtils.js	/^		function snip( contour, u, v, w, n, verts ) {$/;"	f
 function.v	js/three/geometries/ExtrudeGeometry.js	/^	function v( x, y, z ) {$/;"	f
 function.v	vendor/three.js/Three.js	/^	function v( x, y, z ) {$/;"	f
+g	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "g": 1.0,$/;"	f
+g	js/shaders/shaderfrog/Vignette.json	/^        "g": 0.0,$/;"	f
 g	vendor/three.js/Three.js	/^		var g = Math.floor( color.g * 255 );$/;"	v
 generateDefines	js/three/renderers/webgl/WebGLProgram.js	/^function generateDefines( defines ) {$/;"	f
 generateExtensions	js/three/renderers/webgl/WebGLProgram.js	/^function generateExtensions( extensions, parameters, rendererExtensions ) {$/;"	f
 generateTextureCallback	vendor/three.js/Three.js	/^		var generateTextureCallback = function ( count ) {$/;"	f
+generator	relicAssets/carbon/geo/blendProper.json	/^        "generator":"io_three"$/;"	f
 geoID	vendor/three.js/Three.js	/^		var geoID, geoJSON;$/;"	v
 geometries	js/three/renderers/WebGLRenderer.js	/^		_infoMemory = {$/;"	p
 geometry	vendor/three.js/Three.js	/^		var geometry, material, camera, fog,$/;"	v
@@ -2500,6 +2627,7 @@ geometry.attributes.itemSize	vendor/three.js/Three.js	/^			geometry.attributes[ 
 geometryHandlers.loaderClass	vendor/three.js/Three.js	/^		this.geometryHandlers[ typeID ] = { "loaderClass": loaderClass };$/;"	p
 get	js/three/renderers/webgl/WebGLAttributes.js	/^	function get( attribute ) {$/;"	f
 getAttributes	js/three/renderers/webgl/WebGLProgram.js	/^	this.getAttributes = function() {$/;"	f
+getAutoRotationAngle	vendor/three.js/OrbitControls.js	/^	function getAutoRotationAngle() {$/;"	f
 getBufferMaterial	vendor/three.js/Three.js	/^	function getBufferMaterial( object, geometryGroup ) {$/;"	f
 getChannelsForNode	js/loaders/ColladaLoader.js	/^	function getChannelsForNode ( node ) {$/;"	f
 getClearAlpha	js/three/renderers/WebGLRenderer.js	/^	this.getClearAlpha = function () {$/;"	f
@@ -2542,45 +2670,77 @@ getTexelEncodingFunction	js/three/renderers/webgl/WebGLProgram.js	/^function get
 getTextureUnit	vendor/three.js/Three.js	/^	function getTextureUnit() {$/;"	f
 getToneMappingFunction	js/three/renderers/webgl/WebGLProgram.js	/^function getToneMappingFunction( functionName, toneMapping ) {$/;"	f
 getUniforms	js/three/renderers/webgl/WebGLProgram.js	/^	this.getUniforms = function() {$/;"	f
+getZoomScale	vendor/three.js/OrbitControls.js	/^	function getZoomScale() {$/;"	f
 get_url	vendor/three.js/Three.js	/^		function get_url( source_url, url_type ) {$/;"	f
-global_time_seed	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var global_time_seed = 0,$/;"	variable
-gui_core	relicAssets/carbon/config.js	/^var gui_core = gui.addFolder("core");$/;"	v
-gui_hexagons	relicAssets/carbon/config.js	/^var gui_hexagons = gui.addFolder("hexagons");$/;"	v
-gui_orbitLines	relicAssets/carbon/config.js	/^var gui_orbitLines = gui.addFolder("orbitLines");$/;"	v
-gui_orbitLines_changed	relicAssets/carbon/config.js	/^function gui_orbitLines_changed() {$/;"	f
-gui_orbitLines_layout	relicAssets/carbon/config.js	/^var gui_orbitLines_layout = gui_orbitLines.addFolder("layout");$/;"	v
-gui_points	relicAssets/carbon/config.js	/^var gui_points = gui.addFolder("points");$/;"	v
+glslType	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "glslType": "float",$/;"	f
+glslType	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "glslType": "sampler2D",$/;"	f
+glslType	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "glslType": "vec3",$/;"	f
+glslType	js/shaders/shaderfrog/Vignette.json	/^      "glslType": "float",$/;"	f
+glslType	js/shaders/shaderfrog/Vignette.json	/^      "glslType": "vec2",$/;"	f
+glslType	js/shaders/shaderfrog/Vignette.json	/^      "glslType": "vec3",$/;"	f
+glslType	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "glslType": "float",$/;"	f
+glslType	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "glslType": "sampler2D",$/;"	f
+glslType	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "glslType": "vec3",$/;"	f
+glslType	relicAssets/carbon/shaders/Vignette.json	/^      "glslType": "float",$/;"	f
+glslType	relicAssets/carbon/shaders/Vignette.json	/^      "glslType": "vec2",$/;"	f
+glslType	relicAssets/carbon/shaders/Vignette.json	/^      "glslType": "vec3",$/;"	f
+guiChanged	webgl_shaders_sky.html	/^				function guiChanged() {$/;"	f
+gui_materials	js/shaders/shaderfrog/shaderFrog_library.js	/^var gui_materials = gui.addFolder("materials");$/;"	v
+gui_scene	js/gui.js	/^var gui_scene = gui.addFolder('scene');$/;"	v
 h	vendor/three.js/Three.js	/^		var h = top - bottom;$/;"	v
 halfTheta	vendor/three.js/Three.js	/^		var halfTheta = Math.acos( cosHalfTheta );$/;"	v
+handleKeyDown	vendor/three.js/OrbitControls.js	/^	function handleKeyDown( event ) {$/;"	f
+handleMouseDownDolly	vendor/three.js/OrbitControls.js	/^	function handleMouseDownDolly( event ) {$/;"	f
+handleMouseDownPan	vendor/three.js/OrbitControls.js	/^	function handleMouseDownPan( event ) {$/;"	f
+handleMouseDownRotate	vendor/three.js/OrbitControls.js	/^	function handleMouseDownRotate( event ) {$/;"	f
+handleMouseMoveDolly	vendor/three.js/OrbitControls.js	/^	function handleMouseMoveDolly( event ) {$/;"	f
+handleMouseMovePan	vendor/three.js/OrbitControls.js	/^	function handleMouseMovePan( event ) {$/;"	f
+handleMouseMoveRotate	vendor/three.js/OrbitControls.js	/^	function handleMouseMoveRotate( event ) {$/;"	f
+handleMouseUp	vendor/three.js/OrbitControls.js	/^	function handleMouseUp( event ) {$/;"	f
+handleMouseWheel	vendor/three.js/OrbitControls.js	/^	function handleMouseWheel( event ) {$/;"	f
+handleTouchEnd	vendor/three.js/OrbitControls.js	/^	function handleTouchEnd( event ) {$/;"	f
+handleTouchMoveDolly	vendor/three.js/OrbitControls.js	/^	function handleTouchMoveDolly( event ) {$/;"	f
+handleTouchMovePan	vendor/three.js/OrbitControls.js	/^	function handleTouchMovePan( event ) {$/;"	f
+handleTouchMoveRotate	vendor/three.js/OrbitControls.js	/^	function handleTouchMoveRotate( event ) {$/;"	f
+handleTouchStartDolly	vendor/three.js/OrbitControls.js	/^	function handleTouchStartDolly( event ) {$/;"	f
+handleTouchStartPan	vendor/three.js/OrbitControls.js	/^	function handleTouchStartPan( event ) {$/;"	f
+handleTouchStartRotate	vendor/three.js/OrbitControls.js	/^	function handleTouchStartRotate( event ) {$/;"	f
 handleTriangle	vendor/three.js/Three.js	/^		function handleTriangle( a, b, c ) {$/;"	f
 handleVertex	vendor/three.js/Three.js	/^		function handleVertex( v ) {$/;"	f
 handle_children	vendor/three.js/Three.js	/^		function handle_children( parent, children ) {$/;"	f
 handle_hierarchy	vendor/three.js/Three.js	/^		function handle_hierarchy( node, id, parent, material, obj ) {$/;"	f
 handle_mesh	vendor/three.js/Three.js	/^		function handle_mesh( geo, mat, id ) {$/;"	f
 handle_objects	vendor/three.js/Three.js	/^		function handle_objects() {$/;"	f
+handler_shaderChange	relicAssets/carbon/config.js	/^function handler_shaderChange() {$/;"	f
 hash.vert1	vendor/three.js/Three.js	/^				hash[ key ] = { vert1: edge[ 0 ], vert2: edge[ 1 ], face1: i, face2: undefined };$/;"	p
 headerLengthInt	vendor/three.js/Three.js	/^		var headerLengthInt = 31; \/\/ The header length in 32 bit ints$/;"	v
 height	vendor/three.js/Three.js	/^		var height = dds.height;$/;"	v
 height	vendor/three.js/Three.js	/^		var height = image.height;$/;"	v
-hexArray	relicAssets/carbon/config.js	/^var hexArray = [];$/;"	v
 hierarchyHandlers.loaderClass	vendor/three.js/Three.js	/^		this.hierarchyHandlers[ typeID ] = { "loaderClass": loaderClass };$/;"	p
 highpAvailable	vendor/three.js/Three.js	/^	var highpAvailable = _vertexShaderPrecisionHighpFloat.precision > 0 && _fragmentShaderPrecisionHighpFloat.precision > 0;$/;"	v
 holes	vendor/three.js/Three.js	/^	var holes = shapePoints.holes;$/;"	v
 hue	js/three/math/Color.js	/^		var hue, saturation;$/;"	v
 hue	vendor/three.js/Three.js	/^		var hue, saturation;$/;"	v
+i	js/shaders/ConvolutionShader.js	/^		var i, values, sum, halfWidth, kMaxKernelSize = 25, kernelSize = 2 * Math.ceil( sigma * 3.0 ) + 1;$/;"	v
 i	vendor/three.js/Three.js	/^		var i, i2, divisions,$/;"	v
 i	vendor/three.js/Three.js	/^		var i, il;$/;"	v
 i	vendor/three.js/Three.js	/^		var i,il, face;$/;"	v
 i	vendor/three.js/Three.js	/^	var i, l, hole, s;$/;"	v
 iA	vendor/three.js/Three.js	/^		var iA, iB, iC;$/;"	v
+id	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "id": 1530,$/;"	f
+id	js/shaders/shaderfrog/Vignette.json	/^  "id": 1527,$/;"	f
+id	js/three/loaders/OBJLoader.js	/^				var id;$/;"	v
+id	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "id": 1530,$/;"	f
+id	relicAssets/carbon/shaders/Vignette.json	/^  "id": 1527,$/;"	f
 imageData	vendor/three.js/Three.js	/^		var imageData = context.createImageData( width, height );$/;"	v
 images.mipmaps	vendor/three.js/Three.js	/^						images[ f ] = { mipmaps : [] };$/;"	p
 index	js/loaders/ColladaLoader.js	/^		var index = 0;$/;"	v
+index	relicAssets/carbon/geo/blendProper.json	/^        "index":{$/;"	f
 indexPtr	vendor/three.js/Three.js	/^		var indexPtr = 0;$/;"	v
 indices	vendor/three.js/Three.js	/^		var indices, k, j, jl, u;$/;"	v
-init	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function init() {$/;"	function
-init	js/kr_main.js	/^function init() {$/;"	f
+init	js/main.js	/^function init() {$/;"	f
 init	js/three/renderers/webgl/WebGLState.js	/^	function init() {$/;"	f
+init	webgl_shaders_sky.html	/^			function init() {$/;"	f
 initAttributes	js/three/renderers/webgl/WebGLState.js	/^	function initAttributes() {$/;"	f
 initAttributes	vendor/three.js/Three.js	/^	function initAttributes() {$/;"	f
 initCustomAttributes	vendor/three.js/Three.js	/^	function initCustomAttributes ( geometry, object ) {$/;"	f
@@ -2591,8 +2751,7 @@ initMaterial	js/three/renderers/WebGLRenderer.js	/^	function initMaterial( mater
 initMaterial	vendor/three.js/Three.js	/^	this.initMaterial = function ( material, lights, fog, object ) {$/;"	f
 initMeshBuffers	vendor/three.js/Three.js	/^	function initMeshBuffers ( geometryGroup, object ) {$/;"	f
 initParticleBuffers	vendor/three.js/Three.js	/^	function initParticleBuffers ( geometry, object ) {$/;"	f
-initPostprocessing	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function initPostprocessing() {$/;"	function
-initPostprocessing.pars.minFilter	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^  var pars = {$/;"	property
+initSky	webgl_shaders_sky.html	/^			function initSky() {$/;"	f
 initWebGLObjects	vendor/three.js/Three.js	/^	this.initWebGLObjects = function ( scene ) {$/;"	f
 int32ToFourCC	vendor/three.js/Three.js	/^		function int32ToFourCC( value ) {$/;"	f
 interpolate	vendor/three.js/Three.js	/^	function interpolate( p0, p1, p2, p3, t, t2, t3 ) {$/;"	f
@@ -2607,6 +2766,13 @@ invSZ	vendor/three.js/Three.js	/^			var invSZ = 1 \/ sz;$/;"	v
 invdirx	vendor/three.js/Three.js	/^		var invdirx = 1\/this.direction.x,$/;"	v
 isPointInsideAngle	js/three/extras/ShapeUtils.js	/^		function isPointInsideAngle( inVertex, inLegFromPt, inLegToPt, inOtherPt ) {$/;"	f
 isRGBAUncompressed	vendor/three.js/Three.js	/^		var isRGBAUncompressed = false;$/;"	v
+isRandom	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "isRandom": false,$/;"	f
+isRandom	js/shaders/shaderfrog/Vignette.json	/^      "isRandom": false,$/;"	f
+isRandom	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "isRandom": false,$/;"	f
+isRandom	relicAssets/carbon/shaders/Vignette.json	/^      "isRandom": false,$/;"	f
+itemSize	relicAssets/carbon/geo/blendProper.json	/^                "itemSize":2,$/;"	f
+itemSize	relicAssets/carbon/geo/blendProper.json	/^                "itemSize":3,$/;"	f
+itemSize	relicAssets/carbon/geo/blendProper.json	/^            "itemSize":1,$/;"	f
 iw	vendor/three.js/Three.js	/^		var iw = -qx * x - qy * y - qz * z;$/;"	v
 ix	vendor/three.js/Three.js	/^		var ix =  qw * x + qy * z - qz * y;$/;"	v
 iy	vendor/three.js/Three.js	/^		var iy =  qw * y + qz * x - qx * z;$/;"	v
@@ -2615,28 +2781,43 @@ j	vendor/three.js/Three.js	/^			var j, jl;$/;"	v
 j	vendor/three.js/Three.js	/^		var j, jl;$/;"	v
 kinematics.joints	js/loaders/ColladaLoader.js	/^		kinematics = {$/;"	p
 l	js/three/math/Color.js	/^						var l = parseInt( color[ 3 ], 10 ) \/ 100;$/;"	v
+line	js/three/loaders/OBJLoader.js	/^		var line = '', lineFirstChar = '', lineSecondChar = '';$/;"	v
 lineGeometry	js/three/helpers/ArrowHelper.js	/^var lineGeometry, coneGeometry;$/;"	v
+lineLength	js/three/loaders/OBJLoader.js	/^		var lineLength = 0;$/;"	v
 lineWidthAvailable	js/three/renderers/webgl/WebGLState.js	/^	var lineWidthAvailable = parseFloat( version ) >= 1.0;$/;"	v
+lines	js/three/loaders/OBJLoader.js	/^		var lines = text.split( '\\n' );$/;"	v
 listenerArray	vendor/three.js/Three.js	/^		var listenerArray = listeners[ event.type ];$/;"	v
 listenerArray	vendor/three.js/Three.js	/^		var listenerArray = listeners[ type ];$/;"	v
 loadARGBMip	vendor/three.js/Three.js	/^		function loadARGBMip( buffer, dataOffset, width, height ) {$/;"	f
 loadTextureImage	js/loaders/ColladaLoader.js	/^	function loadTextureImage ( texture, url ) {$/;"	f
 loadUniformsGeneric	vendor/three.js/Three.js	/^	function loadUniformsGeneric ( program, uniforms ) {$/;"	f
 loadUniformsMatrices	vendor/three.js/Three.js	/^	function loadUniformsMatrices ( uniforms, object ) {$/;"	f
+loadedScene	relicAssets/carbon/config.js	/^var loadedScene;$/;"	v
 m11	vendor/three.js/Three.js	/^		var m11 = te[0], m12 = te[4], m13 = te[8];$/;"	v
 m21	vendor/three.js/Three.js	/^		var m21 = te[1], m22 = te[5], m23 = te[9];$/;"	v
 m31	vendor/three.js/Three.js	/^		var m31 = te[2], m32 = te[6], m33 = te[10];$/;"	v
 markUniformsLightsNeedsUpdate	js/three/renderers/WebGLRenderer.js	/^	function markUniformsLightsNeedsUpdate( uniforms, value ) {$/;"	f
 matID	vendor/three.js/Three.js	/^		var matID, matJSON;$/;"	v
+mat_Diffuse_Specular_Emmisive	js/shaders/shaderfrog/shaderFrog_library.js	/^var mat_Diffuse_Specular_Emmisive, gui_Diffuse_Spec_Emissive = gui_materials.addFolder("Carbon");$/;"	v
+mat_Diffuse_Specular_Emmisive_SETUP	js/shaders/shaderfrog/shaderFrog_library.js	/^function mat_Diffuse_Specular_Emmisive_SETUP(m){$/;"	f
+mat_Vignette	js/shaders/shaderfrog/shaderFrog_library.js	/^var mat_Vignette, gui_mat_Vignette = gui_materials.addFolder("Vignette");$/;"	v
+mat_Vignette_SETUP	js/shaders/shaderfrog/shaderFrog_library.js	/^function mat_Vignette_SETUP(m){$/;"	f
 material	vendor/three.js/Three.js	/^	var material = options.material;$/;"	v
 material.PointLightHelper	js/three/helpers/PointLightHelper.js	/^}$/;"	c
 material.PointLightHelper.constructor	js/three/helpers/PointLightHelper.js	/^PointLightHelper.prototype.constructor = PointLightHelper;$/;"	m
 material.PointLightHelper.dispose	js/three/helpers/PointLightHelper.js	/^PointLightHelper.prototype.dispose = function () {$/;"	m
+material.index	js/three/loaders/OBJLoader.js	/^						var material = {$/;"	p
 materialId	js/three/materials/Material.js	/^var materialId = 0;$/;"	v
 materialNeedsSmoothNormals	vendor/three.js/Three.js	/^	function materialNeedsSmoothNormals ( material ) {$/;"	f
 materialProperties.__webglShader.name	js/three/renderers/WebGLRenderer.js	/^				materialProperties.__webglShader = {$/;"	p
 materials.clone	js/three/Three.Legacy.js	/^	materials.materials = materials;$/;"	f
+max	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "max": "1"$/;"	f
+max	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "max": "100"$/;"	f
+max	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "max": "3"$/;"	f
 max	js/three/math/Color.js	/^		var max = Math.max( r, g, b );$/;"	v
+max	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^        "max": "1"$/;"	f
+max	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^        "max": "100"$/;"	f
+max	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^        "max": "3"$/;"	f
 max	vendor/three.js/Three.js	/^		var max = Math.max( r, g, b );$/;"	v
 maxRadiusSq	vendor/three.js/Three.js	/^			var maxRadiusSq = 0;$/;"	v
 maxTextures	js/three/renderers/webgl/WebGLState.js	/^	var maxTextures = gl.getParameter( gl.MAX_TEXTURE_IMAGE_UNITS );$/;"	v
@@ -2649,7 +2830,12 @@ me12	vendor/three.js/Three.js	/^		var me12 = me[12], me13 = me[13], me14 = me[14
 me4	vendor/three.js/Three.js	/^		var me4 = me[4], me5 = me[5], me6 = me[6], me7 = me[7];$/;"	v
 me8	vendor/three.js/Three.js	/^		var me8 = me[8], me9 = me[9], me10 = me[10], me11 = me[11];$/;"	v
 mediumpAvailable	vendor/three.js/Three.js	/^	var mediumpAvailable = _vertexShaderPrecisionMediumpFloat.precision > 0 && _fragmentShaderPrecisionMediumpFloat.precision > 0;$/;"	v
+metadata	relicAssets/carbon/geo/blendProper.json	/^    "metadata":{$/;"	f
+min	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "min": "-1",$/;"	f
+min	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "min": "0",$/;"	f
 min	js/three/math/Color.js	/^		var min = Math.min( r, g, b );$/;"	v
+min	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^        "min": "-1",$/;"	f
+min	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^        "min": "0",$/;"	f
 min	vendor/three.js/Three.js	/^		var min = Math.min( r, g, b );$/;"	v
 mipmaps	vendor/three.js/Three.js	/^		var dds = { mipmaps: [], width: 0, height: 0, format: null, mipmapCount: 1 };$/;"	p
 mpars.color	vendor/three.js/Three.js	/^		var mpars = { color: 0xeeeeee, opacity: 1.0, map: null, lightMap: null, normalMap: null, bumpMap: null, wireframe: false };$/;"	p
@@ -2664,7 +2850,61 @@ n31	vendor/three.js/Three.js	/^		var n31 = te[2], n32 = te[6], n33 = te[10], n34
 n41	vendor/three.js/Three.js	/^		var n41 = me[3], n42 = me[7], n43 = me[11], n44 = me[15];$/;"	v
 n41	vendor/three.js/Three.js	/^		var n41 = te[3], n42 = te[7], n43 = te[11], n44 = te[15];$/;"	v
 nVertices	vendor/three.js/Three.js	/^		var nVertices = positions.length \/ 3;$/;"	v
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "cameraPosition",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "time",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientAffectedBySpec",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientColor",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientFalloff",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientStrength",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_diffuseColour",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionColour",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionPulseRate",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionPulseStrength",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionStrength",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionTexture",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_lightColor",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_lightPosition",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_matteStrength",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_matteTexture",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_reflectionStrength",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_reflectionTexture",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_specularFalloff",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_specularPower",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "name": "Diffuse_Spec_Emissive",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^      "name": "cameraPosition",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^      "name": "time",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^      "name": "u_vignetteBias",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^      "name": "u_vignetteColour",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^      "name": "u_vignetteSpread",$/;"	f
+name	js/shaders/shaderfrog/Vignette.json	/^  "name": "Vignette",$/;"	f
 name	js/three/math/Color.js	/^			var name = m[ 1 ];$/;"	v
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "cameraPosition",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "time",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientAffectedBySpec",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientColor",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientFalloff",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientStrength",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_diffuseColour",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionColour",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionPulseRate",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionPulseStrength",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionStrength",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionTexture",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_lightColor",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_lightPosition",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_matteStrength",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_matteTexture",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_reflectionStrength",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_reflectionTexture",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_specularFalloff",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "name": "u_specularPower",$/;"	f
+name	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "name": "Diffuse_Spec_Emissive",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^      "name": "cameraPosition",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^      "name": "time",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^      "name": "u_vignetteBias",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^      "name": "u_vignetteColour",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^      "name": "u_vignetteSpread",$/;"	f
+name	relicAssets/carbon/shaders/Vignette.json	/^  "name": "Vignette",$/;"	f
 nearest_pow2	vendor/three.js/Three.js	/^		function nearest_pow2( n ) {$/;"	f
 negRadius	vendor/three.js/Three.js	/^		var negRadius = -sphere.radius;$/;"	v
 newData.fps	js/loaders/ColladaLoader.js	/^			newData = {$/;"	p
@@ -2672,15 +2912,25 @@ newData.hierarchy	js/loaders/ColladaLoader.js	/^				fps: 60,$/;"	p
 newData.hierarchy	js/loaders/ColladaLoader.js	/^			newData = {$/;"	p
 newNormal	vendor/three.js/Three.js	/^			var newNormal = v1.copy( this.normal ).applyMatrix3( normalMatrix );$/;"	v
 newVerticeMaps	vendor/three.js/Three.js	/^		var newVerticeMaps = 0;$/;"	v
+normal	relicAssets/carbon/geo/blendProper.json	/^            "normal":{$/;"	f
+normal	relicAssets/carbon/geo/blendProper.json	/^        "normal":78,$/;"	f
 normalize	vendor/three.js/Three.js	/^		var normalize = function ( a ) {$/;"	f
 numericalSort	vendor/three.js/Three.js	/^	function numericalSort ( a, b ) {$/;"	f
+obj_floor	relicAssets/carbon/config.js	/^var obj_floor, mat_floor;$/;"	v
+obj_floorRubble	relicAssets/carbon/config.js	/^var obj_floorRubble = [], mat_floorRubble;$/;"	v
+obj_hexagons	relicAssets/carbon/config.js	/^var obj_hexagons = [],mat_hexagons;$/;"	v
+obj_orbitLines	relicAssets/carbon/config.js	/^var obj_orbitLines = [], mat_orbitLines, orbitLine_master;$/;"	v
+obj_roomSphere	relicAssets/carbon/config.js	/^var obj_roomSphere, mat_roomSphere;$/;"	v
+obj_triangleGrid	relicAssets/carbon/config.js	/^var obj_triangleGrid,mat_triangleGrid;$/;"	v
 object.animationCache.pos	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].nextKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
 object.animationCache.pos	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].prevKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
 object.animationCache.rot	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].nextKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
 object.animationCache.rot	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].prevKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
 object.animationCache.scl	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].nextKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
 object.animationCache.scl	vendor/three.js/Three.js	/^			object.animationCache[this.data.name].prevKey = { pos: 0, rot: 0, scl: 0 };$/;"	p
+object.name	js/three/loaders/OBJLoader.js	/^				this.object = {$/;"	p
 object3DId	js/three/core/Object3D.js	/^var object3DId = 0;$/;"	v
+objects	js/three/loaders/OBJLoader.js	/^		var state = {$/;"	p
 off_ABitMask	vendor/three.js/Three.js	/^		var off_ABitMask = 26;$/;"	v
 off_BBitMask	vendor/three.js/Three.js	/^		var off_BBitMask = 25;$/;"	v
 off_GBitMask	vendor/three.js/Three.js	/^		var off_GBitMask = 24;$/;"	v
@@ -2700,26 +2950,36 @@ off_size	vendor/three.js/Three.js	/^		var off_size = 1;$/;"	v
 off_width	vendor/three.js/Three.js	/^		var off_width = 4;$/;"	v
 offset	vendor/three.js/Three.js	/^		var offset = offsets[0];$/;"	v
 offsets	vendor/three.js/Three.js	/^		var offsets = json.offsets;$/;"	v
+omit	js/ShaderRuntime.js	/^function omit( obj, ...keys ) {$/;"	f
 onContextLost	js/three/renderers/WebGLRenderer.js	/^	function onContextLost( event ) {$/;"	f
+onContextMenu	vendor/three.js/OrbitControls.js	/^	function onContextMenu( event ) {$/;"	f
 onGeometryDispose	vendor/three.js/Three.js	/^	var onGeometryDispose = function ( event ) {$/;"	f
+onKeyDown	vendor/three.js/OrbitControls.js	/^	function onKeyDown( event ) {$/;"	f
 onKeyPress	vendor/threex/THREEx.FullScreen.js	/^	var onKeyPress	= __bind(function(event){$/;"	v
 onMaterialDispose	js/three/renderers/WebGLRenderer.js	/^	function onMaterialDispose( event ) {$/;"	f
 onMaterialDispose	vendor/three.js/Three.js	/^	var onMaterialDispose = function ( event ) {$/;"	f
+onMouseDown	vendor/three.js/OrbitControls.js	/^	function onMouseDown( event ) {$/;"	f
+onMouseMove	vendor/three.js/OrbitControls.js	/^	function onMouseMove( event ) {$/;"	f
+onMouseUp	vendor/three.js/OrbitControls.js	/^	function onMouseUp( event ) {$/;"	f
+onMouseWheel	vendor/three.js/OrbitControls.js	/^	function onMouseWheel( event ) {$/;"	f
 onParticleCreated	vendor/threex/threex.sparks.js	/^	var onParticleCreated = function(particle) {$/;"	f
 onParticleDead	vendor/threex/threex.sparks.js	/^	var onParticleDead = function(particle) {$/;"	f
 onRenderTargetDispose	vendor/three.js/Three.js	/^	var onRenderTargetDispose = function ( event ) {$/;"	f
 onTextureDispose	vendor/three.js/Three.js	/^	var onTextureDispose = function ( event ) {$/;"	f
 onTextureUpdate	vendor/three.js/Three.js	/^	function onTextureUpdate ( event ) {$/;"	f
-orbitLine_master	relicAssets/carbon/config.js	/^var orbitLine_master, triangleGrid, core;$/;"	v
-orbitLines	relicAssets/carbon/config.js	/^var orbitLines = [];$/;"	v
-orbitLines_applyOffsets	relicAssets/carbon/config.js	/^function orbitLines_applyOffsets() {$/;"	f
-orbitLines_setup	relicAssets/carbon/config.js	/^function orbitLines_setup() {$/;"	f
+onTouchEnd	vendor/three.js/OrbitControls.js	/^	function onTouchEnd( event ) {$/;"	f
+onTouchMove	vendor/three.js/OrbitControls.js	/^	function onTouchMove( event ) {$/;"	f
+onTouchStart	vendor/three.js/OrbitControls.js	/^	function onTouchStart( event ) {$/;"	f
+onWindowResize	webgl_shaders_sky.html	/^			function onWindowResize() {$/;"	f
 output	vendor/three.js/Three.js	/^		var output = imageData.data;$/;"	v
 p	vendor/three.js/Three.js	/^		var p = far - near;$/;"	v
 p	vendor/three.js/Three.js	/^	var p, sum = 0;$/;"	v
 painterSort	vendor/three.js/Three.js	/^	function painterSort( a, b ) {$/;"	f
 painterSortStable	js/three/renderers/webgl/WebGLRenderLists.js	/^function painterSortStable( a, b ) {$/;"	f
 painterSortStable	vendor/three.js/Three.js	/^	function painterSortStable ( a, b ) {$/;"	f
+pan	vendor/three.js/OrbitControls.js	/^	var pan = function () {$/;"	f
+panLeft	vendor/three.js/OrbitControls.js	/^	var panLeft = function () {$/;"	f
+panUp	vendor/three.js/OrbitControls.js	/^	var panUp = function () {$/;"	f
 parID	vendor/three.js/Three.js	/^		var parID;$/;"	v
 paramThreeToGL	js/three/renderers/WebGLRenderer.js	/^	function paramThreeToGL( p ) {$/;"	f
 paramThreeToGL	vendor/three.js/Three.js	/^	function paramThreeToGL ( p ) {$/;"	f
@@ -2745,6 +3005,8 @@ pickingRay	js/three/Three.Legacy.js	/^	this.pickingRay = function () {$/;"	f
 pickingRay	vendor/three.js/Three.js	/^	this.pickingRay = function ( vector, camera ) {$/;"	c
 point_in_segment_2D_colin	js/three/extras/ShapeUtils.js	/^		function point_in_segment_2D_colin( inSegPt1, inSegPt2, inOtherPt ) {$/;"	f
 points	js/three/renderers/WebGLRenderer.js	/^			faces: 0,$/;"	p
+position	relicAssets/carbon/geo/blendProper.json	/^            "position":{$/;"	f
+position	relicAssets/carbon/geo/blendProper.json	/^        "position":78,$/;"	f
 precision	vendor/three.js/Three.js	/^		var precision = Math.pow( 10, precisionPoints );$/;"	v
 precisionPoints	vendor/three.js/Three.js	/^		var precisionPoints = 4; \/\/ number of decimal points, eg. 4 for epsilon of 0.0001$/;"	v
 process	vendor/three.js/Three.js	/^	var process = function( contour, indices ) {$/;"	f
@@ -2759,8 +3021,20 @@ qw	vendor/three.js/Three.js	/^		var qw = q.w;$/;"	v
 qx	vendor/three.js/Three.js	/^		var qx = q.x;$/;"	v
 qy	vendor/three.js/Three.js	/^		var qy = q.y;$/;"	v
 qz	vendor/three.js/Three.js	/^		var qz = q.z;$/;"	v
+r	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "r": 0.1,$/;"	f
+r	js/shaders/shaderfrog/Vignette.json	/^        "r": 0.0,$/;"	f
 r	vendor/three.js/Three.js	/^		var r = Math.floor( color.r * 255 );$/;"	v
 r	vendor/three.js/Three.js	/^		var r, index,$/;"	v
+randomRange	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "randomRange": null,$/;"	f
+randomRange	js/shaders/shaderfrog/Vignette.json	/^      "randomRange": null,$/;"	f
+randomRange	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "randomRange": null,$/;"	f
+randomRange	relicAssets/carbon/shaders/Vignette.json	/^      "randomRange": null,$/;"	f
+range	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "range": null,$/;"	f
+range	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "range": {$/;"	f
+range	js/shaders/shaderfrog/Vignette.json	/^      "range": null,$/;"	f
+range	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "range": null,$/;"	f
+range	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "range": {$/;"	f
+range	relicAssets/carbon/shaders/Vignette.json	/^      "range": null,$/;"	f
 ratioA	vendor/three.js/Three.js	/^		var ratioA = Math.sin( ( 1 - t ) * halfTheta ) \/ sinHalfTheta,$/;"	v
 readRenderTargetPixels	js/three/renderers/WebGLRenderer.js	/^	this.readRenderTargetPixels = function ( renderTarget, x, y, width, height, buffer ) {$/;"	f
 recurseHierarchy	js/loaders/ColladaLoader.js	/^	function recurseHierarchy( node ) {$/;"	f
@@ -2785,8 +3059,13 @@ refreshUniformsShadow	vendor/three.js/Three.js	/^	function refreshUniformsShadow
 refreshUniformsStandard	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsStandard( uniforms, material ) {$/;"	f
 refreshUniformsToon	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsToon( uniforms, material ) {$/;"	f
 releaseMaterialProgramReference	js/three/renderers/WebGLRenderer.js	/^	function releaseMaterialProgramReference( material ) {$/;"	f
-relic_update	js/relics/relic.js	/^Relic = {};$/;"	f
-relic_update	relicAssets/carbon/config.js	/^function relic_update() {}$/;"	f
+relicSetup_shadersAndMaterials	relicAssets/carbon/config.js	/^function relicSetup_shadersAndMaterials() {$/;"	f
+relic_hexagons_onChange	relicAssets/carbon/config.js	/^function relic_hexagons_onChange(){$/;"	f
+relic_hexagons_setup	relicAssets/carbon/config.js	/^function relic_hexagons_setup(){$/;"	f
+relic_hexagons_update	relicAssets/carbon/config.js	/^function relic_hexagons_update(){$/;"	f
+relic_setupEnvironment	relicAssets/carbon/config.js	/^function relic_setupEnvironment() {$/;"	f
+relic_update	js/relics/relic.js	/^Relic['shaders'] = [];$/;"	f
+relic_update	relicAssets/carbon/config.js	/^function relic_update() {$/;"	f
 remove	js/three/renderers/webgl/WebGLAttributes.js	/^	function remove( attribute ) {$/;"	f
 removeHoles	js/three/extras/ShapeUtils.js	/^		function removeHoles( contour, holes ) {$/;"	f
 removeHoles.intersectsHoleEdge	js/three/extras/ShapeUtils.js	/^			function intersectsHoleEdge( inShapePt, inHolePt ) {$/;"	f
@@ -2795,12 +3074,12 @@ removeHoles.isCutLineInsideAngles	js/three/extras/ShapeUtils.js	/^			function is
 removeInstances	vendor/three.js/Three.js	/^	function removeInstances( objlist, object ) {$/;"	f
 removeInstancesDirect	vendor/three.js/Three.js	/^	function removeInstancesDirect( objlist, object ) {$/;"	f
 removeObject	vendor/three.js/Three.js	/^	function removeObject( object, scene ) {$/;"	f
-render	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^function render() {$/;"	function
-render	js/kr_main.js	/^function render() {$/;"	f
+render	js/main.js	/^function render() {$/;"	f
 render	js/three/Three.Legacy.js	/^	this.render = function () {};$/;"	f
 render	js/three/renderers/WebGLRenderer.js	/^	this.render = function ( scene, camera, renderTarget, forceClear ) {$/;"	c
 render	vendor/three.js/Three.js	/^	this.render = function ( scene, camera ) {$/;"	f
 render	vendor/three.js/Three.js	/^	this.render = function ( scene, camera, renderTarget, forceClear ) {$/;"	c
+render	webgl_shaders_sky.html	/^			function render() {$/;"	f
 renderBuffer	vendor/three.js/Three.js	/^	this.renderBuffer = function ( camera, lights, fog, material, geometryGroup, object ) {$/;"	f
 renderBufferDirect	js/three/renderers/WebGLRenderer.js	/^	this.renderBufferDirect = function ( camera, fog, geometry, material, object, group ) {$/;"	f
 renderBufferDirect	vendor/three.js/Three.js	/^	this.renderBufferDirect = function ( camera, lights, fog, material, geometry, object ) {$/;"	f
@@ -2822,6 +3101,7 @@ replaceLightNums	js/three/renderers/webgl/WebGLProgram.js	/^function replaceLigh
 request.onload	vendor/three.js/Three.js	/^		var request = new XMLHttpRequest();$/;"	f
 reset	js/three/renderers/webgl/WebGLState.js	/^	function reset() {$/;"	f
 resetGLState	js/three/renderers/WebGLRenderer.js	/^	function resetGLState() {$/;"	f
+result	js/three/loaders/OBJLoader.js	/^		var result = [];$/;"	v
 result	vendor/three.js/Three.js	/^		var result = optionalTarget || new THREE.Vector3();$/;"	v
 result.scene	vendor/three.js/Three.js	/^		result = {$/;"	p
 ret.maxX	vendor/three.js/Three.js	/^		minY: minY,$/;"	p
@@ -2832,6 +3112,8 @@ return	js/three/animation/AnimationUtils.js	/^		}$/;"	c
 return.slice	js/three/animation/AnimationUtils.js	/^		return Array.prototype.slice.call( array ); \/\/ create Array$/;"	m
 reversePainterSortStable	js/three/renderers/webgl/WebGLRenderLists.js	/^function reversePainterSortStable( a, b ) {$/;"	f
 rgb2hex	vendor/three.js/Three.js	/^		function rgb2hex( rgb ) {$/;"	f
+rotateLeft	vendor/three.js/OrbitControls.js	/^	function rotateLeft( angle ) {$/;"	f
+rotateUp	vendor/three.js/OrbitControls.js	/^	function rotateUp( angle ) {$/;"	f
 s	js/three/math/Color.js	/^						var s = parseInt( color[ 2 ], 10 ) \/ 100;$/;"	v
 s	vendor/three.js/Three.js	/^			newShapes[mainIdx] = { s: new THREE.Shape(), p: tmpPoints };$/;"	p
 s	vendor/three.js/Three.js	/^		var s = Math.sin( angle );$/;"	v
@@ -2841,6 +3123,7 @@ s0	vendor/three.js/Three.js	/^		var s0, s1, sqrDist, extDet;$/;"	v
 s1	vendor/three.js/Three.js	/^		var s1 = Math.sin( euler._x \/ 2 );$/;"	v
 s2	vendor/three.js/Three.js	/^		var s2 = Math.sin( euler._y \/ 2 );$/;"	v
 s3	vendor/three.js/Three.js	/^		var s3 = Math.sin( euler._z \/ 2 );$/;"	v
+scale	vendor/three.js/OrbitControls.js	/^	var scale = 1;$/;"	v
 scaleX	vendor/three.js/Three.js	/^			var scaleX = 1 \/ v1.set( me[0], me[1], me[2] ).length();$/;"	v
 scaleXSq	vendor/three.js/Three.js	/^		var scaleXSq = te[0] * te[0] + te[1] * te[1] + te[2] * te[2];$/;"	v
 scaleY	vendor/three.js/Three.js	/^			var scaleY = 1 \/ v1.set( me[4], me[5], me[6] ).length();$/;"	v
@@ -2939,6 +3222,7 @@ setupLights	vendor/three.js/Three.js	/^	function setupLights ( program, lights )
 setupMatrices	vendor/three.js/Three.js	/^	function setupMatrices ( object, camera ) {$/;"	f
 setupMorphTargets	vendor/three.js/Three.js	/^	function setupMorphTargets ( material, geometryGroup, object ) {$/;"	f
 setupRenderBuffer	vendor/three.js/Three.js	/^	function setupRenderBuffer ( renderbuffer, renderTarget  ) {$/;"	f
+setupShaderLibrary	js/shaders/shaderfrog/shaderFrog_library.js	/^function setupShaderLibrary(cam){$/;"	f
 setupShadows	js/three/renderers/WebGLRenderer.js	/^	function setupShadows( lights ) {$/;"	f
 setupSkeleton	js/loaders/ColladaLoader.js	/^	function setupSkeleton ( node, bones, frame, parent ) {$/;"	f
 setupSkinningMatrices	js/loaders/ColladaLoader.js	/^	function setupSkinningMatrices ( bones, skin ) {$/;"	f
@@ -2956,8 +3240,9 @@ sqy	vendor/three.js/Three.js	/^		var sqy = q.y * q.y;$/;"	v
 sqz	vendor/three.js/Three.js	/^		var sqz = q.z * q.z;$/;"	v
 startEnd2	vendor/three.js/Three.js	/^			var startEnd2 = startEnd.dot( startEnd );$/;"	v
 startEnd_startP	vendor/three.js/Three.js	/^			var startEnd_startP = startEnd.dot( startP );$/;"	v
-stats	/Users/dt/Documents/GIT/tk_relic/js/kr_main.js	/^var stats,$/;"	variable
-stats	js/kr_main.js	/^var stats,$/;"	v
+startEvent.type	vendor/three.js/OrbitControls.js	/^	var startEvent = { type: 'start' };$/;"	p
+state	vendor/three.js/OrbitControls.js	/^	var state = STATE.NONE;$/;"	v
+stats	js/main.js	/^var stats,$/;"	v
 strokePath	vendor/three.js/Three.js	/^	function strokePath( color, linewidth, linecap, linejoin ) {$/;"	f
 subtract	vendor/three.js/Three.js	/^		var subtract = function ( a, b ) {$/;"	f
 supportsCompressedTextureS3TC	vendor/three.js/Three.js	/^	this.supportsCompressedTextureS3TC = function () {$/;"	f
@@ -2976,6 +3261,7 @@ tan1	vendor/three.js/Three.js	/^		var tan1 = [], tan2 = [];$/;"	v
 target.color	vendor/threex/threex.sparks.js	/^			size		: function(value){ valuesSize[vertexIdx] = value;	},$/;"	m
 target_array	vendor/three.js/Three.js	/^		var target_array = [];$/;"	v
 te	vendor/three.js/Three.js	/^		var te = m.elements;$/;"	v
+testShaderLoop	relicAssets/carbon/config.js	/^function testShaderLoop() {$/;"	f
 texImage2D	js/three/renderers/webgl/WebGLState.js	/^	function texImage2D() {$/;"	f
 textureID	vendor/three.js/Three.js	/^		var textureID, textureJSON;$/;"	v
 textureId	js/three/textures/Texture.js	/^var textureId = 0;$/;"	v
@@ -2998,15 +3284,88 @@ this.texOpts.repeatU	js/loaders/ColladaLoader.js	/^						offsetV: 0,$/;"	p
 this.texOpts.repeatV	js/loaders/ColladaLoader.js	/^						repeatU: 1,$/;"	p
 this.texOpts.wrapU	js/loaders/ColladaLoader.js	/^						repeatV: 1,$/;"	p
 this.texOpts.wrapV	js/loaders/ColladaLoader.js	/^						wrapU: 1,$/;"	p
+time	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "time": {$/;"	f
+time	js/shaders/shaderfrog/Vignette.json	/^    "time": {$/;"	f
+time	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "time": {$/;"	f
+time	relicAssets/carbon/shaders/Vignette.json	/^    "time": {$/;"	f
 tmp	vendor/three.js/Three.js	/^		var tmp;$/;"	v
 tmpHoles	vendor/three.js/Three.js	/^	var tmpHoles, j, jl;$/;"	v
+toggle	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "toggle": null,$/;"	f
+toggle	js/shaders/shaderfrog/Vignette.json	/^      "toggle": null,$/;"	f
+toggle	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "toggle": null,$/;"	f
+toggle	relicAssets/carbon/shaders/Vignette.json	/^      "toggle": null,$/;"	f
 touchend	vendor/three.js/TrackballControls.js	/^	function touchend( event ) {$/;"	f
 touchmove	vendor/three.js/TrackballControls.js	/^	function touchmove( event ) {$/;"	f
 traverse_json_hierarchy	vendor/three.js/Three.js	/^		function traverse_json_hierarchy( objJSON, callback ) {$/;"	f
 triangles	js/three/extras/ShapeUtils.js	/^		var triangles = ShapeUtils.triangulate( shapeWithoutHoles, false ); \/\/ True returns indices for points of spooled shape$/;"	v
 tx	vendor/three.js/Three.js	/^		var tx = t * x, ty = t * y;$/;"	v
+type	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "type": "c",$/;"	f
+type	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "type": "f",$/;"	f
+type	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "type": "t",$/;"	f
+type	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "type": "v3",$/;"	f
+type	js/shaders/shaderfrog/Vignette.json	/^      "type": "c",$/;"	f
+type	js/shaders/shaderfrog/Vignette.json	/^      "type": "f",$/;"	f
+type	js/shaders/shaderfrog/Vignette.json	/^      "type": "v2",$/;"	f
+type	js/shaders/shaderfrog/Vignette.json	/^      "type": "v3",$/;"	f
+type	relicAssets/carbon/geo/blendProper.json	/^                "type":"Float32Array"$/;"	f
+type	relicAssets/carbon/geo/blendProper.json	/^            "type":"Uint16Array"$/;"	f
+type	relicAssets/carbon/geo/blendProper.json	/^        "type":"BufferGeometry",$/;"	f
+type	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "type": "c",$/;"	f
+type	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "type": "f",$/;"	f
+type	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "type": "t",$/;"	f
+type	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "type": "v3",$/;"	f
+type	relicAssets/carbon/shaders/Vignette.json	/^      "type": "c",$/;"	f
+type	relicAssets/carbon/shaders/Vignette.json	/^      "type": "f",$/;"	f
+type	relicAssets/carbon/shaders/Vignette.json	/^      "type": "v2",$/;"	f
+type	relicAssets/carbon/shaders/Vignette.json	/^      "type": "v3",$/;"	f
 types	vendor/three.js/Three.js	/^		var types = [ Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array ];$/;"	v
+u_ambientAffectedBySpec	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientAffectedBySpec": {$/;"	f
+u_ambientAffectedBySpec	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientAffectedBySpec": {$/;"	f
+u_ambientColor	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientColor": {$/;"	f
+u_ambientColor	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientColor": {$/;"	f
+u_ambientFalloff	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientFalloff": {$/;"	f
+u_ambientFalloff	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientFalloff": {$/;"	f
+u_ambientStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientStrength": {$/;"	f
+u_ambientStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientStrength": {$/;"	f
+u_diffuseColour	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_diffuseColour": {$/;"	f
+u_diffuseColour	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_diffuseColour": {$/;"	f
+u_emissionColour	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_emissionColour": {$/;"	f
+u_emissionColour	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_emissionColour": {$/;"	f
+u_emissionPulseRate	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_emissionPulseRate": {$/;"	f
+u_emissionPulseRate	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_emissionPulseRate": {$/;"	f
+u_emissionPulseStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_emissionPulseStrength": {$/;"	f
+u_emissionPulseStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_emissionPulseStrength": {$/;"	f
+u_emissionStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_emissionStrength": {$/;"	f
+u_emissionStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_emissionStrength": {$/;"	f
+u_emissionTexture	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_emissionTexture": {$/;"	f
+u_emissionTexture	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_emissionTexture": {$/;"	f
+u_lightColor	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_lightColor": {$/;"	f
+u_lightColor	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_lightColor": {$/;"	f
+u_lightPosition	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_lightPosition": {$/;"	f
+u_lightPosition	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_lightPosition": {$/;"	f
+u_matteStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_matteStrength": {$/;"	f
+u_matteStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_matteStrength": {$/;"	f
+u_matteTexture	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_matteTexture": {$/;"	f
+u_matteTexture	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_matteTexture": {$/;"	f
+u_reflectionStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_reflectionStrength": {$/;"	f
+u_reflectionStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_reflectionStrength": {$/;"	f
+u_reflectionTexture	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_reflectionTexture": {$/;"	f
+u_reflectionTexture	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_reflectionTexture": {$/;"	f
+u_specularFalloff	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_specularFalloff": {$/;"	f
+u_specularFalloff	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_specularFalloff": {$/;"	f
+u_specularPower	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_specularPower": {$/;"	f
+u_specularPower	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_specularPower": {$/;"	f
+u_vignetteBias	js/shaders/shaderfrog/Vignette.json	/^    "u_vignetteBias": {$/;"	f
+u_vignetteBias	relicAssets/carbon/shaders/Vignette.json	/^    "u_vignetteBias": {$/;"	f
+u_vignetteColour	js/shaders/shaderfrog/Vignette.json	/^    "u_vignetteColour": {$/;"	f
+u_vignetteColour	relicAssets/carbon/shaders/Vignette.json	/^    "u_vignetteColour": {$/;"	f
+u_vignetteSpread	js/shaders/shaderfrog/Vignette.json	/^    "u_vignetteSpread": {$/;"	f
+u_vignetteSpread	relicAssets/carbon/shaders/Vignette.json	/^    "u_vignetteSpread": {$/;"	f
+uniforms	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "uniforms": {$/;"	f
+uniforms	js/shaders/shaderfrog/Vignette.json	/^  "uniforms": {$/;"	f
 uniforms	js/three/renderers/webgl/WebGLLights.js	/^			var uniforms;$/;"	v
+uniforms	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "uniforms": {$/;"	f
+uniforms	relicAssets/carbon/shaders/Vignette.json	/^  "uniforms": {$/;"	f
 uniforms.renderType	js/three/renderers/webgl/plugins/LensFlarePlugin.js	/^		uniforms = {$/;"	p
 uniforms.uvOffset	js/three/renderers/webgl/plugins/SpritePlugin.js	/^		uniforms = {$/;"	p
 uniforms.uvOffset	vendor/three.js/Three.js	/^		uniforms = {$/;"	p
@@ -3020,12 +3379,49 @@ update	js/three/renderers/webgl/WebGLAttributes.js	/^	function update( attribute
 updateBuffer	js/three/renderers/webgl/WebGLAttributes.js	/^	function updateBuffer( buffer, attribute, bufferType ) {$/;"	f
 updateObject	vendor/three.js/Three.js	/^	function updateObject( object ) {$/;"	f
 updateRenderTargetMipmap	vendor/three.js/Three.js	/^	function updateRenderTargetMipmap ( renderTarget ) {$/;"	f
+updateShaders	js/shaders/shaderfrog/shaderFrog_library.js	/^function updateShaders(){$/;"	f
 updateShadowCamera	vendor/three.js/Three.js	/^	function updateShadowCamera( camera, light ) {$/;"	f
 updateShadowMap	vendor/three.js/Three.js	/^	this.updateShadowMap = function ( scene, camera ) {$/;"	c
 updateVirtualLight	vendor/three.js/Three.js	/^	function updateVirtualLight( light, cascade ) {$/;"	f
+url	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "url": "http:\/\/shaderfrog.com\/app\/profile\/andrewray"$/;"	f
+url	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "url": "http:\/\/shaderfrog.com\/app\/view\/1530",$/;"	f
+url	js/shaders/shaderfrog/Vignette.json	/^    "url": "http:\/\/shaderfrog.com\/app\/profile\/andrewray"$/;"	f
+url	js/shaders/shaderfrog/Vignette.json	/^  "url": "http:\/\/shaderfrog.com\/app\/view\/1527",$/;"	f
+url	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "url": "http:\/\/shaderfrog.com\/app\/profile\/andrewray"$/;"	f
+url	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "url": "http:\/\/shaderfrog.com\/app\/view\/1530",$/;"	f
+url	relicAssets/carbon/shaders/Vignette.json	/^    "url": "http:\/\/shaderfrog.com\/app\/profile\/andrewray"$/;"	f
+url	relicAssets/carbon/shaders/Vignette.json	/^  "url": "http:\/\/shaderfrog.com\/app\/view\/1527",$/;"	f
 urlBase	vendor/three.js/Three.js	/^		var urlBase = THREE.Loader.prototype.extractUrlBase( url );$/;"	v
+useGridHelper	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "useGridHelper": false,$/;"	f
+useGridHelper	js/shaders/shaderfrog/Vignette.json	/^      "useGridHelper": false,$/;"	f
+useGridHelper	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "useGridHelper": false,$/;"	f
+useGridHelper	relicAssets/carbon/shaders/Vignette.json	/^      "useGridHelper": false,$/;"	f
+useRange	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "useRange": false,$/;"	f
+useRange	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "useRange": true,$/;"	f
+useRange	js/shaders/shaderfrog/Vignette.json	/^      "useRange": false,$/;"	f
+useRange	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "useRange": false,$/;"	f
+useRange	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "useRange": true,$/;"	f
+useRange	relicAssets/carbon/shaders/Vignette.json	/^      "useRange": false,$/;"	f
+useToggle	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "useToggle": false,$/;"	f
+useToggle	js/shaders/shaderfrog/Vignette.json	/^      "useToggle": false,$/;"	f
+useToggle	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^      "useToggle": false,$/;"	f
+useToggle	relicAssets/carbon/shaders/Vignette.json	/^      "useToggle": false,$/;"	f
+user	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "user": {$/;"	f
+user	js/shaders/shaderfrog/Vignette.json	/^  "user": {$/;"	f
+user	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "user": {$/;"	f
+user	relicAssets/carbon/shaders/Vignette.json	/^  "user": {$/;"	f
+username	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "username": "dcturner",$/;"	f
+username	js/shaders/shaderfrog/Vignette.json	/^    "username": "dcturner",$/;"	f
+username	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "username": "dcturner",$/;"	f
+username	relicAssets/carbon/shaders/Vignette.json	/^    "username": "dcturner",$/;"	f
+uv	relicAssets/carbon/geo/blendProper.json	/^            "uv":{$/;"	f
+uv	relicAssets/carbon/geo/blendProper.json	/^        "uv":78,$/;"	f
+uv2	relicAssets/carbon/geo/blendProper.json	/^            "uv2":{$/;"	f
+uv2	relicAssets/carbon/geo/blendProper.json	/^        "uv2":78,$/;"	f
 uvgen	vendor/three.js/Three.js	/^	var uvgen = options.UVGenerator === undefined ? THREE.ExtrudeGeometry.WorldUVGenerator : options.UVGenerator;$/;"	v
 v	vendor/three.js/Three.js	/^		var v, key;$/;"	v
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value": {$/;"	f
+value	js/shaders/shaderfrog/Vignette.json	/^      "value": {$/;"	f
 var.attribute.itemSize	vendor/three.js/Three.js	/^			var attribute = {$/;"	p
 var.attributes.alpha	js/three/renderers/WebGL2Renderer.js	/^		var attributes = {$/;"	p
 var.attributes.alpha	vendor/three.js/Three.js	/^			var attributes = {$/;"	p
@@ -3039,6 +3435,7 @@ var.attributes.preserveDrawingBuffer	js/three/renderers/WebGL2Renderer.js	/^			p
 var.attributes.preserveDrawingBuffer	vendor/three.js/Three.js	/^				premultipliedAlpha: _premultipliedAlpha,$/;"	p
 var.attributes.stencil	js/three/renderers/WebGL2Renderer.js	/^			depth: _depth,$/;"	p
 var.attributes.stencil	vendor/three.js/Three.js	/^				depth: _depth,$/;"	p
+var.cloned.index	js/three/loaders/OBJLoader.js	/^								var cloned = {$/;"	p
 var.contextAttributes.alpha	js/three/renderers/WebGLRenderer.js	/^		var contextAttributes = {$/;"	p
 var.contextAttributes.antialias	js/three/renderers/WebGLRenderer.js	/^			stencil: _stencil,$/;"	p
 var.contextAttributes.depth	js/three/renderers/WebGLRenderer.js	/^			alpha: _alpha,$/;"	p
@@ -3060,6 +3457,7 @@ var.new_offset.index	vendor/three.js/Three.js	/^				var new_offset = { start:ind
 var.new_offset.start	vendor/three.js/Three.js	/^				var new_offset = { start:indexPtr, count:0, index:vertexPtr };$/;"	p
 var.parameters.fragmentShader	vendor/three.js/Three.js	/^				var parameters = { fragmentShader: shader.fragmentShader, vertexShader: shader.vertexShader, uniforms: uniforms, lights: true, fog: true };$/;"	p
 var.parameters.fragmentShader	vendor/three.js/Three.js	/^			var parameters = { fragmentShader: shader.fragmentShader, vertexShader: shader.vertexShader, uniforms: uniforms, lights: true, fog: true };$/;"	p
+var.parameters.minFilter	js/postprocessing/EffectComposer.js	/^		var parameters = {$/;"	p
 var.pars.format	js/three/renderers/webgl/WebGLShadowMap.js	/^				var pars = { minFilter: NearestFilter, magFilter: NearestFilter, format: RGBAFormat };$/;"	p
 var.pars.format	vendor/three.js/Three.js	/^				var pars = { minFilter: shadowFilter, magFilter: shadowFilter, format: THREE.RGBAFormat };$/;"	p
 var.pars.magFilter	js/three/renderers/webgl/WebGLShadowMap.js	/^				var pars = { minFilter: NearestFilter, magFilter: NearestFilter, format: RGBAFormat };$/;"	p
@@ -3083,7 +3481,12 @@ var.wrapMap.repeat	vendor/three.js/Three.js	/^					var wrapMap = {$/;"	p
 var.wrapMap.repeat	vendor/three.js/Three.js	/^				var wrapMap = {$/;"	p
 vendors	vendor/three.js/Three.js	/^	var vendors = [ 'ms', 'moz', 'webkit', 'o' ];$/;"	v
 version	js/three/renderers/webgl/WebGLState.js	/^	var version = parseFloat( \/^WebGL\\ ([0-9])\/.exec( gl.getParameter( gl.VERSION ) )[ 1 ] );$/;"	v
+version	relicAssets/carbon/geo/blendProper.json	/^        "version":3,$/;"	f
 vert	vendor/three.js/Three.js	/^	var vert, vlen = vertices.length;$/;"	v
+vertex	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "vertex": "precision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\nuniform float time;\\n\\nattribute vec3 position;\\nattribute vec3 normal;\\nattribute vec2 uv;\\nattribute vec2 uv2;\\n\\n\/\/ Examples of variables passed from vertex to fragment shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\nvarying vec2 vUv2;\\n\\nvoid main() {\\n\\n    \/\/ To pass variables to the fragment shader, you assign them here in the\\n    \/\/ main function. Traditionally you name the varying with vAttributeName\\n    vNormal = normal;\\n    vUv = uv;\\n    vUv2 = uv2;\\n    vPosition = position;\\n\\n    \/\/ This sets the position of the vertex in 3d space. The correct math is\\n    \/\/ provided below to take into account camera and object data.\\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\\n\\n}",$/;"	f
+vertex	js/shaders/shaderfrog/Vignette.json	/^  "vertex": "\/**\\n* Example Vertex Shader\\n* Sets the position of the vertex by setting gl_Position\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ Default attributes provided by THREE.js. Attributes are only available in the\\n\/\/ vertex shader. You can pass them to the fragment shader using varyings\\nattribute vec3 position;\\nattribute vec3 normal;\\nattribute vec2 uv;\\nattribute vec2 uv2;\\n\\n\/\/ Examples of variables passed from vertex to fragment shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nvoid main() {\\n\\n    \/\/ To pass variables to the fragment shader, you assign them here in the\\n    \/\/ main function. Traditionally you name the varying with vAttributeName\\n    vNormal = normal;\\n vPosition = position;\\nvUv = uv;\\n    \/\/ This sets the position of the vertex in 3d space. The correct math is\\n    \/\/ provided below to take into account camera and object data.\\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\\n\\n}",$/;"	f
+vertex	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "vertex": "precision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\nuniform float time;\\n\\nattribute vec3 position;\\nattribute vec3 normal;\\nattribute vec2 uv;\\nattribute vec2 uv2;\\n\\n\/\/ Examples of variables passed from vertex to fragment shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\nvarying vec2 vUv2;\\n\\nvoid main() {\\n\\n    \/\/ To pass variables to the fragment shader, you assign them here in the\\n    \/\/ main function. Traditionally you name the varying with vAttributeName\\n    vNormal = normal;\\n    vUv = uv;\\n    vUv2 = uv2;\\n    vPosition = position;\\n\\n    \/\/ This sets the position of the vertex in 3d space. The correct math is\\n    \/\/ provided below to take into account camera and object data.\\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\\n\\n}",$/;"	f
+vertex	relicAssets/carbon/shaders/Vignette.json	/^  "vertex": "\/**\\n* Example Vertex Shader\\n* Sets the position of the vertex by setting gl_Position\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ Default attributes provided by THREE.js. Attributes are only available in the\\n\/\/ vertex shader. You can pass them to the fragment shader using varyings\\nattribute vec3 position;\\nattribute vec3 normal;\\nattribute vec2 uv;\\nattribute vec2 uv2;\\n\\n\/\/ Examples of variables passed from vertex to fragment shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\nvoid main() {\\n\\n    \/\/ To pass variables to the fragment shader, you assign them here in the\\n    \/\/ main function. Traditionally you name the varying with vAttributeName\\n    vNormal = normal;\\n    vUv = uv;\\n     vPosition = position;\\n\\n    \/\/ This sets the position of the vertex in 3d space. The correct math is\\n    \/\/ provided below to take into account camera and object data.\\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\\n\\n}",$/;"	f
 vertexNormals.a	vendor/three.js/Three.js	/^					vertexNormals = { a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3() };$/;"	p
 vertexPtr	vendor/three.js/Three.js	/^		var vertexPtr = 0;$/;"	v
 vertices	js/three/renderers/WebGLRenderer.js	/^			calls: 0,$/;"	p
@@ -3096,6 +3499,8 @@ width	vendor/three.js/Three.js	/^		var width = dds.width;$/;"	v
 width	vendor/three.js/Three.js	/^		var width = image.width;$/;"	v
 width	vendor/three.js/Three.js	/^		var width = offset \/ 2;$/;"	v
 wx	vendor/three.js/Three.js	/^		var wx = w * x2, wy = w * y2, wz = w * z2;$/;"	v
+x	js/shaders/shaderfrog/Vignette.json	/^        "x": 0.0,$/;"	f
+x	js/shaders/shaderfrog/Vignette.json	/^        "x": 0.5,$/;"	f
 x	vendor/three.js/Three.js	/^		var x = 2 * near \/ ( right - left );$/;"	v
 x	vendor/three.js/Three.js	/^		var x = axis.x, y = axis.y, z = axis.z;$/;"	v
 x	vendor/three.js/Three.js	/^		var x = euler.x, y = euler.y, z = euler.z;$/;"	v
@@ -3107,6 +3512,9 @@ xA	vendor/three.js/Three.js	/^		var xA, yA, zA,$/;"	v
 xmax	vendor/three.js/Three.js	/^		var xmax = ymax * aspect;$/;"	v
 xmin	vendor/three.js/Three.js	/^		var xmin = ymin * aspect;$/;"	v
 xx	vendor/three.js/Three.js	/^		var xx = x * x2, xy = x * y2, xz = x * z2;$/;"	v
+y	js/shaders/shaderfrog/Vignette.json	/^        "y": 0.5$/;"	f
+y	js/shaders/shaderfrog/Vignette.json	/^        "y": 1.0$/;"	f
 y	vendor/three.js/Three.js	/^		var y = 2 * near \/ ( top - bottom );$/;"	v
 ymin	vendor/three.js/Three.js	/^		var ymin = - ymax;$/;"	v
 yy	vendor/three.js/Three.js	/^		var yy = y * y2, yz = y * z2, zz = z * z2;$/;"	v
+zoomChanged	vendor/three.js/OrbitControls.js	/^	var zoomChanged = false;$/;"	v

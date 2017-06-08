@@ -8,13 +8,23 @@ Relic.RelicScene = function(name) {
 	_this = this;
 	this.name = name;
 	this.ready = false;
+
+	// COLLADA
 	this.relicLoader = new THREE.ColladaLoader();
-	this.relicLoader.options.convertUpAxis = true;
-	this.relicLoader.load("relicAssets/carbon/geo/main.dae", function(collada) {
-		_this.relicConfig = new Relic.RelicConfig(collada);
+	this.relicLoader.load("relicAssets/carbon/geo/monster.dae", function(geo) {
+		_this.relicConfig = new Relic.RelicConfig(geo);
 		console.log("relic >> " + name + " >> created");
 		_this.ready = true;
 	});
+
+	// this.relicLoader = new THREE.OBJLoader();
+	//
+	// 	this.relicLoader.load(
+	// 		'relicAssets/carbon/geo/blend.obj',
+	// 		function ( object ) {
+	// 			_this.relicConfig = new Relic.RelicConfig(object);
+	// 		}
+	// 	);
 
 	this.update = function() {}
 }

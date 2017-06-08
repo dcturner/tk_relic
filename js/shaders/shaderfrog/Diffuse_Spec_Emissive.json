@@ -1,0 +1,328 @@
+{
+  "id": 1530,
+  "name": "Diffuse_Spec_Emissive",
+  "fragment": "// Set the precision for data types used in this shader\nprecision highp float;\nprecision highp int;\n\nuniform mat4 modelMatrix;\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\n\n\n// SHADERFROG UNIFORMS\nuniform vec3 cameraPosition;\nuniform float time;\n\nuniform sampler2D u_emissionTexture;\nuniform sampler2D u_matteTexture;\nuniform sampler2D u_reflectionTexture;\n\nuniform float u_reflectionStrength;\nuniform float u_matteStrength;\n\nuniform vec3 u_lightPosition;\nuniform vec3 u_lightColor;\nuniform vec3 u_diffuseColour;\nuniform vec3 u_emissionColour;\n\nuniform float u_emissionStrength;\nuniform float u_emissionPulseStrength;\nuniform float u_emissionPulseRate;\n\nuniform float u_specularPower;\nuniform float u_specularFalloff;\n\nuniform vec3 u_ambientColor;\nuniform float u_ambientFalloff;\nuniform float u_ambientStrength;\nuniform float u_ambientAffectedBySpec;\n\n\nfloat vEmissionOverallStrength;\nvarying vec3 vPosition;\nvarying vec3 vNormal;\nvarying vec2 vUv;\n\nfloat get_emissionStrength(){\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\n    return str;\n}\nfloat get_matteStrength(){\n    return texture2D(u_matteTexture, vUv).r;\n}\n\nvec3 get_reflectionColour(){\n    mat4 mm = modelViewMatrix;\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\n    vec3 r = reflect(e,n);\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\n    vec2 vN = r.xy / m +0.5;\n    return texture2D(u_reflectionTexture, vN).rgb;\n}\n\n\nvoid main() {\n\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\n    vec3 LightX = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\n    \n    \n    \n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, viewDirectionW ) ),u_specularFalloff)*u_specularPower);\n    \n    // Diffuse\n    vec3 c = vec3(u_diffuseColour);\n    \n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\n    \n    // Reflection\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\n    c += (refColour*(1.0 - (matteValue*2.0)));\n    \n    // Emission\n    float emissionStrength = get_emissionStrength();\n    vec3 emissionDifference = vec3(u_emissionColour.x - c.x, u_emissionColour.y - c.y, u_emissionColour.z - c.z) * (1.0 - emissionStrength);\n\n    // Ambient\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\n    vec3 ambCol = u_ambientColor * ambStrength;\n\n    \n\n    // Base colour\n    c += ((specComp*matteValue) + ambCol + emissionDifference);\n    c = clamp(c,.0,1.);\n    \n\n    gl_FragColor = vec4( c , 1.0 );\n\n}",
+  "vertex": "precision highp float;\nprecision highp int;\n\nuniform mat4 modelMatrix;\nuniform mat4 modelViewMatrix;\nuniform mat4 projectionMatrix;\nuniform mat4 viewMatrix;\nuniform mat3 normalMatrix;\n\nuniform float time;\n\nattribute vec3 position;\nattribute vec3 normal;\nattribute vec2 uv;\nattribute vec2 uv2;\n\n// Examples of variables passed from vertex to fragment shader\nvarying vec3 vPosition;\nvarying vec3 vNormal;\nvarying vec2 vUv;\nvarying vec2 vUv2;\n\nvoid main() {\n\n    // To pass variables to the fragment shader, you assign them here in the\n    // main function. Traditionally you name the varying with vAttributeName\n    vNormal = normal;\n    vUv = uv;\n    vUv2 = uv2;\n    vPosition = position;\n\n    // This sets the position of the vertex in 3d space. The correct math is\n    // provided below to take into account camera and object data.\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n\n}",
+  "uniforms": {
+    "time": {
+      "name": "time",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_emissionColour": {
+      "name": "u_emissionColour",
+      "displayName": null,
+      "type": "c",
+      "glslType": "vec3",
+      "value": {
+        "r": 0.1,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_emissionTexture": {
+      "name": "u_emissionTexture",
+      "displayName": null,
+      "type": "t",
+      "glslType": "sampler2D",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_matteTexture": {
+      "name": "u_matteTexture",
+      "displayName": null,
+      "type": "t",
+      "glslType": "sampler2D",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_ambientStrength": {
+      "name": "u_ambientStrength",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_ambientFalloff": {
+      "name": "u_ambientFalloff",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_emissionStrength": {
+      "name": "u_emissionStrength",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "-1",
+        "max": "3"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_emissionPulseStrength": {
+      "name": "u_emissionPulseStrength",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "-1",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_emissionPulseRate": {
+      "name": "u_emissionPulseRate",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "100"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_diffuseColour": {
+      "name": "u_diffuseColour",
+      "displayName": null,
+      "type": "c",
+      "glslType": "vec3",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_lightPosition": {
+      "name": "u_lightPosition",
+      "displayName": null,
+      "type": "v3",
+      "glslType": "vec3",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_lightColor": {
+      "name": "u_lightColor",
+      "displayName": null,
+      "type": "c",
+      "glslType": "vec3",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_specularPower": {
+      "name": "u_specularPower",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_ambientColor": {
+      "name": "u_ambientColor",
+      "displayName": null,
+      "type": "c",
+      "glslType": "vec3",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_specularFalloff": {
+      "name": "u_specularFalloff",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "100"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_reflectionTexture": {
+      "name": "u_reflectionTexture",
+      "displayName": null,
+      "type": "t",
+      "glslType": "sampler2D",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_ambientAffectedBySpec": {
+      "name": "u_ambientAffectedBySpec",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_reflectionStrength": {
+      "name": "u_reflectionStrength",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "u_matteStrength": {
+      "name": "u_matteStrength",
+      "displayName": null,
+      "type": "f",
+      "glslType": "float",
+      "useGridHelper": false,
+      "useRange": true,
+      "range": {
+        "min": "0",
+        "max": "1"
+      },
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    },
+    "cameraPosition": {
+      "name": "cameraPosition",
+      "displayName": null,
+      "type": "v3",
+      "glslType": "vec3",
+      "useGridHelper": false,
+      "useRange": false,
+      "range": null,
+      "isRandom": false,
+      "randomRange": null,
+      "useToggle": false,
+      "toggle": null,
+      "description": ""
+    }
+  },
+  "url": "http://shaderfrog.com/app/view/1530",
+  "user": {
+    "username": "dcturner",
+    "url": "http://shaderfrog.com/app/profile/andrewray"
+  }
+}
