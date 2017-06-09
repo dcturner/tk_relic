@@ -51,7 +51,7 @@ function mat_Diffuse_Specular_Emmisive_SETUP(m){
     mat_Diffuse_Specular_Emmisive = m;
 
     // Colours
-    mat_Diffuse_Specular_Emmisive.uniforms.u_diffuseColour.value = new THREE.Color( 0.1, 0.2, 0.235 );
+    mat_Diffuse_Specular_Emmisive.uniforms.u_diffuseColour.value = new THREE.Color( 0.23, 0.32, 0.36 );
     mat_Diffuse_Specular_Emmisive.uniforms.u_emissionColour.value = new THREE.Color( 0.1,1.0,1.0);
     mat_Diffuse_Specular_Emmisive.uniforms.u_ambientColor.value = new THREE.Color( 25, 38, 38 );
     mat_Diffuse_Specular_Emmisive.uniforms.u_lightColor.value = new THREE.Color( 0, 0, 0);
@@ -94,7 +94,7 @@ function mat_Diffuse_Specular_Emmisive_SETUP(m){
     gui_Diffuse_Spec_Emissive_AMBIENT.add(mat_Diffuse_Specular_Emmisive.uniforms.u_ambientAffectedBySpec,"value").min(0).max(1).name("SpecularMute");
     // SPECULAR
     gui_Diffuse_Spec_Emissive_SPECULAR.add(mat_Diffuse_Specular_Emmisive.uniforms.u_specularPower,"value").min(0).max(1).name("Strength");
-    gui_Diffuse_Spec_Emissive_SPECULAR.add(mat_Diffuse_Specular_Emmisive.uniforms.u_specularFalloff,"value").min(0).max(1).name("Falloff");
+    gui_Diffuse_Spec_Emissive_SPECULAR.add(mat_Diffuse_Specular_Emmisive.uniforms.u_specularFalloff,"value").min(0).max(100).name("Falloff");
     gui_Diffuse_Spec_Emissive_SPECULAR.add(mat_Diffuse_Specular_Emmisive.uniforms.u_reflectionStrength,"value").min(0).max(1).name("ReflectStrength");
     // MATTE
     gui_Diffuse_Spec_Emissive_MATTE.add(mat_Diffuse_Specular_Emmisive.uniforms.u_matteStrength,"value").min(0).max(1).name("MatteStrength");
