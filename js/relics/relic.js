@@ -11,7 +11,7 @@ Relic.RelicScene = function(name) {
 
 	// COLLADA
 	this.relicLoader = new THREE.ColladaLoader();
-	this.relicLoader.load("relicAssets/carbon/geo/monster.dae", function(geo) {
+	this.relicLoader.load("relicAssets/carbon/geo/main.dae", function(geo) {
 		_this.relicConfig = new Relic.RelicConfig(geo);
 		console.log("relic >> " + name + " >> created");
 		_this.ready = true;

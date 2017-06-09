@@ -2257,6 +2257,9 @@ attributes	vendor/three.js/Three.js	/^		var attributes = json.attributes;$/;"	v
 attributes.position	js/three/renderers/webgl/plugins/SpritePlugin.js	/^		attributes = {$/;"	p
 attributes.position	vendor/three.js/Three.js	/^		attributes = {$/;"	p
 attributes.vertex	js/three/renderers/webgl/plugins/LensFlarePlugin.js	/^		attributes = {$/;"	p
+b	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "b": 0.1$/;"	f
+b	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "b": 0.15$/;"	f
+b	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "b": 0.2$/;"	f
 b	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "b": 1.0$/;"	f
 b	js/shaders/shaderfrog/Vignette.json	/^        "b": 0.0$/;"	f
 b	vendor/three.js/Three.js	/^		var b = Math.floor( color.b * 255 );$/;"	v
@@ -2581,7 +2584,7 @@ fogID	vendor/three.js/Three.js	/^		var fogID, fogJSON;$/;"	v
 forceContextLoss	js/three/renderers/WebGLRenderer.js	/^	this.forceContextLoss = function () {$/;"	f
 fourCC	vendor/three.js/Three.js	/^		var fourCC = header[ off_pfFourCC ];$/;"	v
 fourCCToInt32	vendor/three.js/Three.js	/^		function fourCCToInt32( value ) {$/;"	f
-fragment	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "fragment": "\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\\n\/\/ SHADERFROG UNIFORMS\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\nuniform sampler2D u_emissionTexture;\\nuniform sampler2D u_matteTexture;\\nuniform sampler2D u_reflectionTexture;\\n\\nuniform float u_reflectionStrength;\\nuniform float u_matteStrength;\\n\\nuniform vec3 u_lightPosition;\\nuniform vec3 u_lightColor;\\nuniform vec3 u_diffuseColour;\\nuniform vec3 u_emissionColour;\\n\\nuniform float u_emissionStrength;\\nuniform float u_emissionPulseStrength;\\nuniform float u_emissionPulseRate;\\n\\nuniform float u_specularPower;\\nuniform float u_specularFalloff;\\n\\nuniform vec3 u_ambientColor;\\nuniform float u_ambientFalloff;\\nuniform float u_ambientStrength;\\nuniform float u_ambientAffectedBySpec;\\n\\n\\nfloat vEmissionOverallStrength;\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat get_emissionStrength(){\\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\\n    return str;\\n}\\nfloat get_matteStrength(){\\n    return texture2D(u_matteTexture, vUv).r;\\n}\\n\\nvec3 get_reflectionColour(){\\n    mat4 mm = modelViewMatrix;\\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\\n    vec3 r = reflect(e,n);\\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\\n    vec2 vN = r.xy \/ m +0.5;\\n    return texture2D(u_reflectionTexture, vN).rgb;\\n}\\n\\n\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\\n    vec3 LightX = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\\n    \\n    \\n    \\n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, viewDirectionW ) ),u_specularFalloff)*u_specularPower);\\n    \\n    \/\/ Diffuse\\n    vec3 c = vec3(u_diffuseColour);\\n    \\n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\\n    \\n    \/\/ Reflection\\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\\n    c += (refColour*(1.0 - (matteValue*2.0)));\\n    \\n    \/\/ Emission\\n    float emissionStrength = get_emissionStrength();\\n    vec3 emissionDifference = vec3(u_emissionColour.x - c.x, u_emissionColour.y - c.y, u_emissionColour.z - c.z) * (1.0 - emissionStrength);\\n\\n    \/\/ Ambient\\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\\n    vec3 ambCol = u_ambientColor * ambStrength;\\n\\n    \\n\\n    \/\/ Base colour\\n    c += ((specComp*matteValue) + ambCol + emissionDifference);\\n    c = clamp(c,.0,1.);\\n    \\n\\n    gl_FragColor = vec4( c , 1.0 );\\n\\n}",$/;"	f
+fragment	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^  "fragment": "\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\\n\/\/ SHADERFROG UNIFORMS\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\nuniform sampler2D u_emissionTexture;\\nuniform sampler2D u_matteTexture;\\nuniform sampler2D u_reflectionTexture;\\n\\nuniform float u_reflectionStrength;\\nuniform float u_matteStrength;\\n\\nuniform vec3 u_lightPosition;\\nuniform vec3 u_lightColor;\\nuniform float u_lightStrength;\\nuniform vec3 u_diffuseColour;\\nuniform vec3 u_emissionColour;\\n\\nuniform float u_emissionStrength;\\nuniform float u_emissionPulseStrength;\\nuniform float u_emissionPulseRate;\\n\\nuniform float u_specularPower;\\nuniform float u_specularFalloff;\\n\\nuniform vec3 u_ambientColor;\\nuniform float u_ambientStrength;\\nuniform float u_ambientAffectedBySpec;\\n\\nfloat vEmissionOverallStrength;\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat get_emissionStrength(){\\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\\n    return str;\\n}\\nfloat get_matteStrength(){\\n    return texture2D(u_matteTexture, vUv).r;\\n}\\n\\nvec3 get_reflectionColour(){\\n    mat4 mm = modelViewMatrix;\\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\\n    vec3 r = reflect(e,n);\\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\\n    vec2 vN = r.xy \/ m +0.5;\\n    return texture2D(u_reflectionTexture, vN).rgb;\\n}\\n\\n\\nvoid main() {\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\\n    \\n    vec3 LightX = ((modelViewMatrix*vec4(vNormal,1.0)).xyz);\\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\\n    \\n    \\n    \\n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, lightVectorW ) ),u_specularFalloff)*u_specularPower);\\n    \\n    \/\/ Diffuse\\nvec3 c_diffuse = u_diffuseColour+(u_lightColor * 1.0 - smoothstep(0.0,0.99,distance(worldNormal.xyz, u_lightPosition)\/u_lightStrength));\\n    \\n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\\n    \\n    \/\/ Reflection\\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\\n    vec3 c_reflect = c_diffuse + (refColour*(matteValue*2.0));\\n    \\n    \/\/ Emission\\n    float emissionStrength = get_emissionStrength();\\n    vec3 emissionDifference = vec3(u_emissionColour.x - c_reflect.x, u_emissionColour.y - c_reflect.y, u_emissionColour.z - c_reflect.z) * (1.0 - emissionStrength);\\n\\n    \/\/ Ambient\\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\\n    vec3 ambCol = u_ambientColor * ambStrength;\\n\\n    \\n\\n    \/\/ Base colour\\n    vec3 c_final =  c_reflect + ((specComp*matteValue) + ambCol + emissionDifference);\\n    \\n\\n    gl_FragColor = vec4(c_final , 1.0 );\\n\\n}",$/;"	f
 fragment	js/shaders/shaderfrog/Vignette.json	/^  "fragment": "\/**\\n* Example Fragment Shader\\n* Sets the color and alpha of the pixel by setting gl_FragColor\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ A uniform unique to this shader. You can modify it to the using the form\\n\/\/ below the shader preview. Any uniform you add is automatically given a form\\nuniform vec3 u_vignetteColour;\\nuniform vec2 u_vignetteSpread;\\nuniform vec2 u_vignetteBias;\\n\\n\/\/ Example varyings passed from the vertex shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat getVignette(){\\n    float d = smoothstep(u_vignetteSpread.x,u_vignetteSpread.y, distance(vUv, u_vignetteBias));\\n    return d;\\n}\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n\\n    gl_FragColor = vec4( u_vignetteColour, getVignette());\\n\\n}",$/;"	f
 fragment	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^  "fragment": "\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\\n\/\/ SHADERFROG UNIFORMS\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\nuniform sampler2D u_emissionTexture;\\nuniform sampler2D u_matteTexture;\\nuniform sampler2D u_reflectionTexture;\\n\\nuniform float u_reflectionStrength;\\nuniform float u_matteStrength;\\n\\nuniform vec3 u_lightPosition;\\nuniform vec3 u_lightColor;\\nuniform vec3 u_diffuseColour;\\nuniform vec3 u_emissionColour;\\n\\nuniform float u_emissionStrength;\\nuniform float u_emissionPulseStrength;\\nuniform float u_emissionPulseRate;\\n\\nuniform float u_specularPower;\\nuniform float u_specularFalloff;\\n\\nuniform vec3 u_ambientColor;\\nuniform float u_ambientFalloff;\\nuniform float u_ambientStrength;\\nuniform float u_ambientAffectedBySpec;\\n\\n\\nfloat vEmissionOverallStrength;\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\n\\nfloat get_emissionStrength(){\\n    vEmissionOverallStrength = sin((time*u_emissionPulseRate)+vNormal.y-vNormal.x)*u_emissionPulseStrength;\\n    float str = pow(smoothstep(0.1,0.7,texture2D(u_emissionTexture, vUv).r), u_emissionStrength + vEmissionOverallStrength);\\n    return str;\\n}\\nfloat get_matteStrength(){\\n    return texture2D(u_matteTexture, vUv).r;\\n}\\n\\nvec3 get_reflectionColour(){\\n    mat4 mm = modelViewMatrix;\\n    vec3 e = normalize(vec3(mm * vec4(vPosition,1.0)));\\n    vec3 n = normalize(mm * vec4(vNormal,0.0)).xyz;\\n    vec3 r = reflect(e,n);\\n    float m = 2.0 * sqrt(   pow(r.x, 2.0)   +  pow(r.y, 2.0)    +   pow(r.z+1.0, 2.0) );\\n    vec2 vN = r.xy \/ m +0.5;\\n    return texture2D(u_reflectionTexture, vN).rgb;\\n}\\n\\n\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n    vec3 viewPosition = (viewMatrix * vec4( vPosition, 1.0)).xyz;\\n    vec3 viewNormal = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 viewLocation = -(modelViewMatrix*vec4(vPosition,1.0)).xyz;\\n    vec3 LightX = (modelViewMatrix*vec4(vNormal,1.0)).xyz;\\n    vec3 vPositionW = vec3(modelMatrix * vec4(vPosition, 1.0));\\n    vec3 vNormalW = normalize(vec3(modelMatrix * vec4(vNormal, 0.0)));\\n    vec3 viewDirectionW = normalize(cameraPosition - vPosition);\\n    vec3 lightVectorW = normalize(u_lightPosition - vPositionW);\\n    \\n    \\n    \\n    float diff = dot(normalize(u_lightPosition-worldNormal),worldNormal);\\n    vec3 angleW = normalize( viewDirectionW + lightVectorW );\\n    float specComp = smoothstep(0.0,0.2,pow(max( 0.0, dot( vNormalW, viewDirectionW ) ),u_specularFalloff)*u_specularPower);\\n    \\n    \/\/ Diffuse\\n    vec3 c = vec3(u_diffuseColour);\\n    \\n    float matteValue = smoothstep(0.5,0.7,texture2D(u_matteTexture, vUv).r)*u_matteStrength;\\n    \\n    \/\/ Reflection\\n    vec3 refColour = get_reflectionColour()*u_reflectionStrength;\\n    c += (refColour*(1.0 - (matteValue*2.0)));\\n    \\n    \/\/ Emission\\n    float emissionStrength = get_emissionStrength();\\n    vec3 emissionDifference = vec3(u_emissionColour.x - c.x, u_emissionColour.y - c.y, u_emissionColour.z - c.z) * (1.0 - emissionStrength);\\n\\n    \/\/ Ambient\\n    float ambStrength = abs(dot(viewDirectionW, vPositionW))*(u_ambientStrength*1.0 - (((0.5+vEmissionOverallStrength*0.5))*u_ambientAffectedBySpec));\\n    vec3 ambCol = u_ambientColor * ambStrength;\\n\\n    \\n\\n    \/\/ Base colour\\n    c += ((specComp*matteValue) + ambCol + emissionDifference);\\n    c = clamp(c,.0,1.);\\n    \\n\\n    gl_FragColor = vec4( c , 1.0 );\\n\\n}",$/;"	f
 fragment	relicAssets/carbon/shaders/Vignette.json	/^  "fragment": "\/**\\n* Example Fragment Shader\\n* Sets the color and alpha of the pixel by setting gl_FragColor\\n*\/\\n\\n\/\/ Set the precision for data types used in this shader\\nprecision highp float;\\nprecision highp int;\\n\\n\/\/ Default THREE.js uniforms available to both fragment and vertex shader\\nuniform mat4 modelMatrix;\\nuniform mat4 modelViewMatrix;\\nuniform mat4 projectionMatrix;\\nuniform mat4 viewMatrix;\\nuniform mat3 normalMatrix;\\n\\n\/\/ Default uniforms provided by ShaderFrog.\\nuniform vec3 cameraPosition;\\nuniform float time;\\n\\n\/\/ A uniform unique to this shader. You can modify it to the using the form\\n\/\/ below the shader preview. Any uniform you add is automatically given a form\\nuniform vec3 u_vignetteColour;\\nuniform vec2 u_vignetteSpread;\\nuniform vec2 u_vignetteBias;\\n\\n\/\/ Example varyings passed from the vertex shader\\nvarying vec3 vPosition;\\nvarying vec3 vNormal;\\nvarying vec2 vUv;\\nvarying vec2 vUv2;\\n\\nfloat getVignette(){\\n    float d = smoothstep(u_vignetteSpread.x,u_vignetteSpread.y, distance(vUv, u_vignetteBias));\\n    return d;\\n}\\nvoid main() {\\n\\n    vec3 worldPosition = ( modelMatrix * vec4( vPosition, 1.0 )).xyz;\\n    vec3 worldNormal = normalize( vec3( modelMatrix * vec4( vNormal, 0.0 ) ) );\\n\\n    gl_FragColor = vec4( u_vignetteColour, getVignette());\\n\\n}",$/;"	f
@@ -2611,6 +2614,9 @@ function.sidewalls	vendor/three.js/Three.js	/^	function sidewalls( contour, laye
 function.snip	js/three/extras/ShapeUtils.js	/^		function snip( contour, u, v, w, n, verts ) {$/;"	f
 function.v	js/three/geometries/ExtrudeGeometry.js	/^	function v( x, y, z ) {$/;"	f
 function.v	vendor/three.js/Three.js	/^	function v( x, y, z ) {$/;"	f
+g	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "g": 0.1,$/;"	f
+g	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "g": 0.15,$/;"	f
+g	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "g": 0.2,$/;"	f
 g	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "g": 1.0,$/;"	f
 g	js/shaders/shaderfrog/Vignette.json	/^        "g": 0.0,$/;"	f
 g	vendor/three.js/Three.js	/^		var g = Math.floor( color.g * 255 );$/;"	v
@@ -2781,6 +2787,7 @@ j	vendor/three.js/Three.js	/^			var j, jl;$/;"	v
 j	vendor/three.js/Three.js	/^		var j, jl;$/;"	v
 kinematics.joints	js/loaders/ColladaLoader.js	/^		kinematics = {$/;"	p
 l	js/three/math/Color.js	/^						var l = parseInt( color[ 3 ], 10 ) \/ 100;$/;"	v
+lightHelper	js/shaders/shaderfrog/shaderFrog_library.js	/^var lightHelper;$/;"	v
 line	js/three/loaders/OBJLoader.js	/^		var line = '', lineFirstChar = '', lineSecondChar = '';$/;"	v
 lineGeometry	js/three/helpers/ArrowHelper.js	/^var lineGeometry, coneGeometry;$/;"	v
 lineLength	js/three/loaders/OBJLoader.js	/^		var lineLength = 0;$/;"	v
@@ -2798,7 +2805,7 @@ m21	vendor/three.js/Three.js	/^		var m21 = te[1], m22 = te[5], m23 = te[9];$/;"	
 m31	vendor/three.js/Three.js	/^		var m31 = te[2], m32 = te[6], m33 = te[10];$/;"	v
 markUniformsLightsNeedsUpdate	js/three/renderers/WebGLRenderer.js	/^	function markUniformsLightsNeedsUpdate( uniforms, value ) {$/;"	f
 matID	vendor/three.js/Three.js	/^		var matID, matJSON;$/;"	v
-mat_Diffuse_Specular_Emmisive	js/shaders/shaderfrog/shaderFrog_library.js	/^var mat_Diffuse_Specular_Emmisive, gui_Diffuse_Spec_Emissive = gui_materials.addFolder("Carbon");$/;"	v
+mat_Diffuse_Specular_Emmisive	js/shaders/shaderfrog/shaderFrog_library.js	/^var mat_Diffuse_Specular_Emmisive,$/;"	v
 mat_Diffuse_Specular_Emmisive_SETUP	js/shaders/shaderfrog/shaderFrog_library.js	/^function mat_Diffuse_Specular_Emmisive_SETUP(m){$/;"	f
 mat_Vignette	js/shaders/shaderfrog/shaderFrog_library.js	/^var mat_Vignette, gui_mat_Vignette = gui_materials.addFolder("Vignette");$/;"	v
 mat_Vignette_SETUP	js/shaders/shaderfrog/shaderFrog_library.js	/^function mat_Vignette_SETUP(m){$/;"	f
@@ -2854,7 +2861,6 @@ name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "cameraPos
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "time",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientAffectedBySpec",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientColor",$/;"	f
-name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientFalloff",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_ambientStrength",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_diffuseColour",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionColour",$/;"	f
@@ -2864,6 +2870,7 @@ name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissio
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_emissionTexture",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_lightColor",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_lightPosition",$/;"	f
+name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_lightStrength",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_matteStrength",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_matteTexture",$/;"	f
 name	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "name": "u_reflectionStrength",$/;"	f
@@ -3022,6 +3029,7 @@ qx	vendor/three.js/Three.js	/^		var qx = q.x;$/;"	v
 qy	vendor/three.js/Three.js	/^		var qy = q.y;$/;"	v
 qz	vendor/three.js/Three.js	/^		var qz = q.z;$/;"	v
 r	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "r": 0.1,$/;"	f
+r	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "r": 0.2,$/;"	f
 r	js/shaders/shaderfrog/Vignette.json	/^        "r": 0.0,$/;"	f
 r	vendor/three.js/Three.js	/^		var r = Math.floor( color.r * 255 );$/;"	v
 r	vendor/three.js/Three.js	/^		var r, index,$/;"	v
@@ -3059,7 +3067,6 @@ refreshUniformsShadow	vendor/three.js/Three.js	/^	function refreshUniformsShadow
 refreshUniformsStandard	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsStandard( uniforms, material ) {$/;"	f
 refreshUniformsToon	js/three/renderers/WebGLRenderer.js	/^	function refreshUniformsToon( uniforms, material ) {$/;"	f
 releaseMaterialProgramReference	js/three/renderers/WebGLRenderer.js	/^	function releaseMaterialProgramReference( material ) {$/;"	f
-relicSetup_shadersAndMaterials	relicAssets/carbon/config.js	/^function relicSetup_shadersAndMaterials() {$/;"	f
 relic_hexagons_onChange	relicAssets/carbon/config.js	/^function relic_hexagons_onChange(){$/;"	f
 relic_hexagons_setup	relicAssets/carbon/config.js	/^function relic_hexagons_setup(){$/;"	f
 relic_hexagons_update	relicAssets/carbon/config.js	/^function relic_hexagons_update(){$/;"	f
@@ -3323,7 +3330,6 @@ u_ambientAffectedBySpec	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "
 u_ambientAffectedBySpec	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientAffectedBySpec": {$/;"	f
 u_ambientColor	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientColor": {$/;"	f
 u_ambientColor	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientColor": {$/;"	f
-u_ambientFalloff	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientFalloff": {$/;"	f
 u_ambientFalloff	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientFalloff": {$/;"	f
 u_ambientStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_ambientStrength": {$/;"	f
 u_ambientStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_ambientStrength": {$/;"	f
@@ -3343,6 +3349,7 @@ u_lightColor	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_lightColo
 u_lightColor	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_lightColor": {$/;"	f
 u_lightPosition	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_lightPosition": {$/;"	f
 u_lightPosition	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_lightPosition": {$/;"	f
+u_lightStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_lightStrength": {$/;"	f
 u_matteStrength	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_matteStrength": {$/;"	f
 u_matteStrength	relicAssets/carbon/shaders/Diffuse_Spec_Emissive.json	/^    "u_matteStrength": {$/;"	f
 u_matteTexture	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^    "u_matteTexture": {$/;"	f
@@ -3421,6 +3428,14 @@ uv2	relicAssets/carbon/geo/blendProper.json	/^        "uv2":78,$/;"	f
 uvgen	vendor/three.js/Three.js	/^	var uvgen = options.UVGenerator === undefined ? THREE.ExtrudeGeometry.WorldUVGenerator : options.UVGenerator;$/;"	v
 v	vendor/three.js/Three.js	/^		var v, key;$/;"	v
 value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value": {$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.061,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.079,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.104,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.21,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.515,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":0.771,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":17.91,$/;"	f
+value	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^      "value":3.09711588,$/;"	f
 value	js/shaders/shaderfrog/Vignette.json	/^      "value": {$/;"	f
 var.attribute.itemSize	vendor/three.js/Three.js	/^			var attribute = {$/;"	p
 var.attributes.alpha	js/three/renderers/WebGL2Renderer.js	/^		var attributes = {$/;"	p
@@ -3499,6 +3514,7 @@ width	vendor/three.js/Three.js	/^		var width = dds.width;$/;"	v
 width	vendor/three.js/Three.js	/^		var width = image.width;$/;"	v
 width	vendor/three.js/Three.js	/^		var width = offset \/ 2;$/;"	v
 wx	vendor/three.js/Three.js	/^		var wx = w * x2, wy = w * y2, wz = w * z2;$/;"	v
+x	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "x": 1.0,$/;"	f
 x	js/shaders/shaderfrog/Vignette.json	/^        "x": 0.0,$/;"	f
 x	js/shaders/shaderfrog/Vignette.json	/^        "x": 0.5,$/;"	f
 x	vendor/three.js/Three.js	/^		var x = 2 * near \/ ( right - left );$/;"	v
@@ -3512,9 +3528,11 @@ xA	vendor/three.js/Three.js	/^		var xA, yA, zA,$/;"	v
 xmax	vendor/three.js/Three.js	/^		var xmax = ymax * aspect;$/;"	v
 xmin	vendor/three.js/Three.js	/^		var xmin = ymin * aspect;$/;"	v
 xx	vendor/three.js/Three.js	/^		var xx = x * x2, xy = x * y2, xz = x * z2;$/;"	v
+y	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "y": 0.0,$/;"	f
 y	js/shaders/shaderfrog/Vignette.json	/^        "y": 0.5$/;"	f
 y	js/shaders/shaderfrog/Vignette.json	/^        "y": 1.0$/;"	f
 y	vendor/three.js/Three.js	/^		var y = 2 * near \/ ( top - bottom );$/;"	v
 ymin	vendor/three.js/Three.js	/^		var ymin = - ymax;$/;"	v
 yy	vendor/three.js/Three.js	/^		var yy = y * y2, yz = y * z2, zz = z * z2;$/;"	v
+z	js/shaders/shaderfrog/Diffuse_Spec_Emissive.json	/^        "z": 0.0$/;"	f
 zoomChanged	vendor/three.js/OrbitControls.js	/^	var zoomChanged = false;$/;"	v

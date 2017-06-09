@@ -24,9 +24,8 @@ function init() {
 	// -----------------------------------------------  RENDERER
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.gammaInput = true;
-				renderer.gammaOutput = true;
-
-				renderer.alpha = true;
+	renderer.gammaOutput = true;
+	renderer.alpha = true;
 	document.getElementById('container').appendChild(renderer.domElement);
 
 	// -----------------------------------------------  STATS
@@ -41,29 +40,22 @@ function init() {
 	camera.position.set(0, 0, 5);
 	scene.add(camera);
 
-// -----------------------------------------------  LIGHTS
-// Lights
-			var spotLight = new THREE.SpotLight( 0xff8888 );
-			spotLight.position.set( 100, 200, 100 );
-			spotLight.angle = Math.PI / 6;
-			spotLight.penumbra = 0.9;
-			scene.add( spotLight );
-			var spotLight = new THREE.SpotLight( 0x8888ff );
-			spotLight.position.set( - 100, - 200, - 100 );
-			spotLight.angle = Math.PI / 6;
-			spotLight.penumbra = 0.9;
-			scene.add( spotLight );
-			light = new THREE.PointLight(0xffffff, 1.0);
-// We want it to be very close to our character
-light.position.set(0.0, 0.0, 0.1);
-scene.add(light);
+	// HELPERS
+	// var gridHelper = new THREE.GridHelper( 5, 10, 0x0000ff, 0x808080 );
+	// scene.add( gridHelper );
+
+	// -----------------------------------------------  LIGHTS
+	// Lights
+
+	var light = new THREE.PointLight(0xffffff, 1.0);
+	light.position.set(5.0, 2.0, 5.0);
+	scene.add(light);
 
 	// -----------------------------------------------  SETUP SHADER LIBRARY
 	setupShaderLibrary(camera);
 
-	cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
-	var gridHelper = new THREE.GridHelper( 10, 20 );
-	scene.add( gridHelper );
+	cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+	cameraControls.enableDamping = true;
 
 	// -----------------------------------------------  FLUID LAYOUT
 	THREEx.WindowResize.bind(renderer, camera);

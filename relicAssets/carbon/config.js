@@ -15,18 +15,13 @@ var obj_triangleGrid,mat_triangleGrid;
 
 // - - - - - - - - - - - - - - - - - - - - - - COLLADA LOADED -->  SETUP SCENE
 Relic.RelicConfig = function(loaded) {
+    loadedScene = loaded;
     relic_setupEnvironment();
-    relicSetup_shadersAndMaterials();
-    // relic_hexagons_setup();
+    relic_hexagons_setup();
 
-    var planeGeo1 = new THREE.PlaneGeometry( 1, 1, 100 );
-var p1 = new THREE.Mesh( planeGeo1, mat_Vignette );
-scene.add(p1);
-
-var planeGeo2 = new THREE.PlaneGeometry( 1, 1, 100 );
-var p2 = new THREE.Mesh( planeGeo2, mat_Vignette );
-p2.position.set(1.0,1.0,1.0);
-scene.add(p2);
+    // var geo1 = new THREE.IcosahedronGeometry(1, 1)
+    // var sphere1 = new THREE.Mesh( geo1, mat_Vignette );
+    // scene.add(sphere1);
 }
 
 function relic_update() {
@@ -35,15 +30,13 @@ function relic_update() {
 
 // -----------------------------------------------  < HEXAGONS
 function relic_hexagons_setup(){
-
-var childCount = loadedScene.children.length;
+var childCount = loadedScene.scene.children.length;
     for (var i = 0; i < childCount; i++) {
-      var hex = loadedScene.children[i].mesh;
-      obj_hexagons.push(hex);
-    scene.add(hex);
-  }
-  console.log(loadedScene);
-
+        var hex = loadedScene.scene.children[i];
+        hex.children[0].material = mat_Diffuse_Specular_Emmisive;
+        obj_hexagons.push(hex);
+    }
+    scene.add(loadedScene.scene);
 }
 function relic_hexagons_update(){
 }
@@ -51,15 +44,6 @@ function relic_hexagons_onChange(){
 }
 // -----------------------------------------------  HEXAGONS >
 
-
-function relicSetup_shadersAndMaterials() {
-    mat_hexagons = new THREE.RawShaderMaterial( {
-	uniforms: SHADER_vignette['uniforms'],
-	vertexShader: SHADER_vignette['vertex'],
-	fragmentShader: SHADER_vignette['fragment']
-    } );
-    // mat_hexagons = new THREE.MeshBasicMaterial({wireframe:true});
-}
 function relic_setupEnvironment() {
 }
 function handler_shaderChange() {
